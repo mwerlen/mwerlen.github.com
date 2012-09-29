@@ -1,0 +1,1 @@
+<span class="metadata">{{ post.date | date_to_string }} | {{ post.tags | array_to_sentence_string }} | {{ post.categories | array_to_sentence_string }}</span><br/>

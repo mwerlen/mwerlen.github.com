@@ -1,0 +1,6 @@
+    <header>
+		<div class="inner">
+			<h1>Maxime Werlen</h1>
+			<div class="tabs"><a href="/index.html" class="{{page.presentation}}">Présentation</a><a href="/cv.html" class="{{page.cv}}">CV</a><a href="/blog.html" class="{{page.blog}}">Blog</a><a href="/contact.html" class="{{page.contact}}">Contact</a></div>
+		</div>
+    </header>
