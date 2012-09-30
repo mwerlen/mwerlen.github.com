@@ -16,3 +16,5 @@ Vous trouverez ici toutes les informations nécessaires pour mieux me connaitre 
 
 
 Si vous avez des questions n'hésitez pas à me contacter.
+
+<div style="float: right">Maxime Werlen</div>
