@@ -1,6 +1,26 @@
+    <div class="clear"></div>
     <header>
-		<div class="inner">
-			<h1>Maxime Werlen</h1>
-			<div class="tabs"><a href="/index.html" class="{{page.presentation}}">Présentation</a><a href="/cv.html" class="{{page.cv}}">CV</a><a href="/blog.html" class="{{page.blog}}">Blog</a><a href="/contact.html" class="{{page.contact}}">Contact</a></div>
+    	<div class="titlecontentblock">
+	    	<div class="titleblock">
+				<div id="itsignal">IT-Signal</div>
+				<div id="subtitle">Subtitle</div>
+	    	</div>
+	    	<hr class="titlehr"/>
+	    	<div class="signalblock">
+	    		<div>
+	    			<hr class="titlehr"/>
+	    		</div>
+    		</div>
+			<hr class="titlehr"/>
+    	</div>
+		<div class="clear"></div>
+		<div id="menu">
+			<div class="tabs">
+				<a href="/index.html" class="{{page.presentation}}">Présentation</a>
+				<a href="/cv.html" class="{{page.cv}}">CV</a>
+				<a href="/blog.html" class="{{page.blog}}">Blog</a>
+				<a href="/contact.html" class="{{page.contact}}">Contact</a>
+			</div>
 		</div>
-    </header>
+	</header>
+	<div class="clear"></div>
