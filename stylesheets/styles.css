@@ -270,10 +270,10 @@
 /* GENERAL ELEMENT TYPE STYLES */
 
 #main-content h1 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 2.8em;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 2.2em;
   letter-spacing: -1px;
-  color: #474747;
 }
 #main-content h1:before {
   content: "\\";
@@ -282,11 +282,9 @@
   margin-left: -0.9em;
 }
 #main-content h2 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 22px;
-  font-weight: bold;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-size: 1.8em;
   margin-bottom: 8px;
-  color: #474747;
 }
 #main-content h2:before {
   content: "->";
@@ -295,12 +293,11 @@
   margin-left: -1.5em;
 }
 #main-content h3 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 18px;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-size: 1.5em;
   font-weight: bold;
   margin-top: 24px;
   margin-bottom: 8px;
-  color: #474747;
 }
 #main-content h3:before {
   content: "¤";
@@ -309,10 +306,9 @@
   margin-left: -2em;
 }
 #main-content h4 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 15px;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-size: 1.2em;
   font-weight: bold;
-  color: #474747;
 }
 h4:before {
   content: "-";
@@ -322,8 +318,7 @@ h4:before {
 }
 #main-content h5 {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 14px;
-  color: #474747;
+  font-size: 1.1em;
 }
 h5:before {
   content: "~";
@@ -334,7 +329,6 @@ h5:before {
 #main-content h6 {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
   font-size: .8em;
-  color: #474747;
 }
 h6:before {
   content: "_";
@@ -349,6 +343,8 @@ h6:before {
   box-shadow: 2px 2px 8px #aaaaaa;
   -webkit-box-shadow: 2px 2px 8px #aaaaaa;
   -moz-box-shadow: 2px 2px 8px #aaaaaa;
+  padding-left: 15px;
+  color: #474747;
 }
 /* IMPORTS
 --------------------------------------------------------------------------------- */
@@ -384,11 +380,16 @@ h6:before {
 #itsignal {
   font-size: 6em;
   line-height: 0.75em;
+  color: rgba(133, 194, 10, 0.7);
+}
+.titledash {
+  color: #333333;
 }
 #subtitle {
   font-size: 2.5em;
   line-height: 0.75em;
   clear: left;
+  color: #333333;
 }
 /* MENU
 --------------------------------------------------- */
@@ -408,6 +409,11 @@ h6:before {
   box-shadow: 0 1px 3px black;
   border-radius: 0.25em 2em 2em 0.25em;
   text-align: center;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-variant: small-caps;
+}
+#menu a {
+  color: white;
 }
 .menuList {
   text-align: left;
@@ -419,8 +425,9 @@ h6:before {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
-  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-  font-variant: small-caps;
+}
+#menu li a {
+  color: #2879d0;
 }
 #menu li:before {
   content: "\00BB";
@@ -431,5 +438,13 @@ h6:before {
   margin: 0 auto;
   width: 80%;
 }
+.mx {
+  color: white;
+  font-family: "Times New Roman", Times, "Liberation Serif", FreeSerif, serif;
+  font-size: 4em;
+}
 /* TABS */
+
+/* MAIN 
+---------------------------------------------------------------------*/
 

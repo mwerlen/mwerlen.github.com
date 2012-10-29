@@ -4,10 +4,20 @@
 /* LESS VARIABLES
 --------------------------------------------------------------------------------- */
 @main-bg: #ffffff;
-@titlecolor : #333;
-@menu: #333;
+@CustomGray : #333;
+@CustomRed : #a33;
+@CustomGreen : hsla(80, 90%, 40%, 0.5);
+@CustomGreenPlus : hsla(80, 90%, 40%, 0.7);
+@CustomBlue : #2879d0;
+@titleColor : @CustomGreenPlus;
+@subtitleColor : @CustomGray;
+@dashcolor : @CustomGray;
+@menu: @CustomGray;
 @menu-tab: #eee;
-@greenBorder: hsla(80, 90%, 40%, 0.5);
+@greenBorder: @CustomGreen;
+@greenContent : @CustomGreenPlus;
+@menuLinkColor : @CustomBlue;
+@textColor : #474747;
 
 /* GLOBAL
 --------------------------------------------------------------------------------- */
@@ -16,10 +26,10 @@
 /* GENERAL ELEMENT TYPE STYLES */
 
 #main-content h1 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: 2.8em;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 2.2em;
   letter-spacing: -1px;
-  color: #474747;
 } 
 
 #main-content h1:before {
@@ -30,11 +40,9 @@
 }
 
 #main-content h2 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: 22px;
-  font-weight: bold;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-size: 1.8em;
   margin-bottom: 8px;
-  color: #474747;
 } 
 #main-content h2:before {
   content: "->";
@@ -44,12 +52,11 @@
 }
 
 #main-content h3 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: 18px;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-size: 1.5em;
   font-weight: bold;
   margin-top: 24px;
   margin-bottom: 8px;
-  color: #474747;
 } 
  
 #main-content h3:before {
@@ -60,10 +67,9 @@
 }
 
 #main-content h4 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: 15px;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-size: 1.2em;
   font-weight: bold;
-  color: #474747;
 } 
 
 h4:before {
@@ -75,8 +81,7 @@ h4:before {
 
 #main-content h5 {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: 14px;
-  color: #474747;
+  font-size: 1.1em;
 } 
 h5:before {
   content: "~";
@@ -88,7 +93,6 @@ h5:before {
 #main-content h6 {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
   font-size: .8em;
-  color: #474747;
 } 
 h6:before {
   content: "_";
@@ -106,11 +110,13 @@ h6:before {
 	box-shadow: 2px 2px 8px #aaa;
 	-webkit-box-shadow: 2px 2px 8px #aaa;
 	-moz-box-shadow: 2px 2px 8px #aaa;
+  padding-left: 15px;
+  color : @textColor;
 }
 
 /* IMPORTS
 --------------------------------------------------------------------------------- */
 @import "header.less";
 @import "menu.less";
-
+@import "main.less";
 

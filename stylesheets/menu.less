@@ -8,7 +8,7 @@
 	top: 20%;
 	margin: 0 -0.2em 0 0;
 	z-index: 5;
-	background: hsla(80, 90%, 40%, 0.7);
+	background: @greenContent;
 	color: white;
 	border: solid @greenBorder;
 	border-left: none;
@@ -16,6 +16,12 @@
 	box-shadow: 0 1px 3px black;
 	border-radius: 0.25em 2em 2em 0.25em;
 	text-align: center;
+	font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+	font-variant: small-caps;
+}
+
+#menu a{
+	color: white;
 }
 
 .menuList {
@@ -29,8 +35,10 @@
 	list-style-type: none;
 	padding: 0px;
 	margin: 0px;
-	font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-	font-variant: small-caps;
+}
+
+#menu li a{
+	color: @CustomBlue;
 }
 
 #menu li:before {
@@ -44,6 +52,11 @@
 	width: 80%;
 }
 
+.mx {
+	color: white;
+	font-family: "Times New Roman", Times, "Liberation Serif", FreeSerif, serif;
+	font-size: 4em;
+}
 
 /* TABS */
 

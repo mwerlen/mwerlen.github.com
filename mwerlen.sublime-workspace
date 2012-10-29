@@ -4,12 +4,12 @@
 		"selected_items":
 		[
 			[
-				"pad",
-				"padding-left"
+				"fon",
+				"font-size"
 			],
 			[
-				"fon",
-				"font-family"
+				"pad",
+				"padding-left"
 			],
 			[
 				"wi",
@@ -51,17 +51,34 @@
 			"file": "stylesheets/styles.less",
 			"settings":
 			{
-				"buffer_size": 2328,
+				"buffer_size": 2548,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stylesheets/main.less",
+			"settings":
+			{
+				"buffer_size": 81,
+				"line_ending": "Windows",
+				"name": "/* MAIN"
 			}
 		},
 		{
 			"file": "stylesheets/header.less",
 			"settings":
 			{
-				"buffer_size": 666,
+				"buffer_size": 749,
 				"line_ending": "Windows",
 				"name": "/* HEADER"
+			}
+		},
+		{
+			"file": "_includes/header.ext",
+			"settings":
+			{
+				"buffer_size": 331,
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -73,18 +90,10 @@
 			}
 		},
 		{
-			"file": "_includes/header.ext",
-			"settings":
-			{
-				"buffer_size": 287,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "stylesheets/menu.less",
 			"settings":
 			{
-				"buffer_size": 2677,
+				"buffer_size": 2848,
 				"line_ending": "Windows"
 			}
 		},
@@ -92,7 +101,7 @@
 			"file": "_includes/menu.ext",
 			"settings":
 			{
-				"buffer_size": 387,
+				"buffer_size": 615,
 				"line_ending": "Windows"
 			}
 		},
@@ -109,6 +118,22 @@
 			"settings":
 			{
 				"buffer_size": 4841,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "cv.markdown",
+			"settings":
+			{
+				"buffer_size": 3618,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test.html",
+			"settings":
+			{
+				"buffer_size": 219,
 				"line_ending": "Windows"
 			}
 		}
@@ -174,7 +199,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 		]
@@ -216,46 +241,48 @@
 					"file": "stylesheets/styles.less",
 					"settings":
 					{
-						"buffer_size": 2328,
+						"buffer_size": 2548,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2004,
-								2004
+								1062,
+								1062
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 724.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "stylesheets/header.less",
+					"file": "stylesheets/main.less",
 					"settings":
 					{
-						"buffer_size": 666,
+						"buffer_size": 81,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								440,
-								440
+								81,
+								81
 							]
 						],
 						"settings":
 						{
-							"auto_name": "/* HEADER",
+							"auto_name": "/* MAIN",
 							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -266,6 +293,60 @@
 				},
 				{
 					"buffer": 2,
+					"file": "stylesheets/header.less",
+					"settings":
+					{
+						"buffer_size": 749,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								443,
+								542
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/* HEADER",
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "_includes/header.ext",
+					"settings":
+					{
+						"buffer_size": 331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								221,
+								221
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "_layouts/default.html",
 					"settings":
 					{
@@ -293,45 +374,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "_includes/header.ext",
-					"settings":
-					{
-						"buffer_size": 287,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								259,
-								259
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "stylesheets/menu.less",
 					"settings":
 					{
-						"buffer_size": 2677,
+						"buffer_size": 2848,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								642,
-								543
+								694,
+								694
 							]
 						],
 						"settings":
@@ -340,25 +395,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "_includes/menu.ext",
 					"settings":
 					{
-						"buffer_size": 387,
+						"buffer_size": 615,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								379,
-								379
+								608,
+								608
 							]
 						],
 						"settings":
@@ -372,7 +427,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "stylesheets/old.css",
 					"settings":
 					{
@@ -383,8 +438,8 @@
 						"selection":
 						[
 							[
-								3722,
-								5376
+								5094,
+								5095
 							]
 						],
 						"settings":
@@ -394,13 +449,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3960.0,
+						"translation.y": 2340.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "stylesheets/960gs.less",
 					"settings":
 					{
@@ -419,6 +474,60 @@
 						{
 							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "cv.markdown",
+					"settings":
+					{
+						"buffer_size": 3618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								67,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "test.html",
+					"settings":
+					{
+						"buffer_size": 219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								219,
+								219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -462,7 +571,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 141.0
+		"height": 112.0
 	},
 	"replace":
 	{
