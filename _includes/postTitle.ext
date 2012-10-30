@@ -1,0 +1,10 @@
+{% if post %}
+ {% assign thePost = post %}
+{% else %} 
+ {% assign thePost = page %}
+{% endif %}
+
+<div id="postTitle">
+	<h1><a href="{{thePost.url}}" alt="{{thePost.title}}">{{thePost.title}}</a></h1>
+	<span class="metadata">Publié le <span class="date">{{thePost.date|date:'%d/%m/%Y'}}</span> - Tags : <span class="tags">{{thePost.tags}}</span> - Categories <span class="categories">{{thePost.categories}}</span></span>
+</div>

@@ -4,8 +4,20 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"po",
+				"postTitle"
+			],
+			[
 				"fon",
-				"font-size"
+				"font-weight"
 			],
 			[
 				"pad",
@@ -51,49 +63,41 @@
 			"file": "stylesheets/styles.less",
 			"settings":
 			{
-				"buffer_size": 2548,
+				"buffer_size": 1311,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stylesheets/reset.less",
+			"settings":
+			{
+				"buffer_size": 1105,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "stylesheets/widgets.less",
+			"settings":
+			{
+				"buffer_size": 2053,
+				"line_ending": "Windows",
+				"name": "/* widgets"
 			}
 		},
 		{
 			"file": "stylesheets/main.less",
 			"settings":
 			{
-				"buffer_size": 81,
+				"buffer_size": 3450,
 				"line_ending": "Windows",
 				"name": "/* MAIN"
 			}
 		},
 		{
-			"file": "stylesheets/header.less",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 749,
-				"line_ending": "Windows",
-				"name": "/* HEADER"
-			}
-		},
-		{
-			"file": "_includes/header.ext",
-			"settings":
-			{
-				"buffer_size": 331,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "_layouts/default.html",
-			"settings":
-			{
-				"buffer_size": 1624,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "stylesheets/menu.less",
-			"settings":
-			{
-				"buffer_size": 2848,
+				"buffer_size": 315,
 				"line_ending": "Windows"
 			}
 		},
@@ -101,49 +105,53 @@
 			"file": "_includes/menu.ext",
 			"settings":
 			{
-				"buffer_size": 615,
+				"buffer_size": 808,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "stylesheets/old.css",
+			"file": "stylesheets/menu.less",
 			"settings":
 			{
-				"buffer_size": 9212,
+				"buffer_size": 2890,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "stylesheets/960gs.less",
+			"file": "_includes/postTitle.ext",
 			"settings":
 			{
-				"buffer_size": 4841,
+				"buffer_size": 426,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "cv.markdown",
+			"file": "_layouts/post.html",
 			"settings":
 			{
-				"buffer_size": 3618,
+				"buffer_size": 397,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test.html",
+			"file": "stylesheets/posts.less",
 			"settings":
 			{
-				"buffer_size": 219,
+				"buffer_size": 900,
 				"line_ending": "Windows"
 			}
 		}
 	],
-	"build_system": "Packages/LESS-build/LESS.sublime-build",
+	"build_system": "",
 	"command_palette":
 	{
-		"height": 311.0,
+		"height": 81.0,
 		"selected_items":
 		[
+			[
+				"Package Control: In",
+				"Package Control: Install Package"
+			],
 			[
 				"Package Control: ",
 				"Package Control: Install Package"
@@ -161,7 +169,7 @@
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 165.0
 	},
 	"distraction_free":
 	{
@@ -174,6 +182,23 @@
 	},
 	"file_history":
 	[
+		"/C/Projets/mwerlen/mwerlen.markdown",
+		"/C/Projets/mwerlen/stylesheets/old.css",
+		"/C/Projets/mwerlen/stylesheets/header.less",
+		"/C/Projets/mwerlen/_includes/header.ext",
+		"/C/Projets/mwerlen/_layouts/base.html",
+		"/C/Projets/mwerlen/_layouts/default.html",
+		"/C/Projets/mwerlen/_layouts/site.html",
+		"/C/Projets/mwerlen/stylesheets/menu.less",
+		"/C/Projets/mwerlen/_includes/menu.ext",
+		"/C/Projets/mwerlen/stylesheets/posts.less",
+		"/C/Projets/mwerlen/stylesheets/960gs.less",
+		"/C/Projets/mwerlen/cv.markdown",
+		"/C/Projets/mwerlen/index.markdown",
+		"/C/Projets/mwerlen/test.html",
+		"/C/Projets/mwerlen/_includes/powered.ext",
+		"/C/Projets/mwerlen/_layouts/post.html",
+		"/C/Users/maximewerlen/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings",
 		"/C/Users/mwerlen/Documents/GitHub/mwerlen.github.com/stylesheets/menu.less",
 		"/C/Users/mwerlen/Documents/GitHub/mwerlen.github.com/stylesheets/old.css",
 		"/C/Users/mwerlen/Documents/GitHub/mwerlen.github.com/stylesheets/960gs.less",
@@ -209,6 +234,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"grid_12",
+			"inner",
 			";\n	margin: 0px;",
 			"header",
 			"tab",
@@ -233,7 +260,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -241,15 +268,15 @@
 					"file": "stylesheets/styles.less",
 					"settings":
 					{
-						"buffer_size": 2548,
+						"buffer_size": 1311,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1062,
-								1062
+								1128,
+								1128
 							]
 						],
 						"settings":
@@ -259,31 +286,32 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 219.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "stylesheets/main.less",
+					"file": "stylesheets/reset.less",
 					"settings":
 					{
-						"buffer_size": 81,
+						"buffer_size": 1105,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								81,
-								81
+								1105,
+								1105
 							]
 						],
 						"settings":
 						{
-							"auto_name": "/* MAIN",
-							"syntax": "Packages/LESS/LESS.tmLanguage"
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -293,25 +321,24 @@
 				},
 				{
 					"buffer": 2,
-					"file": "stylesheets/header.less",
+					"file": "stylesheets/widgets.less",
 					"settings":
 					{
-						"buffer_size": 749,
+						"buffer_size": 2053,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								443,
-								542
+								310,
+								310
 							]
 						],
 						"settings":
 						{
-							"auto_name": "/* HEADER",
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"auto_name": "/* widgets",
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -321,51 +348,50 @@
 				},
 				{
 					"buffer": 3,
-					"file": "_includes/header.ext",
+					"file": "stylesheets/main.less",
 					"settings":
 					{
-						"buffer_size": 331,
+						"buffer_size": 3450,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								221,
-								221
+								360,
+								360
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"auto_name": "/* MAIN",
+							"syntax": "Packages/LESS/LESS.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "_layouts/default.html",
+					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 1624,
+						"buffer_size": 315,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								940,
-								940
+								205,
+								205
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -375,50 +401,23 @@
 				},
 				{
 					"buffer": 5,
-					"file": "stylesheets/menu.less",
-					"settings":
-					{
-						"buffer_size": 2848,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								694,
-								694
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 45.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
 					"file": "_includes/menu.ext",
 					"settings":
 					{
-						"buffer_size": 615,
+						"buffer_size": 808,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								608,
-								608
+								801,
+								801
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -428,53 +427,80 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "stylesheets/old.css",
+					"buffer": 6,
+					"file": "stylesheets/menu.less",
 					"settings":
 					{
-						"buffer_size": 9212,
+						"buffer_size": 2890,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5094,
-								5095
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2340.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "stylesheets/960gs.less",
-					"settings":
-					{
-						"buffer_size": 4841,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								393,
-								393
+								662,
+								662
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "_includes/postTitle.ext",
+					"settings":
+					{
+						"buffer_size": 426,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								392,
+								392
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "_layouts/post.html",
+					"settings":
+					{
+						"buffer_size": 397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -484,54 +510,28 @@
 				},
 				{
 					"buffer": 9,
-					"file": "cv.markdown",
+					"file": "stylesheets/posts.less",
 					"settings":
 					{
-						"buffer_size": 3618,
+						"buffer_size": 900,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								67,
-								0
+								479,
+								479
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
+							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "test.html",
-					"settings":
-					{
-						"buffer_size": 219,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								219,
-								219
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 99.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

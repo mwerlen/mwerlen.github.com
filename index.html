@@ -1,0 +1,13 @@
+---
+layout: default
+title: Blog
+permalink: index.html
+blog: active
+---
+{% for post in site.posts %}
+	{% include postTitle.ext %}
+	<div class="preview">
+    	{{ post.content | strip_html | truncatewords:100}}
+    	<div class="readmore">&raquo; <a href="{{ post.url }}">Lire la suite...</a></div>
+	</div>
+{% endfor %}
