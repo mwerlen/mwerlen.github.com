@@ -1,18 +1,19 @@
-@import "old.css";
+@import "reset.less";
+//@import "old.css";
 @import "960gs.less";
 
 /* LESS VARIABLES
 --------------------------------------------------------------------------------- */
 @main-bg: #ffffff;
-@CustomGray : #333;
+@CustomGrey : #333;
 @CustomRed : #a33;
 @CustomGreen : hsla(80, 90%, 40%, 0.5);
 @CustomGreenPlus : hsla(80, 90%, 40%, 0.7);
 @CustomBlue : #2879d0;
 @titleColor : @CustomGreenPlus;
-@subtitleColor : @CustomGray;
-@dashcolor : @CustomGray;
-@menu: @CustomGray;
+@subtitleColor : @CustomGrey;
+@dashcolor : @CustomGrey;
+@menu: @CustomGrey;
 @menu-tab: #eee;
 @greenBorder: @CustomGreen;
 @greenContent : @CustomGreenPlus;
@@ -21,87 +22,6 @@
 
 /* GLOBAL
 --------------------------------------------------------------------------------- */
-
-
-/* GENERAL ELEMENT TYPE STYLES */
-
-#main-content h1 {
-  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-  font-weight: bold;
-  font-size: 2.2em;
-  letter-spacing: -1px;
-} 
-
-#main-content h1:before {
-  content: "\\";
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -0.9em;
-}
-
-#main-content h2 {
-  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-  font-size: 1.8em;
-  margin-bottom: 8px;
-} 
-#main-content h2:before {
-  content: "->";
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -1.5em;
-}
-
-#main-content h3 {
-  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-top: 24px;
-  margin-bottom: 8px;
-} 
- 
-#main-content h3:before {
-  content: "¤";
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -2em;
-}
-
-#main-content h4 {
-  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-  font-size: 1.2em;
-  font-weight: bold;
-} 
-
-h4:before {
-  content: "-";
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -2.8em;
-}
-
-#main-content h5 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: 1.1em;
-} 
-h5:before {
-  content: "~";
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -3.2em;
-}
-
-#main-content h6 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: .8em;
-} 
-h6:before {
-  content: "_";
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -3.7em;
-}
-
-
 
 .page {
 	-webkit-hyphens: auto;
@@ -119,4 +39,19 @@ h6:before {
 @import "header.less";
 @import "menu.less";
 @import "main.less";
+@import "posts.less";
+@import "widgets.less";
+
+/* MISC */
+.clearfix:after {
+  clear: both;
+  content: '.';
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+
+.clearfix {display: inline-block;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
 

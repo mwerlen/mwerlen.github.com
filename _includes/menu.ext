@@ -1,15 +1,14 @@
 <div id="menu">
 	<a href="/index.html">Le Blog</a>
 	<ul class="menuList">
-		<li><a href="/index.html" class="{{page.presentation}}">Dernières news</a></li>
-		<li><a href="/cv.html" class="{{page.cv}}">Archives</a></li>
-		<li><a href="/blog.html" class="{{page.blog}}">Catégories</a></li>
+		<li><a href="/index.html" class="{% if page.url == '/index.html'%}active{% endif %}">Dernières news</a></li>
+		<li><a href="/archives.html" class="{% if page.url == '/archives.html'%}active{% endif %}">Archives</a></li>
+		<li><a href="/categories.html" class="{% if page.url == '/categories.html'%}active{% endif %}">Catégories</a></li>
 	</ul>
 	<a href="/mwerlen.html">L'auteur</a>
 	<ul class="menuList">
-		<li><a href="/mwerlen.html" class="{{page.presentation}}">Présentation</a></li>
-		<li><a href="/cv.html" class="{{page.cv}}">CV</a></li>
-		<li><a href="/contact.html" class="{{page.contact}}">Contact</a></li>
+		<li><a href="/mwerlen.html" class="{% if page.url == '/mwerlen.html'%}active{% endif %}">Présentation</a></li>
+		<li><a href="/cv.html" class="{% if page.url == '/cv.html'%}active{% endif %}">CV</a></li>
+		<li><a href="/contact.html" class="{% if page.url == '/contact.html'%}active{% endif %}">Contact</a></li>
 	</ul>
-	<!--<span class="mx">Mx</span>-->
 </div>

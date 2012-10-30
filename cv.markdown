@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: site
 title: Mon CV
 permalink: cv.html
 cv: active

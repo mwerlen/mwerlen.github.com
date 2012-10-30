@@ -1,15 +1,12 @@
 ---
-layout: default
+layout: base
 blog: active
 ---
 
-			<h3><a href="{{page.url}}" alt="{{page.title}}">{{page.title}}</a></h3>
-			<h6>Published : {{page.date}}</h6>
-			<h6>Tags : {{page.tags}}</h6>
-			<h6>Categories : {{page.categories}}</h6>
-<div id="post">
-{{ content }}
-</div>
+<section id="main-content" class="grid_12">
+  {% include postTitle.ext %}
+  {{ content }}
+</section>
 
 <div id="related">
   <h3>Related Posts</h3>
