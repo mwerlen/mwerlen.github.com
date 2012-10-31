@@ -1,8 +1,6 @@
 /* POSTS
 ---------------------------------------------*/
 
-
-
 .preview {
     padding-left: 30px;
     margin-top: 8px;
@@ -15,7 +13,7 @@
 }
 
 .metadata {
-    color : #aaaaaa;
+    color : @postTitleColor;
     font-style: italic;
     font-size: 80%;
     margin-left: -2em;
@@ -31,23 +29,23 @@ h3.blogpostpreview {
 }
 
 #postTitle h1{
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid @postTitleColor;
+    border-bottom: 1px solid @postTitleColor;
     padding: 0;
     margin-bottom: 0;
     font-size: 3em;
-    line-height: 2em;
+    line-height: 1.75em;
 }
 
 #postTitle h1:before {
     content: '';
-    color: #666;
+    color: @postTitleColor;
     padding-right: 0;
     margin-left: 0;
 }
 
 #postTitle a{
-    color: #666;
+    color: @postTitleColor;
 }
 
 #postTitle .metadata {

@@ -433,7 +433,7 @@ table {
   padding-bottom: 1em;
   padding-left: 2em;
   float: left;
-  color: #333333;
+  color: #444444;
   font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
   font-variant: small-caps;
 }
@@ -443,13 +443,13 @@ table {
   color: rgba(133, 194, 10, 0.7);
 }
 .titledash {
-  color: #333333;
+  color: #444444;
 }
 #subtitle {
   font-size: 2.5em;
   line-height: 0.75em;
   clear: left;
-  color: #333333;
+  color: #444444;
 }
 /* MENU
 --------------------------------------------------- */
@@ -490,7 +490,7 @@ table {
   color: #2879d0;
 }
 #menu li a.active {
-  color: #333333;
+  color: #444444;
 }
 #menu li:before {
   content: "\00BB";
@@ -538,22 +538,10 @@ a:hover {
   font-size: 2.2em;
   letter-spacing: -1px;
 }
-#main-content h1:before {
-  content: "\\";
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -0.9em;
-}
 #main-content h2 {
   font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
   font-size: 1.8em;
   margin-bottom: 8px;
-}
-#main-content h2:before {
-  content: "->";
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -1.5em;
 }
 #main-content h3 {
   font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
@@ -561,12 +549,6 @@ a:hover {
   font-weight: bold;
   margin-top: 24px;
   margin-bottom: 8px;
-}
-#main-content h3:before {
-  content: "¤";
-  color: #9ddcff;
-  padding-right: 0.3em;
-  margin-left: -2em;
 }
 #main-content h4 {
   font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
@@ -710,7 +692,7 @@ dl dd {
   margin-bottom: 30px;
 }
 .metadata {
-  color: #aaaaaa;
+  color: #444444;
   font-style: italic;
   font-size: 80%;
   margin-left: -2em;
@@ -723,21 +705,21 @@ h3.blogpostpreview {
   margin-bottom: 10px;
 }
 #postTitle h1 {
-  border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
+  border-top: 1px solid #444444;
+  border-bottom: 1px solid #444444;
   padding: 0;
   margin-bottom: 0;
   font-size: 3em;
-  line-height: 2em;
+  line-height: 1.75em;
 }
 #postTitle h1:before {
   content: '';
-  color: #666666;
+  color: #444444;
   padding-right: 0;
   margin-left: 0;
 }
 #postTitle a {
-  color: #666666;
+  color: #444444;
 }
 #postTitle .metadata {
   margin-left: 1em;
@@ -767,16 +749,11 @@ aside#sidebar p.repo-owner a {
   font-weight: bold;
 }
 aside#sidebar h2 {
-  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
-  font-size: 22px;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
   font-weight: bold;
+  font-size: 22px;
   margin-bottom: 8px;
   color: #474747;
-}
-aside#sidebar h2:before {
-  content: "->";
-  color: #9ddcff;
-  padding-right: 0.3em;
 }
 aside a.button {
   width: 138px;
