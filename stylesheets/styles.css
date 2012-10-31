@@ -679,6 +679,16 @@ dl dd {
   font-style: italic;
   font-weight: 100;
 }
+/* FOOTER 
+------------------------------------------------------------------------*/
+
+.footer {
+  border-top: 1px solid #444444;
+  text-align: center;
+  font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-variant: small-caps;
+  font-size: 0.9em;
+}
 /* POSTS
 ---------------------------------------------*/
 
