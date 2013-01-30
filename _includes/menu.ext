@@ -8,6 +8,8 @@
 	<a href="/mwerlen.html">L'auteur</a>
 	<ul class="menuList">
 		<li><a href="/mwerlen.html" class="{% if page.url == '/mwerlen.html'%}active{% endif %}">Présentation</a></li>
+		<li><a href="/cv.html" class="{% if page.url == '/cv.html'%}active{% endif %}">CV</a></li>
+		<li><a href="/projects.html" class="{% if page.url == '/projects.html'%}active{% endif %}">Projets</a></li>
 		<li><a href="/contact.html" class="{% if page.url == '/contact.html'%}active{% endif %}">Contact</a></li>
 	</ul>
 </div>
