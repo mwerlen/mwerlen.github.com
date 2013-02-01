@@ -18,7 +18,7 @@ Formation
 Expériences professionnelles
 ----------------------------
 
-### Depuis janvier 2012 : Chef de Projet Technique([Sogelink](http://sogelink.fr/))
+### Depuis janvier 2012 : Chef de Projet Technique ([Sogelink](http://sogelink.fr/))
 
 - Gestion de projets de développement interne
     - Etude des besoins
