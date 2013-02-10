@@ -4,7 +4,7 @@ title: Categories
 ---
 {% assign categories_path = '/categories.html' %}
 
-<h1> Liste des catégories</h1>
+<h1> Liste des catégories du blog</h1>
 <ul class="tag_box inline">
 	{% if site.categories.first[0] == null %}
 		{% for category in site.categories %} 
@@ -21,7 +21,7 @@ title: Categories
 	{% endif %}
 </ul>
 
-<h1>Articles par catégories</h1>
+<h1>tous les articles par catégories</h1>
 {% for category in site.categories %} 
   <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
   <ul>

@@ -1,8 +1,9 @@
 			<h2>Présentation</h2>
 			<div style="display:block;">
 				<div class="avatar">
-					<img border="0" src="http://www.gravatar.com/avatar/798bd095469753c11bb61a782669de97.png?width=80" width="80">
+					<a href="/mwerlen.html"><img border="0" src="http://www.gravatar.com/avatar/798bd095469753c11bb61a782669de97.png?width=100" width="100"></a>
 				</div>
 				<p>Ingénieur Insa Lyon, spécialisé dans les technologies web. Mes principaux moteurs sont la passion pour un projet, le travail en équipe et l'innovation.</p>
 				<div style="clear:both"/>
 			</div>
+		

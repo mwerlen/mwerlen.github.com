@@ -1,6 +1,11 @@
 ---
 layout: base
 ---
-<section id="main-content" class="grid_12">
+<section id="main-content" class="grid_9">
 	{{ content }}
 </section>
+
+<aside id="sidebar" class="grid_3">
+	{% include blogroll.ext %}
+	{% include rssLink.ext %}
+</aside>	

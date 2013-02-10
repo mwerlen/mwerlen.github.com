@@ -1,9 +1,11 @@
 ---
-layout: default
+layout: site
 title: Contactez-moi
 permalink: contact.html
 contact: active
 ---
+
+# Contactez-moi
 
 ## Adresse mail
 [maxime@werlen.fr](mailto:maxime@werlen.fr)

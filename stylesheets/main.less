@@ -5,7 +5,7 @@
 body {
   font-size: 15px;
   line-height: 1.5; 
-  background: #fafafa url(../images/body-bg.jpg) 0 0 repeat;
+  background: #fafafa  0 0 repeat;
   font-family: 'Helvetica Neue', Helvetica, Arial, serif;
   font-weight: 400;
   color: #666;
@@ -28,29 +28,32 @@ a:hover {
 
 #main-content h1 {
   font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
+  font-variant: small-caps;
   font-weight: bold;
-  font-size: 2.2em;
+  font-size: 1.9em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
   letter-spacing: -1px;
 } 
 
 
 #main-content h2 {
   font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-  font-size: 1.8em;
-  margin-bottom: 8px;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 0.25em;
 } 
 
 #main-content h3 {
   font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-  font-size: 1.5em;
-  font-weight: bold;
+  font-size: 1.1em;
+  font-weight: bold;  
   margin-top: 24px;
-  margin-bottom: 8px;
 } 
 
 #main-content h4 {
   font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold;
 } 
 
@@ -63,7 +66,7 @@ h4:before {
 
 #main-content h5 {
   font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; 
-  font-size: 1.1em;
+  font-size: 1em;
 } 
 h5:before {
   content: "~";
@@ -132,6 +135,10 @@ ul, ol, dl {
   margin-bottom: 20px;
 }
 
+ul ul {
+  margin-bottom: 0px;
+}
+
 
 /* COMMON STYLES */
 
@@ -168,7 +175,8 @@ form {
 /* GENERAL ELEMENT TYPE STYLES */
 
 p {
-  margin-bottom: 20px;
+  margin-bottom: 1em;
+  padding-left: 1em;
 }
  
 a {
@@ -201,6 +209,9 @@ dl dd {
   font-weight: 100;
 }
 
+strong {
+  font-weight: bold;
+}
 
 /* FOOTER 
 ------------------------------------------------------------------------*/
