@@ -1,9 +1,9 @@
     <div class="clear"></div>
     <div class="header">
     	<div class="titlecontentblock">
-	    	<div class="titleblock">
+	    	<div class="titleblock" title="{{ site.name }}">
 				<div id="itsignal">IT<span class="titledash">-</span>Signal</div>
-				<div id="subtitle">Blog d'un human coder</div>
+				<div id="subtitle">{{ site.description }}</div>
 	    	</div>
     	</div>
 		<div class="clear"></div>

@@ -1,8 +1,9 @@
 			<h2>RSS</h2>
 			<div style="display:block;">
+				<a href="/feed.xml" title="RSS feed">
 				<div class="avatar">
 					<img border="0" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Feed-icon.svg/200px-Feed-icon.svg.png" width="100">
 				</div>
-				<p>Le flux RSS du blog pour retrouver les news dans votre lecteur préféré.</p>
+				<p>Le flux RSS du blog pour retrouver les news dans votre lecteur préféré.</p></a>
 				<div style="clear:both"/>
 			</div>
