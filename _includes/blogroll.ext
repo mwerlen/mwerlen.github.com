@@ -1,8 +1,5 @@
-			<h2>Et ailleurs...</h2>
+			<h2>A lire ailleurs...</h2>
 			<div style="display:block;">
-				<div class="avatar">
-					<img border="0" src="http://1.bp.blogspot.com/-J0HmhxWNUcY/UM7a4yCmAwI/AAAAAAAAWpI/-Vt8DF_TNXs/s1600/cube.png" width="100">
-				</div>
 				<p>Technique</p>
 				<ul>
 					<!-- Octo --><li><a href="http://blog.octo.com/" target="_blank">Octo talks</a></li>
