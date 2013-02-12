@@ -1,5 +1,5 @@
 
-<h2>Les sujets abordés</h2>
+<h2>Sujets abordés</h2>
 <ul>
 	{% if site.categories.first[0] == null %}
 		{% for category in site.categories %} 

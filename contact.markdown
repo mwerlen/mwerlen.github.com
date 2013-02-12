@@ -5,7 +5,7 @@ permalink: contact.html
 contact: active
 ---
 
-# Contactez-moi
+# Contact
 
 ## Adresse mail
 [maxime@werlen.fr](mailto:maxime@werlen.fr)
