@@ -2,7 +2,7 @@
 layout: post
 title: Mon deuxieme test
 permalink : /blog/test2.html
-category: test
+category: [test,toto]
 tag: 1234
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at massa lacus. Maecenas massa nibh, mollis in pharetra eu, fringilla ac magna. Praesent vulputate, erat quis hendrerit aliquet, lectus nisi dictum mauris, non convallis mi libero et justo. Pellentesque at libero sem. Maecenas aliquet massa sit amet arcu vestibulum tincidunt. Aliquam in odio sem. Proin dignissim pellentesque risus, at blandit erat rutrum sit amet.
