@@ -3,8 +3,18 @@ layout: base
 blog: active
 ---
 
+{% if post %}
+ {% assign thePost = post %}
+{% else %} 
+ {% assign thePost = page %}
+{% endif %}
+
+
 <section id="main-content" class="grid_9">
   {% include postTitle.ext %}
+  {% if thePost.categories contains 'archives' %}
+    {% include archive.ext %}
+  {% endif %}
   {{ content }}
 </section>
 
