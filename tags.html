@@ -1,0 +1,42 @@
+---
+layout: default
+title: Tags
+---
+{% assign tags_path = '/tags.html' %}
+
+<h1>Les tags du blog</h1>
+<ul class="tag_box inline">
+	{% if site.tags.first[0] == null %}
+		{% for tag in site.tags %} 
+			<li><a href="{{ tags_path }}#{{ tag }}-ref">
+				{{ tag | join: "/" | capitalize }} <span>({{ site.tags[tag].size }} posts)</span>
+			</a></li>
+		{% endfor %}
+		{% else %}
+		{% for tag in site.tags %} 
+			<li><a href="{{ tags_path }}#{{ tag[0] }}-ref">
+				{{ tag[0] | join: "/" | capitalize}} <span>({{ tag[1].size }} posts)</span>
+			</a></li>
+		{% endfor %}
+	{% endif %}
+</ul>
+
+<h1>Tous les articles par tags</h1>
+{% for tag in site.tags %} 
+  <h2 id="{{ tag[0] }}-ref">{{ tag[0] | join: "/" | capitalize }}</h2>
+  <ul>
+    {% assign pages_list = tag[1] %}  
+    
+	{% for node in pages_list %}
+		{% if node.title != null %}
+		  {% if group == null or group == node.group %}
+		  	{% if page.url == node.url %}
+		  	<li class="active"><a href="{{node.url}}" class="active">{{node.title}}</a></li>
+		  	{% else %}
+		  	<li><a href="{{node.url}}">{{node.title}}</a></li>
+		  	{% endif %}
+		  {% endif %}
+		{% endif %}
+	{% endfor %}
+  </ul>
+{% endfor %}
