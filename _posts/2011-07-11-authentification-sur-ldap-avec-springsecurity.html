@@ -1,10 +1,151 @@
 ---
 layout: post
-title: Authentification sur LDAP avec SpringSecurity
+title: LDAP avec SpringSecurity
 date: 2011-07-11
 comments: false
 categories : [archives]
-tags: []
+tags: [informatique,spring,securite,sword]
 ---
 
-<a href="http://static.springsource.org/spring-security/site/">Spring Security </a>est un projet de <a href="https://www.springsource.com/">Spring Source </a>anciennement appelé <a href="http://www.acegisecurity.org/">Acegi Security</a>. Le framework a beaucoup évolué depuis en s'étoffant de nombreux connecteurs et en améliorant son intégration avec <a href="http://www.springsource.org/about">Spring framework</a>.<br /><br />Dans cet article, nous allons aborder la méthode d'authentification LDAP (Windows Active Directory, Open LDAP...) à travers Spring Security. Les détails de l'utilisation de l'autorisation (droit d'effectuer certaines opérations) ne seront pas évoqués ici, le sujet étant déjà <a href="http://static.springsource.org/spring-security/site/docs/3.0.x/reference/springsecurity.html">largement documenté</a>. La référence du framework comprend tout un <a href="http://static.springsource.org/spring-security/site/docs/3.0.x/reference/ldap.html">chapitre dédié à l'interaction avec un LDAP</a>.<br /><h1><span style="font-size: large;">Les annuaires LDAP</span></h1>Un annuaire LDAP est un système de gestion des informations associées aux acteurs d'un SI (utilisateurs, machines, équipements électroniques...). Le principal rôle de l'annuaire est de stocker les informations des utilisateurs et de permettre grâce à des mécanismes simples de rechercher, tri et organiser l'information.<br />Les annuaires LDAP proposent une organisation hiérarchique de l'information. Chaque élément est contenu dans les éléments parents (groupes, unités organisationnelles ou physiques...).<br />La fonctionnalité qui nous intéresse est la possibilité d'authentifier les utilisateurs. L'annuaire LDAP possède le login de l'utilisateur et le password (hashé), il peut ainsi authentifier de manière sûre un utilisateur. Les annuaires ont aussi la possibilité d'enregistrer une liste de rôles attribués aux utilisateurs. Ces rôles permettent de différencier des profils d'utilisateurs pour les offrir des autorisations différentes.<br /><a href="http://fr.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol">LDAP </a>n'est pas une implémentation d'annuaire, mais uniquement une norme respectée par de nombreux grands systèmes d'annuaires (Windows Active Directory, Open LDAP, <a href="http://fr.wikipedia.org/wiki/Apache_Directory_Server" title="Apache Directory Server">Apache Directory Server</a>,&nbsp;<a href="http://www.novell.com/products/edirectory/" rel="nofollow">Novell eDirectory</a>,&nbsp;<a href="http://fr.wikipedia.org/wiki/IBM_Lotus_Domino" title="IBM Lotus Domino">IBM Lotus Domino</a>...).<br />Dernier point d'importance, LDAP dispose d'une règle de nommage permettant de gérer les organisations hiérarchiques. Par exemple, le&nbsp;Distinguished Name&nbsp;(DN)&nbsp;<span style="font-family: monospace, 'Courier New';">cn=Jean,ou=gens,dc=EXEMPLE,dc=FR&nbsp;</span>est composé des éléments suivants :<br /><ul><li>CN (common name) = jean ⇒&nbsp;Le nom de l'utilisateur</li><li>OU (Organisation Unit) = gens&nbsp;⇒ Le groupe contenant les utilisateurs (ou=machines pour les PC par exemple...)</li><li>DC (Domain component)&nbsp;dc=EXEMPLE,dc=FR&nbsp;&nbsp;⇒ exemple.fr, le domaine du ldap</li></ul>Le DN d'un utilisateur permet de l'identifier de façon unique dans l'annuaire.<br /><h1><span style="font-size: large;">Le principe de l'authentification sur LDAP</span></h1>Le processus d'authentification sur un LDAP s'appelle un <a href="http://fr.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol#Bind_.28authentification.29">BIND</a>. Il permet de fournir au système LDAP un DN d'utilisateur et un mot de passe (généralement chiffré).<br />Avant de pouvoir faire un bind, il est nécessaire de récupérer le DN de l'utilisateur. Il n'est pas réaliste de demander à l'utilisateur son DN complet. La première étape est donc généralement une recherche dans l'annuaire sur un attribut (login de l'utilisateur) dans un répertoire de l'annuaire (les utilisateurs généralement).<br />Une fois le bind réalisé, il est possible de demander des informations supplémentaires à l'annuaire comme par exemple les rôles de l'utilisateur (administrateur, membre d'une liste de diffusion...). Ces éléments pourront être réutilisés dans Spring Security pour automatiser l'attribution d'autorisations.<br /><h1><span style="font-size: large;">Exemple d'utilisation</span></h1>L'exemple suivant montre comment intégrer l'authentification ldap dans un projet comprenant déjà une authentification simple (BDD par exemple) basée sur Spring Security.<br /><h2><span style="font-size: small;">L'AuthenticationManager de Spring Security</span></h2>Ici on configure un authentication-manager grâce à un schéma xml spring security spécialisé. La balise authentication-manager crée automatiquement l'object authentication manager avec une configuration standard efficace. Les enfants de cette balise sont les différentes sources d'authentification utilisée :<br /><ul><li>L'authentification provider ldap (ldapAuthProvider)</li><li>Un autre authentification provider définissant un <a href="http://en.wikipedia.org/wiki/Salt_(cryptography)">sel </a>et un service spécialisé (proxyUserDetailsService2)</li></ul><div><pre>&lt;authentication-manager alias="authenticationManager"&gt;<br />   <br />         &lt;authentication-provider ref="ldapAuthProvider"&gt;<br />          <br />         &lt;authentication-provider user-service-ref="proxyUserDetailsService2"&gt;<br />               &lt;password-encoder ref="passwordEncoder"&gt;<br />                     &lt;salt-source ref="saltSource"&gt;<br />               &lt;/salt-source&gt;&lt;/password-encoder&gt;<br />         &lt;/authentication-provider&gt;<br />    &lt;/authentication-provider&gt;<br />&lt;/authentication-manager&gt;<br /></pre></div><h2><span style="font-size: small;">Le LDAP AuthenticationProvider</span></h2>L'objet authenticationProvider est un service SpringSecurity prenant en en entrée un token (par exemple couple login/password) et répondant avec un utilisateur authentifié (ou null s'il n'existe pas). Dans notre cas, l'authentificationProvider à utiliser est créé avec la configuration xml suivante :<br /><pre>&lt;bean class="org.springframework.security.ldap.authentication.LdapAuthenticationProvider" id="ldapAuthProvider"&gt;<br /> &lt;constructor-arg&gt;<br />  &lt;bean class="org.springframework.security.ldap.authentication.BindAuthenticator"&gt;<br />   &lt;constructor-arg ref="contextSource" /&gt;<br />   &lt;property name="userSearch"&gt;<br />    &lt;bean class="org.springframework.security.ldap.search.FilterBasedLdapUserSearch"&gt;<br />     &lt;constructor-arg value="OU=MonGroup"&gt;<br />     &lt;constructor-arg value="(sAMAccountName={0})"&gt;<br />     &lt;constructor-arg ref="contextSource"&gt;<br />    &lt;/bean&gt;<br />   &lt;/property&gt;<br />  &lt;/bean&gt;<br /> &lt;/constructor-arg&gt;<br /> &lt;constructor-arg&gt;<br />  &lt;bean class="org.springframework.security.ldap.userdetails.DefaultLdapAuthoritiesPopulator"&gt;<br />   &lt;constructor-arg ref="contextSource"&gt;<br />   &lt;constructor-arg value="OU=Groups,OU=Mycompany,OU=CompanyUsers"&gt;<br />   &lt;property name="rolePrefix" value="LDAP_ROLE_" /&gt;<br />  &lt;/bean&gt;<br /> &lt;/constructor-arg&gt;<br /> &lt;property name="userDetailsContextMapper"&gt;<br />  &lt;bean class="com.company.AcmeContextMapper"&gt;<br />   &lt;property name="AcmeSecurityProviderService" ref="acmeSecurityProviderService" /&gt;<br />  &lt;/bean&gt;<br /> &lt;/property&gt;<br />&lt;/bean&gt;<br />&lt;bean class="org.springframework.security.ldap.DefaultSpringSecurityContextSource" id="contextSource"&gt;<br /> &lt;constructor-arg value="ldap://1.2.3.4:389/dc=exemple,dc=com" /&gt;<br /> &lt;property name="userDn" value="CN=browser,OU=testAccount,DC=exemple,DC=com" /&gt;<br /> &lt;property name="password" value="P@ssw0rd" /&gt;<br />&lt;/bean&gt;<br /></pre>Le premier bean définit le service d'authentification. Le premier argument (le bind authenticator) définit les paramètres de la recherche de l'utilisateur dans le LDAP (quel groupe cherche, quelle requête...).<br />La seconde partie du bean (DefaultLdapAuthoritiesPopulator) définit la recherche des groupes LDAP pour les transformer en rôles Spring security.<br />La dernière partie (userDetailsContextMapper) est une classe qui permet de convertir l'objet User retournée par le LDAP en un objet User de l'application pour l'enrichir, effectuer des modifications...<br />Le second bean présente le contexte LDAP avec l'url de connexion et la définition d'un utilisateur permettant de lire les informations du LDAP.<br /><h1><span style="font-size: large;">A retenir</span></h1>La connexion LDAP est une authentification en deux étapes (recherche puis bind) qui permet d'authentifier l'utilisateur et de lui attribuer des rôles. Cette solution permet de mettre en oeuvre rapidement une authentification centralisée.<br /><h2><span style="font-size: small;">Les informations utiles pour configurer une connexion LDAP</span></h2><ul><li>L'URL de connexion au LDAP</li><li>Un utilisateur ayant les droits pour browser les comptes LDAP :<ul><li>son DN</li><li>son password</li></ul></li><li>L'OU contenant les utilisateurs</li><li>La requêtes de recherche de l'utilisateur [sur un active directory&nbsp;(sAMAccountName={0}) ]</li><li>Pour la transformation des groupes en rôles :<ul><li>l'OU contenant les groupes</li><li>Un préfixe pour les rôles</li></ul></li></ul><br /><span style="font-style: italic;">Article rédigé pour la plateforme de capitalisation technique de&nbsp;</span><a href="http://www.sword-group.com/" style="font-style: italic;" target="_blank">Sword</a>
+<p><a href="http://static.springsource.org/spring-security/site/">Spring Security </a>est un projet de
+    <a href="https://www.springsource.com/">Spring Source</a> anciennement appelé
+    <a href="http://www.acegisecurity.org/">Acegi Security</a>. Le framework a beaucoup évolué depuis en s'étoffant de
+    nombreux connecteurs et en améliorant son intégration avec <a href="http://www.springsource.org/about">Spring
+        framework</a>.</p>
+<p>Dans cet article, nous allons aborder la méthode d'authentification LDAP (Windows Active Directory, Open LDAP...)
+    à travers Spring Security. Les détails de l'utilisation de l'autorisation (droit d'effectuer certaines opérations)
+    ne seront pas évoqués ici, le sujet étant déjà
+    <a href="http://static.springsource.org/spring-security/site/docs/3.0.x/reference/springsecurity.html">largement
+        documenté</a>. La référence du framework comprend tout un
+    <a href="http://static.springsource.org/spring-security/site/docs/3.0.x/reference/ldap.html">chapitre dédié à
+        l'interaction avec un LDAP</a>.</p>
+
+<h1>Les annuaires LDAP</h1>
+<p>Un annuaire LDAP est un système de gestion des informations associées aux acteurs d'un SI (utilisateurs, machines,
+    équipements électroniques...). Le principal rôle de l'annuaire est de stocker les informations des utilisateurs et de
+    permettre grâce à des mécanismes simples de rechercher, tri et organiser l'information.</p>
+<p>Les annuaires LDAP proposent une organisation hiérarchique de l'information. Chaque élément est contenu dans les
+    éléments parents (groupes, unités organisationnelles ou physiques...).</p>
+<p>La fonctionnalité qui nous intéresse est la possibilité d'authentifier les utilisateurs. L'annuaire LDAP possède le
+    login de l'utilisateur et le password (hashé), il peut ainsi authentifier de manière sûre un utilisateur. Les
+    annuaires ont aussi la possibilité d'enregistrer une liste de rôles attribués aux utilisateurs. Ces rôles permettent
+    de différencier des profils d'utilisateurs pour les offrir des autorisations différentes.</p>
+<p><a href="http://fr.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol">LDAP </a>n'est pas une implémentation
+    d'annuaire, mais uniquement une norme respectée par de nombreux grands systèmes d'annuaires (Windows Active Directory,
+    Open LDAP, <a href="http://fr.wikipedia.org/wiki/Apache_Directory_Server" title="Apache Directory Server">Apache
+        Directory Server</a>,&nbsp;<a href="http://www.novell.com/products/edirectory/" rel="nofollow">Novell
+        eDirectory</a>,&nbsp;<a href="http://fr.wikipedia.org/wiki/IBM_Lotus_Domino" title="IBM Lotus Domino">IBM
+        Lotus Domino</a>...).</p>
+<p>Dernier point d'importance, LDAP dispose d'une règle de nommage permettant de gérer les organisations hiérarchiques.
+    Par exemple, le Distinguished Name (DN) <code>cn=Jean,ou=gens,dc=EXEMPLE,dc=FR</code> est composé des éléments suivants :</p>
+<ul>
+    <li>CN (common name) = jean ⇒&nbsp;Le nom de l'utilisateur</li>
+    <li>OU (Organisation Unit) = gens&nbsp;⇒ Le groupe contenant les utilisateurs (ou=machines pour les PC par exemple...)</li>
+    <li>DC (Domain component)&nbsp;dc=EXEMPLE,dc=FR&nbsp;&nbsp;⇒ exemple.fr, le domaine du ldap</li>
+</ul>
+<p>Le DN d'un utilisateur permet de l'identifier de façon unique dans l'annuaire.</p>
+
+<h1>Le principe de l'authentification sur LDAP</h1>
+<p>Le processus d'authentification sur un LDAP s'appelle un
+    <a href="http://fr.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol#Bind_.28authentification.29">BIND</a>.
+    Il permet de fournir au système LDAP un DN d'utilisateur et un mot de passe (généralement chiffré).</p>
+<p>Avant de pouvoir faire un bind, il est nécessaire de récupérer le DN de l'utilisateur. Il n'est pas réaliste de
+    demander à l'utilisateur son DN complet. La première étape est donc généralement une recherche dans l'annuaire
+    sur un attribut (login de l'utilisateur) dans un répertoire de l'annuaire (les utilisateurs généralement).</p>
+<p>Une fois le bind réalisé, il est possible de demander des informations supplémentaires à l'annuaire comme par exemple
+    les rôles de l'utilisateur (administrateur, membre d'une liste de diffusion...). Ces éléments pourront être réutilisés
+    dans Spring Security pour automatiser l'attribution d'autorisations.</p>
+
+<h1>Exemple d'utilisation</h1>
+<p>L'exemple suivant montre comment intégrer l'authentification ldap dans un projet comprenant déjà une authentification
+    simple (BDD par exemple) basée sur Spring Security.</p>
+
+<h2>L'AuthenticationManager de Spring Security</h2>
+<p>Ici on configure un authentication-manager grâce à un schéma xml spring security spécialisé. La balise
+    authentication-manager crée automatiquement l'object authentication manager avec une configuration standard efficace.
+    Les enfants de cette balise sont les différentes sources d'authentification utilisée :</p>
+<ul>
+    <li>L'authentification provider ldap (ldapAuthProvider)</li>
+    <li>Un autre authentification provider définissant un <a href="http://en.wikipedia.org/wiki/Salt_(cryptography)">sel</a>
+        et un service spécialisé (proxyUserDetailsService2)</li>
+</ul>
+<pre>&lt;authentication-manager alias="authenticationManager"&gt;
+    &lt;authentication-provider ref="ldapAuthProvider"&gt;&lt;/authentication-provider&gt;
+
+    &lt;authentication-provider user-service-ref="proxyUserDetailsService2"&gt;
+        &lt;password-encoder ref="passwordEncoder"&gt;
+            &lt;salt-source ref="saltSource"&gt;&lt;/salt-source&gt;
+        &lt;/password-encoder&gt;
+    &lt;/authentication-provider&gt;
+&lt;/authentication-manager&gt</pre>
+
+<h2>Le LDAP AuthenticationProvider</h2>
+<p>L'objet authenticationProvider est un service SpringSecurity prenant en en entrée un token (par exemple couple
+    login/password) et répondant avec un utilisateur authentifié (ou null s'il n'existe pas). Dans notre cas,
+    l'authentificationProvider à utiliser est créé avec la configuration xml suivante :</p>
+<pre>&lt;bean class="org.springframework.security.ldap.authentication.LdapAuthenticationProvider"
+    id="ldapAuthProvider"&gt;
+ &lt;constructor-arg&gt;
+  &lt;bean class="org.springframework.security.ldap.authentication.BindAuthenticator"&gt;
+   &lt;constructor-arg ref="contextSource" /&gt;
+   &lt;property name="userSearch"&gt;
+    &lt;bean class="org.springframework.security.ldap.search.FilterBasedLdapUserSearch"&gt;
+     &lt;constructor-arg value="OU=MonGroup"&gt;
+     &lt;constructor-arg value="(sAMAccountName={0})"&gt;
+     &lt;constructor-arg ref="contextSource"&gt;
+    &lt;/bean&gt;
+   &lt;/property&gt;
+  &lt;/bean&gt;
+ &lt;/constructor-arg&gt;
+ &lt;constructor-arg&gt;
+  &lt;bean class="org.springframework.security.ldap.userdetails.DefaultLdapAuthoritiesPopulator"&gt;
+   &lt;constructor-arg ref="contextSource"&gt;
+   &lt;constructor-arg value="OU=Groups,OU=Mycompany,OU=CompanyUsers"&gt;
+   &lt;property name="rolePrefix" value="LDAP_ROLE_" /&gt;
+  &lt;/bean&gt;
+ &lt;/constructor-arg&gt;
+ &lt;property name="userDetailsContextMapper"&gt;
+  &lt;bean class="com.company.AcmeContextMapper"&gt;
+   &lt;property name="AcmeSecurityProviderService" ref="acmeSecurityProviderService" /&gt;
+  &lt;/bean&gt;
+ &lt;/property&gt;
+&lt;/bean&gt;
+&lt;bean class="org.springframework.security.ldap.DefaultSpringSecurityContextSource"
+    id="contextSource"&gt;
+ &lt;constructor-arg value="ldap://1.2.3.4:389/dc=exemple,dc=com" /&gt;
+ &lt;property name="userDn" value="CN=browser,OU=testAccount,DC=exemple,DC=com" /&gt;
+ &lt;property name="password" value="P@ssw0rd" /&gt;
+&lt;/bean&gt;</pre>
+<p>Le premier bean définit le service d'authentification. Le premier argument (le bind authenticator) définit les
+    paramètres de la recherche de l'utilisateur dans le LDAP (quel groupe cherche, quelle requête...).</p>
+<p>La seconde partie du bean (DefaultLdapAuthoritiesPopulator) définit la recherche des groupes LDAP pour les
+    transformer en rôles Spring security.</p>
+<p>La dernière partie (userDetailsContextMapper) est une classe qui permet de convertir l'objet User retournée par le
+    LDAP en un objet User de l'application pour l'enrichir, effectuer des modifications...</p>
+<p>Le second bean présente le contexte LDAP avec l'url de connexion et la définition d'un utilisateur permettant de
+    lire les informations du LDAP.</p>
+
+<h1>A retenir</h1>
+<p>La connexion LDAP est une authentification en deux étapes (recherche puis bind) qui permet d'authentifier
+    l'utilisateur et de lui attribuer des rôles. Cette solution permet de mettre en oeuvre rapidement une
+    authentification centralisée.</p>
+
+<h2>Les informations utiles pour configurer une connexion LDAP</h2>
+<ul>
+    <li>L'URL de connexion au LDAP</li>
+    <li>Un utilisateur ayant les droits pour browser les comptes LDAP :
+        <ul>
+            <li>son DN</li>
+            <li>son password</li>
+        </ul>
+    </li>
+    <li>L'OU contenant les utilisateurs</li>
+    <li>La requêtes de recherche de l'utilisateur [sur un active directory&nbsp;(sAMAccountName={0}) ]</li>
+    <li>Pour la transformation des groupes en rôles :
+        <ul>
+            <li>l'OU contenant les groupes</li>
+            <li>Un préfixe pour les rôles</li>
+        </ul>
+    </li>
+</ul>
+<p style="font-style: italic;">Article rédigé pour la plateforme de capitalisation technique de <a href="http://www.sword-group.com/" target="_blank">Sword</a></p>
