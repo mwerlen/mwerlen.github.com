@@ -12,20 +12,20 @@ données sur jdbc. Il permet de récupérer facilement les métadonnées de la b
 sous forme d'outil indépendant à utiliser en ligne de commande. Il permet par exemple
 <a href="http://mindbuffer.wordpress.com/2010/10/14/schema-crawler/">d'extraire un fichier de description d'une base</a>.</p>
 <p>
-SchemaCrawler permet ainsi de récupérer les informations suivantes :
+SchemaCrawler permet ainsi de récupérer les informations suivantes :</p>
 <ul>
     <li>Liste des <a href="http://en.wikipedia.org/wiki/Database_catalog">catalogs</a>&nbsp;(rarement utilisés)</li>
     <li>Liste des <a href="http://en.wikipedia.org/wiki/Database_schema">schémas</a></li>
     <li>Liste des tables, vues, routines, triggers, contraintes...</li>
     <li>Liste et détails des champs</li>
-</ul></p>
+</ul>
 
 <h1>Une recherche en deux étapes</h1>
-<p>La récupération des métadonnées se fait en deux étapes :
+<p>La récupération des métadonnées se fait en deux étapes :</p>
 <ul>
     <li>La définition des options de recherche</li>
     <li>Le lancement de la recherche sur une <em>connection </em>jdbc</li>
-</ul></p>
+</ul>
 
 <h2>Les options de recherche</h2>
 <p>La définition des options de recherche est la phase la plus longue et complexe. Des options mal configurées engendrent
@@ -35,7 +35,7 @@ filtrer tout ce que l'on ne souhaite pas récupérer.</p>
 paramètre une regExp à inclure et une regExp à exclure.</p>
 <p>Dans l'exemple suivant, nous définissons un objet option de <em>schemaCrawler </em>permettant de ne récupérer aucune
 table, aucune vue, aucune procédure, aucun champ... Ainsi nous ne récupérons que la liste des schémas/catalogs de la base.</p>
-<pre>// Création d'un objet option de SchemaCrawler
+<pre><code class="language-java">// Création d'un objet option de SchemaCrawler
 SchemaCrawlerOptions options = new SchemaCrawlerOptions();
 
 // On n'autorise aucun type de tables (tables, vues...)
@@ -58,18 +58,18 @@ options.setTableInclusionRule(tableInclusionRule);
 options.setSchemaInfoLevel(SchemaInfoLevel.minimum());
 
 // On exclue les procédure stockées
-options.setShowStoredProcedures(false);</pre>
+options.setShowStoredProcedures(false);</code></pre>
 
 <h2>Le lancement de la recherche</h2>
 <p>Le lancement de la recherche est la partie la plus simple. Il suffit de faire appel à la méthode
 <code>SchemaCrawlerUtility.getDatabase</code> et de passer en paramètre une connexion à la base de données valide
 (de type <code>java.sql.Connection</code>) et un objet <em>option</em> de <em>schemaCrawler.</em></p>
-<pre>Database crawlingDatabase = SchemaCrawlerUtility.getDatabase(databaseConnection, options);</pre>
+<pre><code class="language-java">Database crawlingDatabase = SchemaCrawlerUtility.getDatabase(databaseConnection, options);</code></pre>
 <p>Une fois l'objet <em>database</em> de <em>SchemaCrawler</em> récupéré, il est très simple de parcourir les métadonnées.
 Par exemple pour tracer la liste des schémas de la base de données :</p>
-<pre>for (final Schema schema : crawlingDatabase.getSchemas()) {
+<pre><code class="language-java">for (final Schema schema : crawlingDatabase.getSchemas()) {
     log.info("Found database schema " + schema.getSchemaName() + " in catalog " + schema.getCatalogName());
-}</pre>
+}</code></pre>
 
 <h1>Différentes options intéressantes</h1>
 <p>Comme expliqué dans le chapitre précédent, la complexité d'utilisation de ce framework réside principalement dans la
@@ -80,7 +80,7 @@ le même principe toutes les métadonnées de la base peuvent être récupérée
 
 <h2>Récupération de la liste des schémas</h2>
 <p>Idem chapitre précédant :</p>
-<pre>// Création d'un objet option de SchemaCrawler
+<pre><code class="language-java">// Création d'un objet option de SchemaCrawler
 SchemaCrawlerOptions options = new SchemaCrawlerOptions();
 
 // On n'autorise aucun type de tables (tables, vues...)
@@ -103,11 +103,10 @@ options.setTableInclusionRule(tableInclusionRule);
 options.setSchemaInfoLevel(SchemaInfoLevel.minimum());
 
 // On exclue les procédure stockées
-options.setShowStoredProcedures(false);
-</pre>
+options.setShowStoredProcedures(false);</code></pre>
 
 <h2>Récupération de la liste des tables et vues</h2>
-<pre>// Création d'un objet option de SchemaCrawler
+<pre><code class="language-java">// Création d'un objet option de SchemaCrawler
 SchemaCrawlerOptions options = new SchemaCrawlerOptions();
 
 // On autorise les tables et les vues
@@ -135,6 +134,6 @@ options.setSchemaInfoLevel(SchemaInfoLevel.minimum());
 
 // On spécifie le schéma que l'on souhaite crawler
 InclusionRule schemaInclusionRule = new InclusionRule("MySchema", "");
-options.setSchemaInclusionRule(schemaInclusionRule);</pre>
+options.setSchemaInclusionRule(schemaInclusionRule);</code></pre>
 <p><i>Article rédigé pour la plateforme de capitalisation technique de
     <a href="http://www.sword-group.com/" target="_blank">Sword</a></i></p>

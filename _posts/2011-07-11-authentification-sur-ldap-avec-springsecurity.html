@@ -69,7 +69,7 @@ tags: [informatique,spring,securite,sword]
     <li>Un autre authentification provider définissant un <a href="http://en.wikipedia.org/wiki/Salt_(cryptography)">sel</a>
         et un service spécialisé (proxyUserDetailsService2)</li>
 </ul>
-<pre>&lt;authentication-manager alias="authenticationManager"&gt;
+<pre><code class="language-java">&lt;authentication-manager alias="authenticationManager"&gt;
     &lt;authentication-provider ref="ldapAuthProvider"&gt;&lt;/authentication-provider&gt;
 
     &lt;authentication-provider user-service-ref="proxyUserDetailsService2"&gt;
@@ -77,13 +77,13 @@ tags: [informatique,spring,securite,sword]
             &lt;salt-source ref="saltSource"&gt;&lt;/salt-source&gt;
         &lt;/password-encoder&gt;
     &lt;/authentication-provider&gt;
-&lt;/authentication-manager&gt</pre>
+&lt;/authentication-manager&gt</code></pre>
 
 <h2>Le LDAP AuthenticationProvider</h2>
 <p>L'objet authenticationProvider est un service SpringSecurity prenant en en entrée un token (par exemple couple
     login/password) et répondant avec un utilisateur authentifié (ou null s'il n'existe pas). Dans notre cas,
     l'authentificationProvider à utiliser est créé avec la configuration xml suivante :</p>
-<pre>&lt;bean class="org.springframework.security.ldap.authentication.LdapAuthenticationProvider"
+<pre><code class="language-java">&lt;bean class="org.springframework.security.ldap.authentication.LdapAuthenticationProvider"
     id="ldapAuthProvider"&gt;
  &lt;constructor-arg&gt;
   &lt;bean class="org.springframework.security.ldap.authentication.BindAuthenticator"&gt;
@@ -115,7 +115,7 @@ tags: [informatique,spring,securite,sword]
  &lt;constructor-arg value="ldap://1.2.3.4:389/dc=exemple,dc=com" /&gt;
  &lt;property name="userDn" value="CN=browser,OU=testAccount,DC=exemple,DC=com" /&gt;
  &lt;property name="password" value="P@ssw0rd" /&gt;
-&lt;/bean&gt;</pre>
+&lt;/bean&gt;</code></pre>
 <p>Le premier bean définit le service d'authentification. Le premier argument (le bind authenticator) définit les
     paramètres de la recherche de l'utilisateur dans le LDAP (quel groupe cherche, quelle requête...).</p>
 <p>La seconde partie du bean (DefaultLdapAuthoritiesPopulator) définit la recherche des groupes LDAP pour les

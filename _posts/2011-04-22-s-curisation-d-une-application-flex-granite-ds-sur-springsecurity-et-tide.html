@@ -35,7 +35,7 @@ Dans le fichier services-config.xml. Nous allons demander la création d'un serv
 qui s'appuiera sur un canal de communication de type <a href="http://en.wikipedia.org/wiki/Action_Message_Format"><em>AMF </em></a>
 (protocole de communication binaire très efficace <em>d'Adobe</em>) à une adresse précisée dans la configuration :
 <h3>La création du service</h3>
-<pre>&lt;services&gt;
+<pre><code class="language-java">&lt;services&gt;
   &lt;service class="flex.messaging.services.RemotingService" id="granite-service"
     messagetypes="flex.messaging.messages.RemotingMessage"&gt;
    &lt;destination id="spring"&gt;
@@ -48,43 +48,43 @@ qui s'appuiera sur un canal de communication de type <a href="http://en.wikipedi
     &lt;/properties&gt;
    &lt;/destination&gt;
   &lt;/service&gt;
- &lt;/services&gt;</pre>
+ &lt;/services&gt;</code></pre>
 
 <h3>La création du canal</h3>
-<pre>&lt;channels&gt;
+<pre><code class="language-java">&lt;channels&gt;
   &lt;channel-definition class="mx.messaging.channels.AMFChannel" id="amf"&gt;
    &lt;endpoint class="flex.messaging.endpoints.AMFEndpoint"
     url="http://{server.name}:{server.port}/{context.root}/amf"&gt;
   &lt;/endpoint&gt;&lt;/channel-definition&gt;
- &lt;/channels&gt;</pre>
+ &lt;/channels&gt;</code></pre>
 Enfin nous allons demander la création d'une factory permettant de créer les objets <em>Java </em>à partir de leurs
 équivalent <em>Flex</em>. Pour cela nous utilisons un adapteur vers <em>Spring</em>.
-<pre>&lt;factories&gt;
+<pre><code class="language-java">&lt;factories&gt;
   &lt;factory class="org.granite.tide.spring.SpringServiceFactory" id="tideSpringFactory"&gt;
   &lt;/factory&gt;
- &lt;/factories&gt;</pre>
+ &lt;/factories&gt;</code></pre>
 
 <h2>Configuration de granite (granite-config.xml)</h2>
 La configuration de granite est encore plus simple. Nous allons juste demander à granite de se configurer avec les
 <a href="http://www.graniteds.org/confluence/display/DOC/2.+Spring+Services#2.SpringServices-AutomaticConfigurationofDestinations">annotations</a>
 dans le code (@RemoteDestination...) et nous lui précisons que la sécurité est gérée par <em>Spring Security</em> ; un
 adapteur spécifique existe.
-<pre>&lt;granite-config scan="true"&gt;
+<pre><code class="language-java">&lt;granite-config scan="true"&gt;
     &lt;security type="org.granite.spring.security.SpringSecurity3Service"&gt;
     &lt;/security&gt;
- &lt;/granite-config&gt;</pre>
+ &lt;/granite-config&gt;</code></pre>
 
 <h1>Authentification en Flex</h1>
 Encore une fois le travail est complètement pré-maché par <em>Granite DS</em>. Pour gérer l'utilisateur de l'application
 <em>Flex</em>, <em>granite </em>met à disposition du programmeur un objet
 <a href="http://www.graniteds.org/public/doc/2.2.1/doc/as3/api/index.html"><em>Identity </em></a>qui permet d'accéder
 aux informations utiles (données de l'utilisateurs, droits...).<br />Pour effectuer un login il suffit de faire :
-<pre>private var __identity:Identity = Identity.instance();
-__identity.login(username, password, onSuccessfulLogin, onFaultLogin);</pre>
+<pre><code class="language-java">private var __identity:Identity = Identity.instance();
+__identity.login(username, password, onSuccessfulLogin, onFaultLogin);</code></pre>
 La méthode effectue exactement la même action que si un utilisateur remplissait un formulaire de login de <em>Spring Security</em>.
 Les méthodes&nbsp;<em>onSuccessfulLogin </em>et&nbsp;<em>onFaultLogin </em>sont appelée en cas de réussite ou d'échec.
 Nous pouvons récupérer le nom d'utilisateur avec la méthode suivante :
-<pre>__identity.username</pre>
+<pre><code class="language-java">__identity.username</code></pre>
 
 <h1>Autorisation en <em>Flex</em></h1>
 Il existe 3 méthodes très utiles sur l'objet <em>Identity </em>permettant de gérer l'autorisation :
@@ -94,9 +94,9 @@ Il existe 3 méthodes très utiles sur l'objet <em>Identity </em>permettant de g
     <li>ifNotGranted : Si l'utilisateur n'a pas l'autorisation demandée</li>
 </ul>
 Ces méthodes sont asynchrones mais <em>bindable</em>, ce qui permet de les utiliser dans un script mxml :
-<pre>&lt;mx:button click=&quot;updateProduct()&quot; enabled=&quot;{dg.selectedItem}&quot; id=&quot;bUpdate&quot;
+<pre><code class="language-java">&lt;mx:button click=&quot;updateProduct()&quot; enabled=&quot;{dg.selectedItem}&quot; id=&quot;bUpdate&quot;
     label=&quot;Update&quot; visible=&quot;{identity.hasRole('admin')}&quot;&gt;
-&lt;/mx:button&gt;</pre>
+&lt;/mx:button&gt;</code></pre>
 Ainsi le bouton ne sera visible que pour les administrateurs.<br />Les appels peuvent aussi être effectués avec un
 <em>respondeur </em>pour prévoir le prévoir le coté asynchrone de l'appel.<br />Il existe un cache d'autorisations qui
 peut être vidé manuellement.
