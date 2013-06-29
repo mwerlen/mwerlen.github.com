@@ -1,0 +1,16 @@
+---
+layout: post
+title: Au revoir Sword, bienvenue Sogelink
+date: 2012-01-23
+comments: false
+categories : [news]
+tags: [sogelink, sword, divers, emploi]
+---
+
+J'ai quitté mon poste chez Sword vendredi après une mission intéressante chez Sanofi Pasteur : mettre en place une cellule architecture chargée du support de niveau 3 et du suivi technique des projets. Le challenge a été relevé, il est maintenant temps de laisser la place à d'autres et de partir pour de nouvelle aventures. 
+
+![Sogelink](/images/sogelink.jpg "Sogelink, mon nouvel employeur")
+
+Je commence donc aujourd'hui mon nouveau boulot chez Sogelink. Cette société édite le service en ligne DICT.fr permettant aux professionnels du BTP de réaliser leurs démarches réglementaires en un temps record. Sogelink s'occupe de la création des formulaires CERFA à partir des informations saisies, de leur acheminement et du suivi. La société, qui profite d'une croissance exceptionnelle, commence à se diversifier. Je m'occuperais de la gestion d'une équipe au sein du tout nouveau service développement de la société. Les technos et les équipes ont l'air sympa.
+
+Je vous tiendrais au courant.
