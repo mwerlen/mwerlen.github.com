@@ -1,58 +1,46 @@
-@import "reset.less";
-//@import "old.css";
-//@import "960gs.less";
-
 /* LESS VARIABLES
 --------------------------------------------------------------------------------- */
-@main-bg: #ffffff;
-@CustomGrey : #444;
-@CustomRed : #a33;
-@CustomGreen : hsla(80, 90%, 40%, 0.5);
-@CustomGreenPlus : hsla(80, 90%, 40%, 0.7);
-@CustomBlue : #2879d0;
-@titleColor : @CustomGreenPlus;
-@subtitleColor : @CustomGrey;
-@dashcolor : @CustomGrey;
-@menu: @CustomGrey;
-@menu-tab: #eee;
-@greenBorder: @CustomGreen;
-@greenContent : @CustomGreenPlus;
-@menuLinkColor : @CustomBlue;
-@textColor : #474747;
-@postTitleColor : @CustomGrey;
+@white: #ffffff;
+@green: hsla(80, 90%, 40%, 0.5);
+@greenStrong : hsla(80, 90%, 40%, 0.7);
+@grey : #444;
+@red : #a33;
+@blue : #2879d0;
+
+@main-bg: @white;
+@textColor : @grey;
+
+@titleColor : @greenStrong;
+@subtitleColor : @grey;
+@dashcolor : @grey;
+@menu: @grey;
+@greenBorder: @green;
+@greenContent : @greenStrong;
+@menuLinkColor : @blue;
+@postTitleColor : @grey;
 
 /* GLOBAL
 --------------------------------------------------------------------------------- */
 
-.page {
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto;
-	box-shadow: 2px 2px 8px #aaa;
-	-webkit-box-shadow: 2px 2px 8px #aaa;
-	-moz-box-shadow: 2px 2px 8px #aaa;
-  padding-left: 15px;
-  color : @textColor;
+/* Add transition to containers so they can push in and out */
+#layout,
+#menu,
+.pure-menu-link {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 /* IMPORTS
 --------------------------------------------------------------------------------- */
 @import "header.less";
+@import "footer.less";
 @import "menu.less";
+
 @import "main.less";
 @import "posts.less";
 @import "widgets.less";
 
-/* MISC */
-.clearfix:after {
-  clear: both;
-  content: '.';
-  display: block;
-  visibility: hidden;
-  height: 0;
-}
-
-.clearfix {display: inline-block;}
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
-
+@import "responsive.less";

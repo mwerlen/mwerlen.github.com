@@ -1,114 +1,83 @@
-/* MENU
---------------------------------------------------- */
+/* --------------------------
+ * Main Navigation Bar Styles
+ * --------------------------
+*/
 
 #menu {
-	position: fixed;
-	left: 0;
-	width: 10%;
-	min-width: 125px;
-	max-width: 200px;
-	top: 20%;
-	margin: 0 -0.2em 0 0;
-	z-index: 5;
-	background: @greenContent;
-	color: white;
-	border: solid @greenBorder;
-	border-left: none;
-	padding: 0.5em 0.1em 0.5em 0;
-	box-shadow: 0 1px 3px black;
-	border-radius: 0.25em 2em 2em 0.25em;
-	text-align: center;
-	font-size: 15px;
-	font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
-	font-variant: small-caps;
+    margin-left: -150px; /* "#menu" width */
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 150px;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scroll: touch;
 }
 
-#menu a{
-	color: white;
+#menu a {
+    color: #999;
+    border: none;
+    white-space: normal;
+    padding: 0.6em 0 0.6em 0.6em;
 }
 
-.menuList {
-	text-align: left;
-	list-style-type: none;
-	padding: 0 0 15px 0;
-	margin: 0px;
+#menu .pure-menu-open {
+    background: transparent;
+    border: 0;
 }
 
-#menu li {
-	list-style-type: none;
-	padding: 0px;
-	margin: 0px;
+#menu .pure-menu ul {
+    border: none;
+    background: transparent;
 }
 
-#menu li a{
-	color: @CustomBlue;
-}
-#menu li a.active{
-	color: @CustomGrey;
+#menu .pure-menu ul,
+#menu .pure-menu .menu-item-divided {
+    border-top: 1px solid #333;
 }
 
-#menu li:before {
-	content: "\00BB";
-	color: white;
-	padding: 0 3px 0 5px;
+#menu .pure-menu li a:hover,
+#menu .pure-menu li a:focus {
+    background: @green;
+    color: @main-bg;
 }
 
-#menu .icon {
-	margin: 0 auto;
-	width: 80%;
+.pure-menu-link {
+    display: none; /* show this only on small screens */
+    top: 0;
+    left: 150px; /* "#menu width" */
+    background: #000;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.75em 1em;
 }
 
-.mx {
-	color: white;
-	font-family: "Times New Roman", Times, "Liberation Serif", FreeSerif, serif;
-	font-size: 4em;
+.pure-menu-link:hover,
+.pure-menu-link:focus {
+    background: #000;
 }
 
-/* TABS */
+#menu .pure-menu-heading {
+    font-size: 110%;
+    color: #fff;
+}
 
-// header .tabs {
-//   font-size: 1.5em;
-//   color: @menu-tab;
-//   font-weight: normal;
-//   line-height: 1em;
-//   letter-spacing: 0;
-// }
+#menu .pure-menu-heading:hover,
+#menu .pure-menu-heading:focus {
+    color: @greenStrong;
+}
 
-// header .tabs a {
-//   color: @menu-tab;
-//   padding-left: 15px;
-//   padding-right: 15px;
-//   -webkit-border-radius: 5px;
-//   -moz-border-radius: 5px;
-//   border-radius: 5px;
-//   -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+#menu .pure-menu-selected {
+    background: @greenStrong;
+    color: #eeeeee;
+}
 
-//   -moz-box-shadow: 0px 0px 2px #666;
-//   -webkit-box-shadow: 0px 0px 2px #666; 
-//   box-shadow: 0px 0px 2px #666; 
+#menu .pure-menu-selected a {
+    color: #fff;
+}
 
-//   background-color: #E6E6E6;
-//   background-image: -webkit-gradient(linear, left top, left bottom, from(#BFBFBF), to(#E6E6E6)); 
-//   background-image: -webkit-linear-gradient(top, #BFBFBF, #E6E6E6); 
-//   background-image: -moz-linear-gradient(top, #BFBFBF, #E6E6E6); 
-//   background-image: -ms-linear-gradient(top, #BFBFBF, #E6E6E6); 
-//   background-image: -o-linear-gradient(top, #BFBFBF, #E6E6E6); 
-//   background-image: linear-gradient(top, #BFBFBF, #E6E6E6);
-//   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#BFBFBF', EndColorStr='#E6E6E6'); 
-// }
-// header .tabs a.active {
-
-//   -moz-box-shadow: 0px 0px 0px #FFFFFF;
-//   -webkit-box-shadow: 0px 0px 0px #FFFFFF; 
-//   box-shadow: 0px 0px 0px #FFFFFF; 
-
-//   color: #666;
-//   background-color: #FFFFFF;
-//   background-image: -webkit-gradient(linear, left top, left bottom, from(#E6E6E6), to(#FFFFFF)); 
-//   background-image: -webkit-linear-gradient(top, #E6E6E6, #FFFFFF); 
-//   background-image: -moz-linear-gradient(top, #E6E6E6, #FFFFFF); 
-//   background-image: -ms-linear-gradient(top, #E6E6E6, #FFFFFF); 
-//   background-image: -o-linear-gradient(top, #E6E6E6, #FFFFFF); 
-//   background-image: linear-gradient(top, #E6E6E6, #FFFFFF);
-//   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#E6E6E6', EndColorStr='#FFFFFF'); 
-// }
+#menu li.pure-menu-selected a:hover,
+#menu li.pure-menu-selected a:focus {
+    background: none;
+}

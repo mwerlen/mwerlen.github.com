@@ -8,10 +8,9 @@
 
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
 
-        <!--<link rel="stylesheet" type="text/less" href="/stylesheets/styles.less" media="screen" />-->
-        <!--<link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />-->
-        <link rel="stylesheet" type="text/css" href="/stylesheets/purecssTheme.css"/>
-        <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+        <link rel="stylesheet" type="text/less" href="/stylesheets/styles.less" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/myPureSkin.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print"/>
         <link rel="stylesheet" type="text/css" href="/stylesheets/prism.css" media="screen">
 
 
@@ -31,11 +30,23 @@
                 {% include menu.ext %}
             </div>
             <div id="main" class="pure-u">
-                {% include header.ext %}
-                <div id="content" class="content pure-g-r">
-                    {{ content }}
+                <div class="wrapper">
+                    {% include header.ext %}
+                    <div id="content" class="content">
+                        {{ content }}
+                    </div>
+
+                    <div class="footer-push"></div>
                 </div>
-                {% include footer.ext %}
+                <div class="footer pure-u1">
+                    Le contenu du site et du blog est écrit par <a href="/mwerlen.html">Maxime Werlen</a>.<br/>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/fr/">
+                        <img alt="Licence Creative Commons"
+                             style="border-width:0"
+                             src="http://i.creativecommons.org/l/by-nc-sa/2.0/fr/80x15.png"/>
+                    </a>
+                    - <a href="/mentionslegales.html" title="Mentions légales">Mentions légales</a>
+                </div>
             </div>
         </div>
     </body>

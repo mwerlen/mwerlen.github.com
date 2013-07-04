@@ -1,0 +1,59 @@
+
+/* --------------------------
+ * Responsive Styles
+ * --------------------------
+*/
+
+@media (max-width: 870px) {
+
+  /* Navigation Push Styles */
+  #layout {
+    position: relative;
+    padding-left: 0;
+  }
+  #layout.active {
+    position: relative;
+    left: 150px;
+  }
+  #layout.active #menu {
+    left: 150px;
+    width: 150px;
+  }
+
+  #menu {
+    left: 0;
+  }
+
+  .pure-menu-link {
+    position: fixed;
+    left: 0;
+    display: block;
+  }
+
+  #layout.active .pure-menu-link {
+    left: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .content {
+    width: 95%;
+    font-size: 90%;
+  }
+
+  .legal-links {
+    padding:1em 0;
+  }
+  .legal-license,
+  .legal-copyright,
+  .legal-links,
+  .legal-links li {
+    text-align: center;
+  }
+
+  /* normalize paddings on small screens*/
+  .l-hbox {
+    padding: 1.3em;
+  }
+}

@@ -1,5 +1,5 @@
 ---
-layout: site
+layout: base
 title: Pr&eacute;sentation
 permalink: mwerlen.html
 ---

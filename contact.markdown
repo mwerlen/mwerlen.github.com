@@ -1,5 +1,5 @@
 ---
-layout: site
+layout: base
 title: Contactez-moi
 permalink: contact.html
 contact: active

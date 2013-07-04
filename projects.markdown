@@ -1,5 +1,5 @@
 ---
-layout: site
+layout: base
 title: Projets
 permalink: projects.html
 ---

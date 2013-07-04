@@ -1,5 +1,5 @@
 ---
-layout: site
+layout: base
 title: Mentions l&eacute;gales
 permalink: mentionslegales.html
 ---
