@@ -5,15 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+        
 
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
 
         <link rel="stylesheet" type="text/less" href="/stylesheets/styles.less" media="screen"/>
         <link rel="stylesheet" type="text/css" href="/stylesheets/myPureSkin.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print"/>
-        <link rel="stylesheet" type="text/css" href="/stylesheets/prism.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/prism.css">
 
-
+        <script src="http://yui.yahooapis.com/3.10.3/build/yui/yui-min.js"></script>
         <script type="text/javascript" src="/javascripts/less-1.3.1.min.js"></script>
         <script type="text/javascript" src="/javascripts/prism.js"></script>
 
@@ -26,6 +27,9 @@
 
     <body>
         <div class="pure-g-r " id="layout">
+            <a href="#menu" id="menuLink" class="pure-menu-link">
+                <img src="/images/menu.png" width="20" alt="Menu toggle">
+            </a>
             <div id="menu" class="pure-u">
                 {% include menu.ext %}
             </div>
@@ -50,4 +54,5 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" src="/javascripts/main.js"></script>
 </html>

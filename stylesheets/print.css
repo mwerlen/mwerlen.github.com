@@ -211,15 +211,22 @@ footer a {
   color: #666;
 }
 
-/* MISC */
-.clearfix:after {
-  clear: both;
-  content: '.';
-  display: block;
-  visibility: hidden;
-  height: 0;
+#menu {
+  display: none;
 }
 
-.clearfix {display: inline-block;}
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
+#menuLink {
+  display: none;
+}
+
+.header {
+  font-size: 300%;
+  font-family: Helvetica;
+  font-style: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.footer {
+  display: none;
+}
