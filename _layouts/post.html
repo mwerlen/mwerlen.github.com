@@ -10,15 +10,15 @@ blog: active
 {% endif %}
 
 
-<section id="main-content" class="grid_9">
+<div id="main-content">
   {% include postTitle.ext %}
   {% if thePost.categories contains 'archives' %}
     {% include archive.ext %}
   {% endif %}
   {{ content }}
-</section>
+</div>
 
-<div id="related" class="grid_9">
+<div id="related">
   <h3>Les articles sur le même sujet :</h3>
   <ul class="posts">
     {% for post in site.related_posts limit:5 %}

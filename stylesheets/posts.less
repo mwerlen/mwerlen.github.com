@@ -24,32 +24,31 @@ h3.blogpostpreview {
 }
 
 #postTitle {
-    margin-top: 10px;
+    margin-top: 0;
     margin-bottom: 10px;
 }
 
 #postTitle h1{
-    border-top: 1px solid @postTitleColor;
-    border-bottom: 1px solid @postTitleColor;
+    border: 3px dotted @green;
     padding: 0;
+    padding-left: 10px;
     margin-bottom: 25px;
-    font-size: 3em;
     line-height: 1.75em;
 }
 
-#postTitle h1:before {
+/*#postTitle h1:before {
     content: '';
     color: @postTitleColor;
     padding-right: 0;
     margin-left: 0;
-}
+}*/
 
 #postTitle a{
     color: @postTitleColor;
 }
 
 #postTitle .metadata {
-    margin-left: 1em;
+    margin-left: 10px;
     margin-top: -35px;
     display: block;
     background-color: #fafafa;
@@ -64,7 +63,7 @@ h3.blogpostpreview {
     margin-top: 16px;
 } 
 
-
+    
 note {
     text-align: center;
     text-decoration:none;
@@ -88,16 +87,15 @@ blockquote {
 }
 
 hr {
-    border-top-width: 0px;
-    border-left-width: 0px;
-    border-bottom-width: 1px;
-    border-bottom-color: @greenStrong;
-    border-bottom-style: solid;
-    border-right-width: 0px;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 3px;
+    border-bottom-color: @green;
+    border-bottom-style: dotted;
+
     padding: 0;
     width: 80%;
-    background-color: @green;
-    height: 3px;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
