@@ -18,7 +18,7 @@ Formation
 Expériences professionnelles
 ----------------------------
 
-### Depuis janvier 2012 : Chef de Projet Technique ([Sogelink](http://sogelink.fr/))
+### Depuis janvier 2012 : Chef de Projet Technique chez [Sogelink](http://sogelink.fr/)
 
 - Gestion de projets de développement interne
     - Etude des besoins
@@ -34,7 +34,7 @@ Expériences professionnelles
     - Suivi des évolutions technologiques applicables
     - Force de proposition sur les innovations techniques
 
-### De juillet 2010 à Janvier 2012 : Coordinateur du centre d’expertise chez Sanofi Pasteur([Sword](http://www.sword-group.com/))
+### De juillet 2010 à Janvier 2012 : Coordinateur du centre d’expertise pour Sanofi Pasteur chez [Sword](http://www.sword-group.com/)
  
 Gestion et pilotage d’un pool de ressources dans la cellule expertise et architecture de Sanofi Pasteur.
 
@@ -43,7 +43,7 @@ Gestion et pilotage d’un pool de ressources dans la cellule expertise et archi
 - Planification des interventions des experts 
 - Veille technologique Réalisation de pilotes
 
-### De janvier 2010 à novembre 2011 : Chef de projet informatique ([Sword](http://www.sword-group.com))
+### De janvier 2010 à novembre 2011 : Chef de projet informatique chez [Sword](http://www.sword-group.com)
  
 Gestion de projets informatiques basés sur le produit logiciel IntelliGIS pour la communauté d’agglomération de Saint-Quentin-En-Yvelines.
 
@@ -58,7 +58,7 @@ Gestion de projets informatiques basés sur le produit logiciel IntelliGIS pour 
 - Support des administrateurs
 - Mise en production de l’application
 
-### De juillet 2009 à juillet 2011 : Ingénieur d’études([Sword](http://www.sword-group.com))
+### De juillet 2009 à juillet 2011 : Ingénieur d’études chez [Sword](http://www.sword-group.com)
  
 Création d’IntelliGIS, un produit logiciel de R&D permettant
 l’intégration du SI dans un système d’information géographique gr&acirc;ce &agrave;
@@ -80,14 +80,14 @@ ArcGIS d’ESRI.
 -  Formation des utilisateurs
 
 
-### De décembre 08 à juillet 09 : Projet de fin d’étude ([Atos Worldline](www.atosworldline.com), filiale de [Atos Origin](http://www.atosorigin.com))
+### De décembre 08 à juillet 09 : Projet de fin d’étude chez [Atos Worldline](www.atosworldline.com), filiale de [Atos Origin](http://www.atosorigin.com)
 Réalisation d'un outil de gestion et de reporting de projet dynamique et adaptable à tous projets quelque soit leur taille et leur organisation.
 
 - Analyse
 - Conception
 - Réalisation
 
-### De juin 2008 à septembre 2009 : Stage pratique ([Atos Worldline](www.atosworldline.com), filiale de [Atos Origin](http://www.atosorigin.com))  
+### De juin 2008 à septembre 2009 : Stage pratique chez [Atos Worldline](www.atosworldline.com), filiale de [Atos Origin](http://www.atosorigin.com)
 Réalisation d'un gestionnaire de campagnes d'information multicanaux pour la CNAF basé sur les applications de l’entreprise.
 
 - Analyse
