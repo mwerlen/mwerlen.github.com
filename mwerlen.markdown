@@ -13,3 +13,6 @@ Mon travail est actuellement orienté sur la gestion fonctionnelle et technique 
 
 Si vous souhaitez obtenir plus d'information sur les différents emplois que j'ai exercés, reportez-vous à mon [CV en ligne](cv.html).
 
+
+{% include profils.ext %}
+

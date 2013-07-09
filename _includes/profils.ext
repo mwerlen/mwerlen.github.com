@@ -1,13 +1,8 @@
-<h2>Profils pro</h2>
-<div style="text-align:center">
-    <a href="http://www.viadeo.com/fr/profile/maxime.werlen"><img border="0" width="160px"
-                                                                  src="http://static0.viadeo-static.com/v_img14/profile/promotion/white/button_profile_fr.png"></a>
-    <br/>
-    <a href="http://fr.linkedin.com/in/mwerlen"><img alt="Voir le profil de Maxime Werlen sur LinkedIn" border="0"
-                                                     height="33"
-                                                     src="http://www.linkedin.com/img/webpromo/btn_myprofile_160x33_fr_FR.png?locale="
-                                                     width="160"></a>
-    <br/>
-    <a href="https://github.com/mwerlen" title="Suivez mwerlen sur Github" id="followGithub" class="noBg"><img
-            src="https://github.com/favicon.ico"/>Suivez moi sur Github</a>
+<div class="profils">
+    <h3>Retrouvez moi sur ces sites :</h3>
+    <ul class="profils-sites">
+        <li><i class="icon-github-sign"></i> <a href="https://github.com/mwerlen" title="Suivez mwerlen sur Github">Github</a></li>
+        <li><i class="icon-linkedin"></i> <a href="http://fr.linkedin.com/in/mwerlen">LinkedIn</a></li>
+        <li><i class="icon-file-alt"></i> <a href="http://www.viadeo.com/fr/profile/maxime.werlen">Viadeo</a></li>
+    </ul>
 </div>
