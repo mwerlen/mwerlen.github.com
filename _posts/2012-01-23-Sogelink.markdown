@@ -4,7 +4,7 @@ title: Au revoir Sword, bienvenue Sogelink
 date: 2012-01-23
 comments: false
 categories : [news]
-tags: [sogelink, sword, divers, emploi]
+tags: [sogelink, sword, emploi]
 ---
 
 J'ai quitté mon poste chez Sword vendredi après une mission intéressante chez Sanofi Pasteur : mettre en place une cellule architecture chargée du support de niveau 3 et du suivi technique des projets. Le challenge a été relevé, il est maintenant temps de laisser la place à d'autres et de partir pour de nouvelle aventures. 
