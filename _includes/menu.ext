@@ -3,7 +3,8 @@
 	<ul>
 		<li><a href="/index.html" class="{% if page.url == '/index.html'%}pure-menu-selected{% endif %}">Dernières news</a></li>
 		<li><a href="/archives.html" class="{% if page.url == '/archives.html'%}pure-menu-selected{% endif %}">Archives</a></li>
-		<li><a href="/categories.html" class="{% if page.url == '/categories.html'%}pure-menu-selected{% endif %}">Catégories</a></li>
+		<li><a href="/tags.html" class="{% if page.url == '/tags.html'%}pure-menu-selected{% endif %}">Tags</a></li>
+        <li><a href="/categories.html" class="{% if page.url == '/categories.html'%}pure-menu-selected{% endif %}">Catégories</a></li>
 	</ul>
 	<a href="/mwerlen.html" class="pure-menu-heading">L'auteur</a>
 	<ul>
