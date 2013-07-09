@@ -4,25 +4,26 @@ blog: active
 ---
 
 {% if post %}
- {% assign thePost = post %}
-{% else %} 
- {% assign thePost = page %}
+    {% assign thePost = post %}
+{% else %}
+    {% assign thePost = page %}
 {% endif %}
 
 
 <div id="main-content">
-  {% include postTitle.ext %}
-  {% if thePost.categories contains 'archives' %}
-    {% include archive.ext %}
-  {% endif %}
-  {{ content }}
+    {% include postTitle.ext %}
+    {% if thePost.categories contains 'archives' %}
+        <div class="ribbon-wrapper-green"><div class="ribbon-green">ARCHIVE</div></div>
+        <div class="note">Ceci est une archive de mon ancien blog <a href="http://mwerlen.blogspot.com/{{ thePost.date | date: '%Y/%m' }}/{{ thePost.originalName }}" title="Defense de me faire travailler">Defense de me faire travailler</a>.</div>
+    {% endif %}
+    {{ content }}
 </div>
 
 <div id="related">
-  <h3>Les articles sur le même sujet :</h3>
-  <ul class="posts">
-    {% for post in site.related_posts limit:5 %}
-      <li><span>{{ post.date | date_to_string }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+    <h3>Les articles sur le même sujet :</h3>
+    <ul class="posts">
+        {% for post in site.related_posts limit:5 %}
+            <li><span>{{ post.date | date_to_string }}</span> <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
 </div>
