@@ -1,6 +1,0 @@
-			<h2>{{site.name}}</h2>
-			<div style="display:block;">
-				<p><a href="/" title="{{site.name}}">{{site.name}}</a> est un blog personnel où l'auteur diffuse des news, des penses-bêtes techniques, des retours d'expérience et tous autres éléments qui lui semblent intéressants.</p>
-				<p>Si un sujet vous fait réagir et que vous souhaitez en discuter n'hésitez pas à me <a href="/contact.html" title="me contacter">contacter</a></p>
-				<div style="clear:both"/>
-			</div>
