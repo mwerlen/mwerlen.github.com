@@ -3,8 +3,8 @@ layout: base
 title: Blog
 permalink: index.html
 ---
-{% for post in site.posts %}
+{% for post in site.posts limit:10%}
 	{% include postTitle.ext %}
     {{ post.content | strip_html | truncatewords:100}}
-    <div class="readmore">&raquo; <a href="{{ post.url }}">Lire la suite...</a></div>
+    <div class="readmore"><a href="{{ post.url }}">Lire la suite...</i></a></div>
 {% endfor %}
