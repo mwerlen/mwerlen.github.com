@@ -6,5 +6,13 @@
 
 <div id="postTitle">
 	<h1><a href="{{thePost.url}}" alt="{{thePost.title}}">{{thePost.title}}</a></h1>
-	<span class="metadata">Publié le <span class="date">{{thePost.date|date:'%d/%m/%Y'}}</span> - Tags : <span class="tags">{{thePost.tags | join: ", " }}</span> - Categories : <span class="categories">{{thePost.categories | join: ", " }}</span></span>
+	<span class="metadata">
+        <i class="icon-time"></i> {{ thePost.date | date:'%d/%m/%Y' }}
+        {% if thePost.tags.size > 0 %}
+            &nbsp; <i class="icon-tags"></i> {{thePost.tags | join: ", " }}
+        {% endif %}
+        {% if thePost.categories.size > 0 %}
+            &nbsp; <i class="icon-folder-open"></i> {{thePost.categories | join: ", " }}
+        {% endif %}
+    </span>
 </div>
