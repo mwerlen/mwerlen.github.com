@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Au revoir Sword, bienvenue Sogelink
+permalink: sogelink.html
 date: 2012-01-23
 comments: false
 categories : [news]
