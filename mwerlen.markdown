@@ -11,7 +11,7 @@ Je suis ingénieur, diplômé de l'Insa de Lyon, spécialisé dans les technolog
 
 Mon travail est actuellement orienté sur la gestion fonctionnelle et technique de projet ainsi que la veille technologique. J'anime une cellule architecture répondant aux défis technologiques actuels et futurs rencontrés par les équipes de développement.
 
-Si vous souhaitez obtenir plus d'information sur les différents postes que j'ai occupé, reportez-vous à mon [CV en ligne](/cv.html) et si mon profil vous intéresse, n'hésitez pas à [me contacter](/contact.html).
+Si vous souhaitez obtenir plus d'information sur mes activités, reportez-vous à mon [CV en ligne](/cv.html) et la liste de [mes projets](/projects.html). Si mon profil vous intéresse, n'hésitez pas à [me contacter](/contact.html).
 
 
 {% include profils.ext %}
