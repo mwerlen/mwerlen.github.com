@@ -1,0 +1,9 @@
+{
+    "name": "IT-Signal",
+    "description": "A agile developer's blog",
+    "author": "Maxime Werlen <maxime@werlen.fr>",
+    "dependencies": {
+        "less": ">= 1.4.1"
+    },
+    "engine": "node 0.4.1"
+}
