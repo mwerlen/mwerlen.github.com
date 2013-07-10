@@ -5,5 +5,5 @@
     "dependencies": {
         "less": ">= 1.4.1"
     },
-    "engine": "node 0.4.1"
+    "engine": "node 0.8.9"
 }
