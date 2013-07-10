@@ -6,14 +6,14 @@ layout: none
     {% for page in site.pages %}
         {% if page.layout != none %}
         <url>
-            <loc>http://foo.com{{ page.url | remove: 'index.html' }}</loc>
+            <loc>{{site.url}}{{ page.url | remove: 'index.html' }}</loc>
         </url>
         {% endif %}
     {% endfor %}
 
     {% for post in site.posts %}
         <url>
-            <loc>http://foo.com{{ post.url | remove: 'index.html' }}</loc>
+            <loc>{{site.url}}{{ post.url | remove: 'index.html' }}</loc>
         </url>
     {% endfor %}
 
