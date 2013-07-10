@@ -39,5 +39,5 @@ kramdown:
     coderay_css: style
 
 name: It-Signal
-description: A agile developper's blog
+description: A agile developer's blog
 url: http://mwerlen.github.com
