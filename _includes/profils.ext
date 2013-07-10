@@ -3,6 +3,8 @@
     <ul class="profils-sites">
         <li><i class="icon-github-sign"></i> <a href="https://github.com/mwerlen" title="Suivez mwerlen sur Github">Github</a></li>
         <li><i class="icon-linkedin"></i> <a href="http://fr.linkedin.com/in/mwerlen">LinkedIn</a></li>
-        <li><i class="icon-file-alt"></i> <a href="http://www.viadeo.com/fr/profile/maxime.werlen">Viadeo</a></li>
+        <li><i class="icon-circle-blank"></i> <a href="http://www.viadeo.com/fr/profile/maxime.werlen">Viadeo</a></li>
+        <li><i class="icon-twitter"></i> <a href="https://twitter.com/mwerlen">Twitter</a></li>
+
     </ul>
 </div>
