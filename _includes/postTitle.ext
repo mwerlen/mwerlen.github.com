@@ -7,17 +7,18 @@
 <div id="postTitle">
 	<h1><a href="{{thePost.url}}" alt="{{thePost.title}}">{{thePost.title}}</a></h1>
 	<span class="metadata">
-        <i class="icon-time"></i> {{ thePost.date | date:'%d/%m/%Y' }}
+        <i class="icon-user"></i> <a href="/mwerlen.html" alt="Maxime Werlen" rel="author">Maxime Werlen</a>
+        &nbsp; <i class="icon-time"></i> {{ thePost.date | date:'%d/%m/%Y' }}
         {% if thePost.tags.size > 0 %}
             &nbsp; <i class="icon-tags"></i>
             {% for tag in thePost.tags %}
-                <a href="http://localhost:4000/tags.html#{{tag}}-ref" alt="{{tag}}">{{tag}}</a>{% if tag != thePost.tags.last %},{% endif %}
+                <a href="/tags.html#{{tag}}-ref" alt="{{tag}}" rel="tag">{{tag}}</a>{% if tag != thePost.tags.last %},{% endif %}
             {% endfor %}
         {% endif %}
         {% if thePost.categories.size > 0 %}
             &nbsp; <i class="icon-folder-open"></i>
             {% for categorie in thePost.categories %}
-                <a href="http://localhost:4000/categories.html#{{categorie}}-ref" alt="{{categorie}}">{{categorie}}</a>{% if tag != categorie.categories.last %},{% endif %}
+                <a href="/categories.html#{{categorie}}-ref" alt="{{categorie}}" rel="tag">{{categorie}}</a>{% if tag != categorie.categories.last %},{% endif %}
             {% endfor %}
         {% endif %}
     </span>
