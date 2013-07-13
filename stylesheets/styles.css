@@ -475,6 +475,33 @@ hr {
   right: 0;
 }
 /* ----------------------------------------------------------------------------
+ * IMPORTED CV
+ * ------------------------------------------------------------------------- */
+.background-wrapper {
+  text-align: center;
+}
+#cv-menu {
+  margin-top: -5px;
+  background: #fafafa;
+  width: auto;
+  display: inline-block;
+}
+#cv-menu ul {
+  background: rgba(133, 194, 10, 0.5);
+  height: inherit;
+}
+#cv-menu ul li {
+  padding-left: 0;
+  border: 0;
+}
+#cv-menu ul li a {
+  padding: 5px 15px 5px 15px;
+}
+#cv-menu ul li a:hover {
+  background: rgba(133, 194, 10, 0.7);
+  color: #ffffff;
+}
+/* ----------------------------------------------------------------------------
  * IMPORTED RESPONSIVE
  * ------------------------------------------------------------------------- */
 /* --------------------------

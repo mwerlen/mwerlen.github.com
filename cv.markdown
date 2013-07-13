@@ -5,18 +5,29 @@ permalink: cv.html
 cv: active
 ---
 
-Chef de projet technique
-========================
+<div class="background-wrapper">
+    <div id="cv-menu" class="pure-menu pure-menu-open pure-menu-horizontal">
+        <ul>
+            <li><a href="#formation">Formation</a></li>
+            <li><a href="#experiences">Expériences</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#divers">Divers</a></li>
+        </ul>
+    </div>
+</div>
 
-Formation
----------
+<h1>Chef de projet technique</h1>
+
+
+<h2 id="formation">Formation</h2>
  - **06-09** : **Diplôme d’ingénieur INSA** avec [spécialité informatique](http://if.insa-lyon.fr)
  - **04-06** : Classes préparatoires intégrées à l’**[INSA de Lyon](http://www.insa-lyon.fr/)**
  - **02-04** : Lycée scientifique sanctionné par un bac S, spécialité maths, mention bien
 
 
-Expériences professionnelles
-----------------------------
+
+<h2 id="experiences">Expériences professionnelles</h2>
 
 ### Depuis janvier 2012 : Chef de Projet Technique chez [Sogelink](http://sogelink.fr/)
 
@@ -94,8 +105,7 @@ Réalisation d'un gestionnaire de campagnes d'information multicanaux pour la CN
 - Conception
 - Réalisation
 
-Compétences
------------
+<h2 id="competences">Compétences</h2>
 
 ### Aptitudes et compétences sociales
 Autonome, bon relationnel, passionné, capacité d’adaptation, rigoureux, ouvert
@@ -155,7 +165,6 @@ Anglais (courant, 895 TOEIC)
 Allemand (notions)  
 Espagnol (notions)  
 
-Divers
-------
+<h2 id="divers">Divers</h2>
 * Attestation de formation aux premiers secours
 * Permis B
