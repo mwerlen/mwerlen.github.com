@@ -6,71 +6,92 @@ contact: active
 ---
 
 <h1>Contact</h1>
+<div class="pure-g-r">
+    <div class="pure-u-1-2">
+        <form class="pure-form pure-form-aligned" action="mailto:maxime@werlen.fr">
+            <fieldset>
 
-<form class="pure-form pure-form-aligned" action="mailto:maxime@werlen.fr">
-    <fieldset>
+                <legend>Identité</legend>
+                <div class="pure-control-group">
+                    <label for="prenom">Prénom</label>
+                    <input id="prenom" type="text" value="Maxime" disabled class="contact-form">
+                </div>
 
-        <legend>Identité</legend>
-        <div class="pure-control-group">
-            <label for="prenom">Prénom</label>
-            <input id="prenom" type="text" value="Maxime" disabled class="contact-form">
-        </div>
+                <div class="pure-control-group">
+                    <label for="nom">Nom</label>
+                    <input id="nom" type="text" value="Werlen" disabled class="contact-form">
+                </div>
 
-        <div class="pure-control-group">
-            <label for="nom">Nom</label>
-            <input id="nom" type="text" value="Werlen" disabled class="contact-form">
-        </div>
+                <div class="pure-control-group">
+                    <label for="mail">Mail</label>
+                    <a href="mailto:maxime@werlen.fr">
+                        <input id="mail" type="text" value="maxime@werlen.fr" disabled
+                               class="contact-form contact-form-mail">
+                    </a>
+                </div>
 
-        <div class="pure-control-group">
-            <label for="mail">Mail</label>
-            <a href="mailto:maxime@werlen.fr">
-                <input id="mail" type="text" value="maxime@werlen.fr" disabled
-                       class="contact-form contact-form-mail">
-            </a>
-        </div>
+                <div class="pure-control-group">
+                    <label for="nom">Téléphone</label>
+                    <input id="nom" type="text" value="06.74.74.53.65" disabled class="contact-form">
+                </div>
+            </fieldset>
 
-        <div class="pure-control-group">
-            <label for="nom">Téléphone</label>
-            <input id="nom" type="text" value="06.74.74.53.65" disabled class="contact-form">
-        </div>
-    </fieldset>
+            <fieldset>
+                <legend>Adresse</legend>
+                <div class="pure-control-group">
+                    <label for="adresse">Adresse postale</label>
+                    <input id="adresse" type="text" value="Allée des Terrasses" disabled class="contact-form">
+                </div>
+                <div class="pure-control-group">
+                    <label for="complement"></label>
+                    <input id="complement" type="text" value="Bât. I" disabled class="contact-form">
+                </div>
+                <div class="pure-control-group">
+                    <label for="ville"></label>
+                    <input id="ville" type="text" value="69570 Dardilly" disabled class="contact-form">
+                </div>
+            </fieldset>
+        </form>
 
-    <fieldset>
-        <legend>Adresse</legend>
-        <div class="pure-control-group">
-            <label for="adresse">Adresse postale</label>
-            <input id="adresse" type="text" value="Allée des Terrasses" disabled class="contact-form">
-        </div>
-        <div class="pure-control-group">
-            <label for="complement"></label>
-            <input id="complement" type="text" value="Bât. I" disabled class="contact-form">
-        </div>
-        <div class="pure-control-group">
-            <label for="ville"></label>
-            <input id="ville" type="text" value="69570 Dardilly" disabled class="contact-form">
-        </div>
-    </fieldset>
+    </div>
+    <div class="pure-u-1-2">
+        <form class="pure-form pure-form-aligned" action="mailto:maxime@werlen.fr">
 
-    <fieldset>
-        <legend>Réseaux sociaux</legend>
-        <div class="pure-control-group">
-            <label for="linkedin">LinkedIn</label>
-            <a href="http://fr.linkedin.com/in/mwerlen">
-                <input id="linkedin" type="text" value="mwerlen" disabled class="contact-form contact-form-mail">
-            </a>
-        </div>
-        <div class="pure-control-group">
-            <label for="viadeo">Viadeo</label>
-            <a href="http://www.viadeo.com/fr/profile/maxime.werlen">
-                <input id="viadeo" type="text" value="maxime.werlen" disabled class="contact-form contact-form-mail">
-            </a>
-        </div>
-    </fieldset>
+            <fieldset>
+                <legend>Réseaux sociaux</legend>
+                <div class="pure-control-group">
+                    <label for="linkedin">LinkedIn</label>
+                    <a href="http://fr.linkedin.com/in/mwerlen">
+                        <input id="linkedin" type="text" value="mwerlen" disabled class="contact-form contact-form-mail">
+                    </a>
+                </div>
+                <div class="pure-control-group">
+                    <label for="viadeo">Viadeo</label>
+                    <a href="http://www.viadeo.com/fr/profile/maxime.werlen">
+                        <input id="viadeo" type="text" value="maxime.werlen" disabled class="contact-form contact-form-mail">
+                    </a>
+                </div>
+                <div class="pure-control-group">
+                    <label for="github">Github</label>
+                    <a href="https://github.com/mwerlen">
+                        <input id="github" type="text" value="mwerlen" disabled class="contact-form contact-form-mail">
+                    </a>
+                </div>
+                <div class="pure-control-group">
+                    <label for="twitter">Twitter</label>
+                    <a href="https://twitter.com/mwerlen">
+                        <input id="twitter" type="text" value="mwerlen" disabled class="contact-form contact-form-mail">
+                    </a>
+                </div>
+            </fieldset>
 
-    <fieldset>
-        <div class="pure-control-group">
-            <label for="submit"></label>
-            <button id="submit" type="submit" class="pure-button contact-button">M'écrire un mail</button>
-        </div>
-    </fieldset>
-</form>
+            <fieldset>
+                <legend>Contact mail</legend>
+                <div class="pure-control-group">
+                    <label for="submit"></label>
+                    <button id="submit" type="submit" class="pure-button contact-button">M'écrire un mail</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
