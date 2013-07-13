@@ -510,10 +510,22 @@ hr {
 @media (max-width: 767px) {
   .content {
     width: 95%;
-    font-size: 90%;
+    /*font-size: 90%;*/
+  
   }
   /* normalize paddings on small screens*/
   .l-hbox {
     padding: 1.3em;
+  }
+}
+@media (max-width: 480px) {
+  .pure-form-aligned .pure-control-group label {
+    margin-bottom: .3em;
+    text-align: left;
+    display: inline-block !important;
+    width: 10em !important;
+  }
+  .pure-form-aligned .pure-control-group input[type=text] {
+    display: inline-block !important;
   }
 }
