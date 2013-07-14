@@ -501,6 +501,17 @@ hr {
   background: rgba(133, 194, 10, 0.7);
   color: #ffffff;
 }
+.cv-titre {
+  text-align: center;
+}
+.cv-titre-job {
+  margin-bottom: 0px;
+}
+.cv-detail-job {
+  margin-top: 0;
+  padding-top: 0;
+  font-style: italic;
+}
 /* ----------------------------------------------------------------------------
  * IMPORTED RESPONSIVE
  * ------------------------------------------------------------------------- */

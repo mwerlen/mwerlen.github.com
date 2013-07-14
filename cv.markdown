@@ -17,19 +17,22 @@ cv: active
     </div>
 </div>
 
-<h1>Chef de projet technique</h1>
+<h1 class="cv-titre">Chef de projet technique</h1>
 
 
-<h2 id="formation">Formation</h2>
+<h3 id="formation">Formation</h3>
+
  - **06-09** : **Diplôme d’ingénieur INSA** avec [spécialité informatique](http://if.insa-lyon.fr)
  - **04-06** : Classes préparatoires intégrées à l’**[INSA de Lyon](http://www.insa-lyon.fr/)**
  - **02-04** : Lycée scientifique sanctionné par un bac S, spécialité maths, mention bien
 
 
 
-<h2 id="experiences">Expériences professionnelles</h2>
+<h3 id="experiences">Expériences professionnelles</h3>
 
-### Depuis janvier 2012 : Chef de Projet Technique chez [Sogelink](http://sogelink.fr/)
+<h4 class="cv-titre-job">Chef de Projet Technique</h4>
+<div class="cv-detail-job">Depuis janvier 2012 - <a href="http://sogelink.fr/" alt="Sogelink" title="Sogelink">Sogelink</a></div>
+
 
 - Gestion de projets de développement interne
     - Etude des besoins
@@ -105,7 +108,7 @@ Réalisation d'un gestionnaire de campagnes d'information multicanaux pour la CN
 - Conception
 - Réalisation
 
-<h2 id="competences">Compétences</h2>
+<h3 id="competences">Compétences</h3>
 
 ### Aptitudes et compétences sociales
 Autonome, bon relationnel, passionné, capacité d’adaptation, rigoureux, ouvert
@@ -165,6 +168,6 @@ Anglais (courant, 895 TOEIC)
 Allemand (notions)  
 Espagnol (notions)  
 
-<h2 id="divers">Divers</h2>
+<h3 id="divers">Divers</h3>
 * Attestation de formation aux premiers secours
 * Permis B
