@@ -516,13 +516,16 @@ hr {
 .cv-description-job ul {
   margin-left: 1em;
   padding-left: 0;
+  margin-top: 5px;
 }
 .cv-description-job ul ul {
   margin-top: 0;
   margin-bottom: 0.8em;
   padding-left: 0;
   margin-left: 3em;
-  list-style-type: disc;
+}
+.cv-description-job p {
+  margin-bottom: 5px;
 }
 /* ----------------------------------------------------------------------------
  * IMPORTED RESPONSIVE

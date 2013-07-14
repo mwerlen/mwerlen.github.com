@@ -97,8 +97,8 @@ cv: active
 <div class="cv-description-job">
     <p>Création d’IntelliGIS, un produit logiciel de R&amp;D permettant l’intégration du SI dans un système d’information géographique gr&acirc;ce &agrave; un générateur d’applications riches en Flex basées sur les produits ArcGIS d’ESRI.</p>
     <ul>
-        <li>Conception de la solution technique avec de nombreux frameworks applicatifs (Spring, Hibernate, Flex, Granite DS, ArcGIS Api for Flex…)</li>
-        <li>Recherches non industrialisées sur différents modules :
+        <li>Conception de la solution technique avec de nombreux frameworks applicatifs (Spring, Hibernate, Flex, Granite&nbsp;DS, ArcGIS&nbsp;Api&nbsp;for&nbsp;Flex…)</li>
+        <li>Recherches non industrialisées sur différents modules :</li>
         <li>Reporting (avec BIRT)</li>
         <li>Business Intelligence (BI) avec Business Object (BO)</li>
         <li>gestion documentaire (GED/ECM) avec le protocole CMIS</li>
@@ -110,19 +110,29 @@ cv: active
 </div>
 
 
-### De décembre 08 à juillet 09 : Projet de fin d’étude chez [Atos Worldline](www.atosworldline.com), filiale de [Atos Origin](http://www.atosorigin.com)
-Réalisation d'un outil de gestion et de reporting de projet dynamique et adaptable à tous projets quelque soit leur taille et leur organisation.
+<h4 class="cv-titre-job">Projet de fin d’étude</h4>
+<div class="cv-detail-job">De décembre 08 à juillet 09 - <a href="http://www.atosworldline.com/" alt="Atos Worldline" title="Atos Worldline">Atos Worldline</a> filiale d'<a href="http://www.atosorigin.com" alt="Atos Origin" title="Atos Origin">Atos Origin</a></div>
+<div class="cv-description-job">
+    <p>Réalisation d'un outil de gestion et de reporting de projet dynamique et adaptable à tous projets quelque soit leur taille et leur organisation.</p>
+    <ul>
+        <li>Analyse</li>
+        <li>Conception</li>
+        <li>Réalisation</li>
+    </ul>
+</div>
 
-- Analyse
-- Conception
-- Réalisation
 
-### De juin 2008 à septembre 2009 : Stage pratique chez [Atos Worldline](www.atosworldline.com), filiale de [Atos Origin](http://www.atosorigin.com)
-Réalisation d'un gestionnaire de campagnes d'information multicanaux pour la CNAF basé sur les applications de l’entreprise.
+<h4 class="cv-titre-job">Stage pratique</h4>
+<div class="cv-detail-job">De juin 2008 à septembre 2009 - <a href="http://www.atosworldline.com/" alt="Atos Worldline" title="Atos Worldline">Atos Worldline</a> filiale d'<a href="http://www.atosorigin.com" alt="Atos Origin" title="Atos Origin">Atos Origin</a></div>
+<div class="cv-description-job">
+    <p>Réalisation d'un gestionnaire de campagnes d'information multicanaux pour la CNAF basé sur les applications de l’entreprise.</p>
+    <ul>
+        <li>Analyse</li>
+        <li>Conception</li>
+        <li>Réalisation</li>
+    </ul>
+</div>
 
-- Analyse
-- Conception
-- Réalisation
 
 <h3 id="competences">Compétences</h3>
 
@@ -151,6 +161,7 @@ Rédaction des manuels utilisateurs, constitution des cas métiers puis rédacti
 **Démonstration :**  
 Organisation de démonstration (en français ou en anglais) dans les phases d’avant vente.
 Animation des réunions interne
+
 
 ### Aptitudes et compétences informatiques
 **Langages :**  
@@ -185,5 +196,9 @@ Allemand (notions)
 Espagnol (notions)  
 
 <h3 id="divers">Divers</h3>
-* Attestation de formation aux premiers secours
-* Permis B
+<div class="cv-description-job">
+    <ul>
+        <li>Attestation de formation aux premiers secours</li>
+        <li>Permis B</li>
+    </ul>
+</div>
