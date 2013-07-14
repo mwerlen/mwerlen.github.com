@@ -506,11 +506,23 @@ hr {
 }
 .cv-titre-job {
   margin-bottom: 0px;
+  font-size: 1.1em;
 }
 .cv-detail-job {
   margin-top: 0;
   padding-top: 0;
   font-style: italic;
+}
+.cv-description-job ul {
+  margin-left: 1em;
+  padding-left: 0;
+}
+.cv-description-job ul ul {
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  padding-left: 0;
+  margin-left: 3em;
+  list-style-type: disc;
 }
 /* ----------------------------------------------------------------------------
  * IMPORTED RESPONSIVE

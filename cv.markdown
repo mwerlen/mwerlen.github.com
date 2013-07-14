@@ -22,76 +22,92 @@ cv: active
 
 <h3 id="formation">Formation</h3>
 
- - **06-09** : **Diplôme d’ingénieur INSA** avec [spécialité informatique](http://if.insa-lyon.fr)
- - **04-06** : Classes préparatoires intégrées à l’**[INSA de Lyon](http://www.insa-lyon.fr/)**
- - **02-04** : Lycée scientifique sanctionné par un bac S, spécialité maths, mention bien
+<div class="cv-description-job">
+    <ul>
+        <li><b>06-09</b> : <b>Diplôme d’ingénieur INSA</b> avec <a href="http://if.insa-lyon.fr" alt="Insa Lyon - Département informatique">spécialité informatique</a></li>
+        <li><b>04-06</b> : Classes préparatoires intégrées à l’<b><a href="http://www.insa-lyon.fr/" alt="Insa de Lyon">INSA de Lyon</a></b></li>
+        <li><b>02-04</b> : Lycée scientifique - Bac S, spécialité maths, mention bien</li>
+    </ul>
+</div>
 
 
 
 <h3 id="experiences">Expériences professionnelles</h3>
 
-<h4 class="cv-titre-job">Chef de Projet Technique</h4>
+<h4 class="cv-titre-job">Chef de projet technique</h4>
 <div class="cv-detail-job">Depuis janvier 2012 - <a href="http://sogelink.fr/" alt="Sogelink" title="Sogelink">Sogelink</a></div>
+<div class="cv-description-job">
+    <ul>
+        <li>Gestion de projets de développement interne</li>
+        <ul>
+            <li>Etude des besoins</li>
+            <li>Spécifications fonctionnelles et techniques</li>
+            <li>Conception générale</li>
+            <li>Développement et déploiement</li>
+            <li>Assistance</li>
+        </ul>
+        <li>Coordination et collaboration avec l’équipe de développement</li>
+        <ul>
+            <li>Coordination l’intervention des prestataires</li>
+            <li>Remontée des besoins des projets</li>
+            <li>Encadrement de l’équipe de développement allouée</li>
+        </ul>
+        <li>Veille technologique</li>
+        <ul>
+            <li>Suivi des évolutions technologiques applicables</li>
+            <li>Force de proposition sur les innovations techniques</li>
+        </ul>
+    </ul>
+</div>
 
 
-- Gestion de projets de développement interne
-    - Etude des besoins
-    - Spécifications fonctionnelles et techniques
-    - Conception générale
-    - Développement et déploiement
-    - Assistance
-- Coordination et collaboration avec l’équipe de développement
-    * Coordination l’intervention des prestataires
-    * Remontée des besoins des projets
-    * Encadrement de l’équipe de développement allouée
-- Veille technologique
-    - Suivi des évolutions technologiques applicables
-    - Force de proposition sur les innovations techniques
+<h4 class="cv-titre-job">Coordinateur du centre d’expertise pour Sanofi Pasteur</h4>
+<div class="cv-detail-job">De juillet 2010 à Janvier 2012 - <a href="http://www.sword-group.com/" alt="Sword Group" title="Sword Group">Sword</a></div>
+<div class="cv-description-job">
+    <p>Gestion et pilotage d’un pool de ressources dans la cellule expertise et architecture de Sanofi Pasteur.</p>
+    <ul>
+        <li>Coordination du support niveau 3</li>
+        <li>Support technique de niveau 3</li>
+        <li>Planification des interventions des experts</li>
+        <li>Veille technologique Réalisation de pilotes</li>
+    </ul>
+</div>
 
-### De juillet 2010 à Janvier 2012 : Coordinateur du centre d’expertise pour Sanofi Pasteur chez [Sword](http://www.sword-group.com/)
- 
-Gestion et pilotage d’un pool de ressources dans la cellule expertise et architecture de Sanofi Pasteur.
 
-- Coordination du support niveau 3
-- Support technique de niveau 3 
-- Planification des interventions des experts 
-- Veille technologique Réalisation de pilotes
+<h4 class="cv-titre-job">Chef de projet informatique</h4>
+<div class="cv-detail-job">De janvier 2010 à novembre 2011 - <a href="http://www.sword-group.com" alt="Sword Group" title="Sword Group">Sword</a></div>
+<div class="cv-description-job">
+    <p>Gestion de projets informatiques basés sur le produit logiciel IntelliGIS pour la communauté d’agglomération de Saint-Quentin-En-Yvelines.</p>
+    <ul>
+        <li>Gestion et suivi du projet</li>
+        <li>Modélisation et intégration des données du client avec Talend Open Studio</li>
+        <li>Animation d’ateliers de spécification des besoins</li>
+        <li>Rédaction des spécifications et de la conception</li>
+        <li>Mise en place de la solution IntelliGIS avec le module cartographique configuré</li>
+        <li>Habilitation de l’application basée sur le LDAP du client et les autorisations d’IntelliGIS</li>
+        <li>Réalisation d’un reporting géographique et attributaire avec BIRT</li>
+        <li>Formation des utilisateurs</li>
+        <li>Support des administrateurs</li>
+        <li>Mise en production de l’application</li>
+    </ul>
+</div>
 
-### De janvier 2010 à novembre 2011 : Chef de projet informatique chez [Sword](http://www.sword-group.com)
- 
-Gestion de projets informatiques basés sur le produit logiciel IntelliGIS pour la communauté d’agglomération de Saint-Quentin-En-Yvelines.
-
-- Gestion et suivi du projet
-- Modélisation et intégration des données du client avec Talend Open Studio
-- Animation d’ateliers de spécification des besoins
-- Rédaction des spécifications et de la conception
-- Mise en place de la solution IntelliGIS avec le module cartographique configuré
-- Habilitation de l’application basée sur le LDAP du client et les autorisations d’IntelliGIS
-- Réalisation d’un reporting géographique et attributaire avec BIRT
-- Formation des utilisateurs
-- Support des administrateurs
-- Mise en production de l’application
-
-### De juillet 2009 à juillet 2011 : Ingénieur d’études chez [Sword](http://www.sword-group.com)
- 
-Création d’IntelliGIS, un produit logiciel de R&D permettant
-l’intégration du SI dans un système d’information géographique gr&acirc;ce &agrave;
-un générateur d’applications riches en Flex basées sur les produits
-ArcGIS d’ESRI.
-
--  Conception de la solution technique avec de nombreux frameworks
-    applicatifs (Spring, Hibernate, Flex, Granite DS, ArcGIS Api for
-    Flex…)
--  Recherches non industrialisées sur différents modules :
-    - Reporting (avec BIRT)
-    - Business Intelligence (BI) avec Business Object (BO)
-    - gestion documentaire (GED/ECM) avec le protocole CMIS
--  Mise en place d’une gestion avancée des droits avec authentification
-    déléguée (LDAP, Active Directory…) et autorisations paramétrées
-    finement dans l’outil
--  Documentation de la solution
--  Participation à l’avant-vente
--  Formation des utilisateurs
+<h4 class="cv-titre-job">Ingénieur d’études</h4>
+<div class="cv-detail-job">De juillet 2009 à juillet 2011 - <a href="http://www.sword-group.com" alt="Sword Group" title="Sword Group">Sword</a></div>
+<div class="cv-description-job">
+    <p>Création d’IntelliGIS, un produit logiciel de R&amp;D permettant l’intégration du SI dans un système d’information géographique gr&acirc;ce &agrave; un générateur d’applications riches en Flex basées sur les produits ArcGIS d’ESRI.</p>
+    <ul>
+        <li>Conception de la solution technique avec de nombreux frameworks applicatifs (Spring, Hibernate, Flex, Granite DS, ArcGIS Api for Flex…)</li>
+        <li>Recherches non industrialisées sur différents modules :
+        <li>Reporting (avec BIRT)</li>
+        <li>Business Intelligence (BI) avec Business Object (BO)</li>
+        <li>gestion documentaire (GED/ECM) avec le protocole CMIS</li>
+        <li>Mise en place d’une gestion avancée des droits avec authentification déléguée (LDAP, Active Directory…) et autorisations paramétrées finement dans l’outil</li>
+        <li>Documentation de la solution</li>
+        <li>Participation à l’avant-vente</li>
+        <li>Formation des utilisateurs</li>
+    </ul>
+</div>
 
 
 ### De décembre 08 à juillet 09 : Projet de fin d’étude chez [Atos Worldline](www.atosworldline.com), filiale de [Atos Origin](http://www.atosorigin.com)
