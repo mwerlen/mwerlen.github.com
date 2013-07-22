@@ -195,6 +195,21 @@ Anglais (courant, 895 TOEIC)
 Allemand (notions)  
 Espagnol (notions)  
 
+<h3 id="certifications">Certifications et formations</h3>
+<div class="cv-description-job">
+    <p>En plus de l'auto-formation et des conférences techniques auxquelles je participe régulièrement (
+    <a href="www.mix-it.fr/‎" title="Mix-IT">Mix-IT</a>,
+    <a href="www.devoxx.com/display/FR13/Home" title="Devoxx France">Devoxx France</a> et autres présentations organisées
+     par des partenaires), j'ai eu la chance de recevoir quelques formations ces dernières années. En voici le détail :</p>
+    <ul>
+        <li>Juillet 2013 : Formation <a href="http://geoserver.org/" title="Site officiel de Geoserver">Geoserver</a></li>
+        <li>Juin 2013 : <a href="http://education.10gen.com/downloads/certificates/bba5f084c2d24b7294d4c8b00face8e5/Certificate.pdf" alt="MongoDB for Java Developers Certificate" title="MongoDB for Java Developers Certificate">MongoDB for Java Developers Certificate</a></li>
+        <li>Janvier 2013 : Formation à la sécurité et au hacking d'applications web (<a href="/documents/Certilience_Hacking_Edition_Web_Application.v2.pdf" title="Programme de la formation hacking">programme</a>)</li>
+        <li>Novembre 2011 : Formation interne sur les technologies Tibco (outils de SOA, BPM, CEP et MDM)</li>
+        <li>Automne 2010 : Formation <a href="http://fr.talend.com/" title="Talend">Talend</a> (ETL) sur 2j</li>
+    </ul>
+</div>
+
 <h3 id="divers">Divers</h3>
 <div class="cv-description-job">
     <ul>
