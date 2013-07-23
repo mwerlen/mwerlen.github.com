@@ -1,59 +1,117 @@
 .background-wrapper {
-	text-align: center;
+    text-align: center;
 }
 
-#cv-menu { 
-	margin-top: -5px;
-	background: @main-bg;
-	width: auto;
-	display: inline-block;	
-	
-	ul {
-		background: @green;
-		height: inherit;
+#cv-menu {
+    margin-top: -5px;
+    background: @main-bg;
+    width: auto;
+    display: inline-block;
 
-		li {
-		padding-left: 0;
-		border: 0;
-			a {
-				padding: 5px 15px 5px 15px;
-			}
-			a:hover {
-				background: @greenStrong;
-				color: @white;
-			}
-		}
-	}
+    ul {
+        background: @green;
+        height: inherit;
+
+        li {
+            padding-left: 0;
+            border: 0;
+            a {
+                padding: 5px 15px 5px 15px;
+            }
+            a:hover {
+                background: @greenStrong;
+                color: @white;
+            }
+        }
+    }
 }
 
 .cv-titre {
-	text-align: center;
+    text-align: center;
 }
 
 .cv-titre-job {
-	margin-bottom: 0px;
-	font-size: 1.1em;	
+    margin-bottom: 0px;
+    font-size: 1.1em;
 }
 
 .cv-detail-job {
-	margin-top: 0;
-	padding-top: 0;
-	font-style: italic;
+    margin-top: 0;
+    padding-top: 0;
+    font-style: italic;
 }
 
 .cv-description-job {
-	ul { 
-		margin-left: 1em;
-		padding-left: 0;
-		margin-top: 5px;
-		ul {
-			margin-top: 0;
-			margin-bottom: 0.8em;
-			padding-left: 0;
-			margin-left: 3em;
-		}
-	}
-	p {
-		margin-bottom: 5px;
-	}
+    margin-bottom: 2em;
+
+    p {
+        padding-left: 2em;
+    }
+
+    ul {
+        margin-left: 1em;
+        padding-left: 0;
+        margin-top: 5px;
+        ul {
+            margin-top: 0;
+            margin-bottom: 0.8em;
+            padding-left: 0;
+            margin-left: 3em;
+        }
+    }
+    p {
+        margin-bottom: 5px;
+    }
+}
+
+table.first-table caption {
+    margin: 0 0 0.5em 0 !important;
+}
+
+table.cv-competences {
+    border-collapse: separate;
+    border-spacing: 0 3px;
+    width: 100%;
+
+    caption {
+        font-size: 1em;
+        font-weight: bold;
+        color: #4b4b4b;
+        margin: 1.33em 0 0.5em 0;
+    }
+
+    th {
+        font-weight: normal;
+        text-align: left;
+        padding: 0.6em;
+        width: 20%;
+
+        color: @grey;
+        background-color: @greenStrong;
+
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius: 5px 0 0 5px;
+    }
+    td {
+        padding: 0.6em;
+
+        color: @grey;
+        background-color: @green;
+
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius: 0 5px 5px 0;
+    }
+    td.without-th {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -webkit-border-top-left-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius: 5px 0 0 5px;
+    }
 }
