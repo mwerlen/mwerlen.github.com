@@ -6,3 +6,6 @@ comments: true
 categories : [news]
 tags: []
 ---
+
+
+Remise à jour CV --> difficile de choisir complet/réduit quelle information mettre, jusqu'à quel détail...
