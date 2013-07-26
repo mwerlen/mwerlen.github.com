@@ -126,3 +126,27 @@ dd {
     line-height: 1.6em;
     font-size: 1.125em;
 }
+
+div.pagination {
+    width: 100%;
+
+    padding-top: 3em;
+    padding-bottom: 2em;
+    
+    .previous {
+        display: inline-block;
+        float: left;
+        a {
+            background-color: @green;
+            color: @grey;
+        }
+    }
+    .next {
+        display: inline-block;
+        float: right;
+        a {
+            background-color: @green;
+            color: @grey;
+        }
+    }
+}

@@ -3,8 +3,25 @@ layout: base
 title: Blog
 permalink: index.html
 ---
-{% for post in site.posts limit:10%}
+{% for post in paginator.posts %}
 	{% include postTitle.ext %}
     {{ post.content | strip_html | truncatewords:100}}
     <div class="readmore"><a href="{{ post.url }}">Lire la suite...</i></a></div>
 {% endfor %}
+
+<div id="post-pagination" class="pagination">
+    <span class="previous">
+        {% if paginator.previous_page and paginator.previous_page != '' %}
+            {% if paginator.previous_page == 1 %}
+                <a href="/" class="pure-button"><i class="icon-chevron-sign-left"></i>&nbsp;Articles plus récents</a>
+            {% else %}
+                <a href="/{{ paginator.previous_page_path }}" class="pure-button"><i class="icon-chevron-sign-left"></i>&nbsp;Articles plus récents</a>
+            {% endif %}
+        {% endif %}
+    </span>
+    <span class="next">
+        {% if paginator.next_page %}
+            <a href="/{{ paginator.next_page_path }}"  class="pure-button">Articles plus anciens&nbsp;<i class="icon-chevron-sign-right"></i></a>
+        {% endif %}
+    </span>
+</div>
