@@ -5,7 +5,7 @@
 		<li><a href="/archives.html" class="{% if page.url == '/archives.html'%}pure-menu-selected{% endif %}">Archives</a></li>
 		<li><a href="/tags.html" class="{% if page.url == '/tags.html'%}pure-menu-selected{% endif %}">Tags</a></li>
         <li><a href="/categories.html" class="{% if page.url == '/categories.html'%}pure-menu-selected{% endif %}">Catégories</a></li>
-        <li><a href="/feed.xml">Flux RSS <i class="icon-rss"></i></a></li>
+        <li><a href="/feed.xml" target="_blank">Flux RSS <i class="icon-rss"></i></a></li>
 	</ul>
 	<a href="/mwerlen.html" class="pure-menu-heading">L'auteur</a>
 	<ul>
