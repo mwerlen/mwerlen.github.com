@@ -11,24 +11,26 @@ title : Archives
 	{% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
 
 	{% if forloop.first %}
-		<h2>{{this_month}} {{this_year}}</h2>
-		<ul>
+		<h2 class="archive-year">{{this_year}}</h2>
+        <h3 class="archive-month">{{this_month}}</h3>
+    <ul class="archive-list">
 	{% endif %}
 
-	<li><span>{{ post.date | date: "%d %b %Y " }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+	<li><span>{{ post.date | date: "%d/%m/%Y " }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
 
 	{% if forloop.last %}
 		</ul>
 	{% else %}
 		{% if this_year != next_year %}
 			</ul>
-			<h2>{{next_month}} {{next_year}}</h2>
-			<ul>
+			<h2 class="archive-year">{{next_year}}</h2>
+            <h3 class="archive-month">{{next_month}} </h3>
+			<ul class="archive-list">
 		{% else %}    
 			{% if this_month != next_month %}
 				</ul>
-				<h2>{{next_month}} {{this_year}}</h2>
-				<ul>
+				<h3 class="archive-month">{{next_month}}</h3>
+				<ul  class="archive-list">
 			{% endif %}
 		{% endif %}
 	{% endif %}
