@@ -1,19 +1,19 @@
 <div class="pure-menu pure-menu-open">
 	<a href="/index.html" class="pure-menu-heading">Le Blog</a>
 	<ul>
-		<li><a href="/index.html" class="{% if page.url == '/index.html'%}pure-menu-selected{% endif %}">Dernières news</a></li>
-		<li><a href="/archives.html" class="{% if page.url == '/archives.html'%}pure-menu-selected{% endif %}">Archives</a></li>
-		<li><a href="/tags.html" class="{% if page.url == '/tags.html'%}pure-menu-selected{% endif %}">Tags</a></li>
-        <li><a href="/categories.html" class="{% if page.url == '/categories.html'%}pure-menu-selected{% endif %}">Catégories</a></li>
-        <li><a href="/feed.xml" target="_blank">Flux RSS <i class="icon-rss"></i></a></li>
+		<li><a href="/index.html" title="Le blog" class="{% if page.url == '/index.html'%}pure-menu-selected{% endif %}">Dernières news</a></li>
+		<li><a href="/archives.html" title="Les archives du blog" class="{% if page.url == '/archives.html'%}pure-menu-selected{% endif %}">Archives</a></li>
+		<li><a href="/tags.html" title="Les article du blog classés par tags" class="{% if page.url == '/tags.html'%}pure-menu-selected{% endif %}">Tags</a></li>
+        <li><a href="/categories.html" title="Les article du blog classés par catégorie" class="{% if page.url == '/categories.html'%}pure-menu-selected{% endif %}">Catégories</a></li>
+        <li><a href="/feed.xml" title="Le flux RSS du blog" target="_blank">Flux RSS <i class="icon-rss"></i></a></li>
 	</ul>
 	<a href="/mwerlen.html" class="pure-menu-heading">L'auteur</a>
 	<ul>
-		<li><a href="/mwerlen.html" class="{% if page.url == '/mwerlen.html'%}pure-menu-selected{% endif %}">Présentation</a></li>
-		<li><a href="/cv.html" class="{% if page.url == '/cv.html'%}pure-menu-selected{% endif %}">CV</a></li>
+		<li><a href="/mwerlen.html" title="La présentation de l'auteur du blog" class="{% if page.url == '/mwerlen.html'%}pure-menu-selected{% endif %}">Présentation</a></li>
+		<li><a href="/cv.html" title="Le CV de l'auteur du blog" class="{% if page.url == '/cv.html'%}pure-menu-selected{% endif %}">CV</a></li>
 <!--
 		<li><a href="/projects.html" class="{% if page.url == '/projects.html'%}pure-menu-selected{% endif %}">Projets</a></li>
 -->
-		<li><a href="/contact.html" class="{% if page.url == '/contact.html'%}pure-menu-selected{% endif %}">Contact</a></li>
+		<li><a href="/contact.html" title="Commnent contacter l'auteur" class="{% if page.url == '/contact.html'%}pure-menu-selected{% endif %}">Contact</a></li>
 	</ul>
 </div>
