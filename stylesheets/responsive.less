@@ -1,4 +1,3 @@
-
 /* --------------------------
  * Responsive Styles
  * --------------------------
@@ -6,58 +5,64 @@
 
 @media (max-width: 870px) {
 
-  /* Navigation Push Styles */
-  #layout {
-    position: relative;
-    padding-left: 0;
-  }
-  #layout.active {
-    position: relative;
-    left: 150px;
-  }
-  #layout.active #menu {
-    left: 150px;
-    width: 150px;
-  }
+    /* Navigation Push Styles */
+    #layout {
+        position: relative;
+        padding-left: 0;
+    }
 
-  #menu {
-    left: 0;
-  }
+    #layout.active {
+        position: relative;
+        left: 150px;
+    }
 
-  .pure-menu-link {
-    position: fixed;
-    left: 0;
-    display: block;
-  }
+    #layout.active #menu {
+        left: 150px;
+        width: 150px;
+    }
 
-  #layout.active .pure-menu-link {
-    left: 150px;
-  }
+    #menu {
+        left: 0;
+    }
+
+    .pure-menu-link {
+        position: fixed;
+        left: 0;
+        display: block;
+    }
+
+    #layout.active .pure-menu-link {
+        left: 150px;
+    }
 }
 
 @media (max-width: 767px) {
 
-  .content {
-    width: 95%;
-    /*font-size: 90%;*/
-  }
+    .content {
+        width: 95%;
+        /*font-size: 90%;*/
+    }
 
-  /* normalize paddings on small screens*/
-  .l-hbox {
-    padding: 1.3em;
-  }
+    /* normalize paddings on small screens*/
+    .l-hbox {
+        padding: 1.3em;
+    }
+
+    .cv-entreprise-logo, .cv-projet-logo {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
-  .pure-form-aligned .pure-control-group {
-    label {
-      margin-bottom: .3em;
-      text-align: left;
-      display: inline-block !important;
-      width: 10em !important;
+    .pure-form-aligned .pure-control-group {
+        label {
+            margin-bottom: .3em;
+            text-align: left;
+            display: inline-block !important;
+            width: 10em !important;
+        }
+        input[type=text] {
+            display: inline-block !important;
+        }
     }
-    input[type=text] {
-      display: inline-block !important;
-    }
-  }
 }
