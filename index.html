@@ -15,13 +15,13 @@ permalink: index.html
             {% if paginator.previous_page == 1 %}
                 <a href="/" class="pure-button"><i class="icon-chevron-sign-left"></i>&nbsp;Articles plus récents</a>
             {% else %}
-                <a href="/{{ paginator.previous_page_path }}" class="pure-button"><i class="icon-chevron-sign-left"></i>&nbsp;Articles plus récents</a>
+                <a href="{{ paginator.previous_page_path }}" class="pure-button"><i class="icon-chevron-sign-left"></i>&nbsp;Articles plus récents</a>
             {% endif %}
         {% endif %}
     </span>
     <span class="next">
         {% if paginator.next_page %}
-            <a href="/{{ paginator.next_page_path }}"  class="pure-button">Articles plus anciens&nbsp;<i class="icon-chevron-sign-right"></i></a>
+            <a href="{{ paginator.next_page_path }}"  class="pure-button">Articles plus anciens&nbsp;<i class="icon-chevron-sign-right"></i></a>
         {% endif %}
     </span>
 </div>
