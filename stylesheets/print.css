@@ -184,9 +184,13 @@ blockquote {
   padding: 0 0 0 30px;
 }
 
+ul {
+    padding-left: 10px;
+}
+
 ul li {
   list-style: disc inside;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 ol li {
@@ -227,6 +231,42 @@ footer a {
   width: 100%;
 }
 
+.doNotPrint {
+    display: none!important;
+}
+
 .footer {
   display: none;
+}
+
+.cv-projet-logo {
+    display: none;
+}
+.cv-entreprise-logo {
+    display: none;
+}
+
+
+#cv-menu {
+    display: none;
+}
+
+.cv-titre {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.printHeader {
+    margin-top: 0;
+    padding-top: 0;
+    vertical-align: top;
+}
+
+.printHeader-left {
+    text-align: left;
+    display: inline-block;
+}
+.printHeader-right {
+    float: right;
+    text-align: right;
 }

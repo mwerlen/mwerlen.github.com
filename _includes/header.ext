@@ -1,4 +1,4 @@
-<div class="header pure-u-1">
+<div class="header pure-u-1 {% if page.hideHeaderOnPrint %}doNotPrint{% endif %}">
     <div class="titlecontentblock">
         <div class="titleblock" title="{{ site.name }}">
             <a href="/" title="Retour à la page d'accueil">
