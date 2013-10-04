@@ -1,4 +1,4 @@
 mwerlen.github.com
 ==================
 
-[Page personnelle de Maxime Werlen](//maxime.werlen.fr)
+[Page personnelle de Maxime Werlen](http://maxime.werlen.fr)
