@@ -270,3 +270,7 @@ footer a {
     float: right;
     text-align: right;
 }
+
+.cv-download {
+    display: none;
+}
