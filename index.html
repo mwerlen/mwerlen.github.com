@@ -6,7 +6,7 @@ permalink: index.html
 {% for post in paginator.posts %}
 	{% include postTitle.ext %}
     {{ post.content | strip_html | truncatewords:100}}
-    <div class="readmore"><a href="{{ post.url }}">Lire la suite...</i></a></div>
+    <div class="readmore"><a href="{{ post.url }}">Lire la suite...</a></div>
 {% endfor %}
 
 <div id="post-pagination" class="pagination">

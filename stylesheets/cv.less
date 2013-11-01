@@ -17,10 +17,18 @@
             border: 0;
             a {
                 padding: 5px 15px 5px 15px;
+                color: @greyLight;
             }
             a:hover {
                 background: @greenStrong;
                 color: @white;
+            }
+            a:visited {
+                color: @greyLight;
+            }
+            a.cv-download-link {
+                color : #955;
+                font-weight: bold;
             }
         }
     }
@@ -135,4 +143,8 @@ table.cv-competences {
         color: @grey;
         background-color: @green;
     }
+}
+
+.printHeader {
+    display: none;
 }

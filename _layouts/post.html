@@ -27,3 +27,8 @@ blog: active
         {% endfor %}
     </ul>
 </div>
+
+{% if thePost.comments %}
+    {% include disqus.ext %}
+{% endif %}
+
