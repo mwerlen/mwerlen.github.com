@@ -1,0 +1,83 @@
+---
+layout: post
+title: Backup de mes machines
+comments: true
+categories : [Tech]
+tags: [Linux, Backup, Shell]
+---
+
+Une toute petite note pour partager ici ma méthode de backup de mes machines perso, 
+principalement des Linux basés sur Debian ([Ubuntu Server], [Linux Mint], [Raspbian]).
+Il n'y a rien d'extraordinaire, mais ça permet d'en disctuer.
+
+Différentes utilisations
+------------------------
+
+J'ai différentes façons de procéder à mes sauvegardes :
+
+* Sur mes serveurs, j'utilise des sauvegardes complètes (snapshot) des machines et des copies des principaux fichiers.
+  Le disque système est suffisamment petit (8Go) pour être stocké facilement sans prendre trop de place. Les données sont
+  sauvegardées différemment (rsync entre serveurs).
+* Sur mon PC perso, la taille du disque ne permet pas de faire simplement une copie complète, je me contente donc d'une 
+  copie sélective du disque en excluant les principaux dossiers qui peuvent être reconstruits simplement (repos git, caches,
+  repository maven, cache npm, video, musique...)
+
+Sauvegarde complète, prête à restaurer
+--------------------------------------
+
+Je fais régulièrement des sauvegardes complètes de certaines machines
+(ou plus exactement de certains disques de certaines machines)
+avec la commande [dd], qui permet la copie bit à bit d'une partition à un fichier.
+
+<code class="language-bash">sudo dd if=/dev/sda of=/media/disk/saveMax/server_dd/home_server_sda-20130827.img bs=1024</code>
+
+Cette commande permet une sauvegarde simple et rapide d'un disque complet qui pourra être être restauré très rapidement
+en inversant les paramètres de la commande. 
+
+Copie des fichiers
+------------------
+
+Pour la copie plus régulière des principaux fichiers, 
+j'utilise la commande rsync qui fait de la synchronisation par delta 
+(n'est envoyé sur le réseau que les différences entre la source et la destination).
+J'utilise le système d'exclusion pour enlever les dossier que je peux reconstruire facilement :
+ 
+* Les dossiers de cache (/tmp, bower, npm, système, maven...)
+* Les repository Git/Svn
+* Les dossiers virtuels (/dev, /proc, /run...)
+* Les montages réseaux
+* Ma Dropbox
+* Mes VM (archivées en ova séparemment)
+
+Je package toute cette commande dans un petit script qui vérifie que le montage réseau utilisé est bien monté et horodate la sauvegarde.
+
+<pre><code class="language-bash">
+    #!/bin/bash
+    DIRECTORY=<Backup Directory>
+    
+    if [ ! -d "$DIRECTORY" ]; then
+        echo "Backup folder ($DIRECTORY) is not accessible"
+        exit 1
+    else
+        START=$(date +%s)
+        rsync -aAXv /* $DIRECTORY/ --exclude /dev/ --exclude /proc/ --exclude /sys/ --exclude /tmp/ --exclude /run/ --exclude /mnt/ --exclude /media/ --exclude lost+found  --exclude /home/mwerlen/Music --exclude /home/mwerlen/Videos --exclude /home/mwerlen/projects --exclude /home/mwerlen/Dropbox --exclude /home/mwerlen/VirtualBox\ VMs/ --exclude /home/mwerlen/.cache --exclude /home/mwerlen/.npm --exclude /home/mwerlen/.m2/repository/
+        FINISH=$(date +%s)
+        echo "Backup total time: $(( ($FINISH-$START) / 60 )) minutes, $(( ($FINISH-$START) % 60 )) seconds"
+        rm $DIRECTORY/XX-Backup*
+        touch $DIRECTORY/"XX-Backup from $(date '+%A, %d %B %Y, %T')"
+    fi
+</code></pre>
+
+Conclusion
+----------
+
+Avec ces deux commandes, j'effectue mes sauvegardes régulières (avant les montées de version de l'OS ou des softs principaux).
+Je n'ai pas encore eu à tester leur efficacité (je croise les doigts) 
+mais j'espère que mes sauvegardes me seront utiles le jour ou je devrais reconstruire l'une des machines.
+La prochaine étape sera peut-être de packager correctement tous mes petits scripts perso (en dpkg)
+et de scripter complètement l'installation de ces machines avec Puppet
+
+[Ubuntu Server]: http://www.ubuntu.com/download/server "Ubuntu server edition"
+[Linux Mint]: http://www.linuxmint.com/ "Ubuntu based distro"
+[Raspbian]: http://www.raspbian.org/ "Debian for Raspberry Pi"
+[dd]: http://manpages.ubuntu.com/manpages/precise/en/man1/dd.1.html "Page Man de DD"
