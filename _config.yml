@@ -9,7 +9,7 @@ source:      .
 exclude:     [node_modules]
 destination: ./_site
 plugins:     ./_plugins
-
+encoding:    UTF-8
 
 future:      true
 lsi:         false
