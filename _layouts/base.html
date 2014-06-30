@@ -2,25 +2,27 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+        <title>{{ site.name }} - {{ page.title }}</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css">
-
         <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print"/>
         <link rel="stylesheet" type="text/css" href="/stylesheets/prism.css">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
 
-        <script src="http://yui.yahooapis.com/3.10.3/build/yui/yui-min.js"></script>
-
         <!--[if lt IE 9]>
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
+        <script src="http://yui.yahooapis.com/3.10.3/build/yui/yui-min.js"></script>
+
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
         <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 
-        <title>{{ site.name }} - {{ page.title }}</title>
+        {% include analytics.ext %}
     </head>
 
     <body>
@@ -55,5 +57,4 @@
     </body>
     <script type="text/javascript" src="/javascripts/main.js"></script>
     <script type="text/javascript" src="/javascripts/prism.js"></script>
-    {% include analytics.ext %}
 </html>
