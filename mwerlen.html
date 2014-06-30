@@ -3,20 +3,26 @@ layout: base
 title: Pr&eacute;sentation
 permalink: mwerlen.html
 ---
-<h1>Présentation</h1>
+<div itemscope itemtype="http://schema.org/Person">
+    <h1 itemprop="name">Maxime Werlen</h1>
 
-<img border="0" src="http://www.gravatar.com/avatar/798bd095469753c11bb61a782669de97.png?s=160" alt="Maxime Werlen"
-     width="160" class="presentation-image">
+    <img border="0" src="http://www.gravatar.com/avatar/798bd095469753c11bb61a782669de97.png?s=160" alt="Maxime Werlen"
+         width="160" class="presentation-image" itemtype="image">
 
-<p>Je suis ingénieur, diplômé de l'Insa de Lyon, spécialisé dans les technologies web et plus particulièrement en Java,
-    HTML5 et SIG. Mes principaux moteurs sont la passion pour un projet, le travail en équipe et l'innovation.
-    J'aime découvrir de nouvelles technologies, tester et expérimenter dans de nouveaux domaines.</p>
-<p>Mon travail est actuellement orienté sur la gestion fonctionnelle et technique de projets ainsi que la veille
-    technologique. J'anime une cellule architecture répondant aux défis technologiques actuels et futurs rencontrés par
-    les équipes de développement.</p>
-<p>Si vous souhaitez obtenir plus d'information sur mes activités reportez-vous à mon
-    <a href="/cv.html" title="CV de Maxime Werlen">CV en ligne</a>. Si mon profil vous intéresse,
-    n'hésitez pas à <a href="/contact.html" title="Contact Maxime Werlen">me contacter</a>.</p>
-
+    <div itemtype="description">
+        <p>Je suis <span itemprop="title">ingénieur</span>,
+            diplômé de <span itemprop="alumniOf" itemscope itemtype="http://schema.org/EducationalOrganization">
+                <span itemtype="name">l'Insa de Lyon</span></span>, spécialisé dans les technologies web et plus particulièrement en Java,
+            HTML5 et SIG. Mes principaux moteurs sont la passion pour un projet, le travail en équipe et l'innovation.
+            J'aime découvrir de nouvelles technologies, tester et expérimenter dans de nouveaux domaines.</p>
+        <p>Mon travail est actuellement orienté sur la gestion fonctionnelle et technique de projets ainsi que la veille
+            technologique. J'anime une cellule architecture répondant aux défis technologiques actuels et futurs rencontrés par
+            les équipes de développement.</p>
+        <p>Si vous souhaitez obtenir plus d'information sur mes activités reportez-vous à mon
+            <a href="/cv.html" itemprop="url" title="CV de Maxime Werlen">CV en ligne</a>. Si mon profil vous intéresse,
+            n'hésitez pas à <span itemprop="contactPoint" itemscope
+                                  itemtype="http://schema.org/ContactPoint"><a href="/contact.html" itemprop="email" title="Contact Maxime Werlen">me contacter</a></span>.</p>
+    </div>
+</div>
 {% include profils.ext %}
 
