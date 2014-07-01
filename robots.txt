@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /CNAME
+Disallow: /package.json
+Disallow: /params.json
+Disallow: /README.md
