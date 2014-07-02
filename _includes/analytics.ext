@@ -23,23 +23,29 @@
         return expires;
     }
 
+    // Création de la banniere
+    function createBanner(text){
+        var div = document.getElementById('cookie-banner');
+        if (div == null) {
+            var bodytag = document.getElementById('main');
+            div = document.createElement('div');
+            div.setAttribute('id','cookie-banner');
+            div.setAttribute('width','70%');
+        }
+        div.innerHTML =  '<div class="cookie-banner-content">' + text + '</div>'
+        bodytag.insertBefore(div,bodytag.firstChild); // Ajoute la bannière juste au début de la page
+    }
+
     // Cette fonction est appelée pour afficher la demande de consentement
     function askConsent(){
-        var bodytag = document.getElementById('main');
-        var div = document.createElement('div');
-        div.setAttribute('id','cookie-banner');
-        div.setAttribute('width','70%');
         // Le code HTML de la demande de consentement
         // Vous pouvez modifier le contenu ainsi que le style
-        div.innerHTML =  '<div class="cookie-banner-content">Ce site utilise Google Analytics pour réaliser des mesures d\'audiences. \
+        createBanner('Ce site utilise Google Analytics pour réaliser des mesures d\'audiences. \
     En continuant à naviguer, vous nous autorisez à déposer des cookies à des fins de mesure d\'audience.<br/>\
     <a href="/mentionslegales.html">En savoir plus</a> -  \
     <a href="javascript:gaOptout()">S\'opposer à ce dépôt</a> - \
-    <a href="javascript:closeBanner()">Fermer</a>.</div>';
-        bodytag.insertBefore(div,bodytag.firstChild); // Ajoute la bannière juste au début de la page
-        //document.getElementsByTagName('body')[0].className+=' cookiebanner';
+    <a href="javascript:closeBanner()">Fermer</a>');
     }
-
 
     // Retourne la chaine de caractère correspondant à nom=valeur
     function getCookie(NomDuCookie)  {
@@ -77,7 +83,7 @@
         var div = document.getElementById('cookie-banner');
         // Ci dessous le code de la bannière affichée une fois que l'utilisateur s'est opposé au dépôt
         // Vous pouvez modifier le contenu et le style
-        if ( div!= null ) div.innerHTML = '<div class="cookie-banner-content"> Vous vous êtes opposé au dépôt de cookies de mesures d\'audience dans votre navigateur.</div>'
+        createBanner('Vous vous êtes opposé au dépôt de cookies de mesures d\'audience dans votre navigateur -  <a href="javascript:closeBanner()">Fermer</a>');
         window[disableStr] = true;
         deleteAnalyticsCookies();
     }
