@@ -5,21 +5,21 @@
 {% endif %}
 
 <div id="postTitle">
-	<h1><a href="{{thePost.url}}" alt="{{thePost.title}}">{{thePost.title}}</a></h1>
+	<h1><a href="{{thePost.url}}" alt="{{thePost.title}}" itemprop="name">{{thePost.title}}</a></h1>
 	<span class="metadata">
-        <i class="icon-user"></i> <a href="/mwerlen.html" alt="Maxime Werlen" rel="author">Maxime Werlen</a>
-        &nbsp; <i class="icon-time"></i> {{ thePost.date | date:'%d/%m/%Y' }}
+        <i class="icon-user"></i> <a href="/mwerlen.html" alt="Maxime Werlen" rel="author" itemprop="author">Maxime Werlen</a>
+        &nbsp; <i class="icon-time"></i> <span itemprop="datePublished">{{ thePost.date | date:'%d/%m/%Y' }}</span>
         {% if thePost.tags.size > 0 %}
-            &nbsp; <i class="icon-tags"></i>
+            &nbsp; <i class="icon-tags"></i><span itemprop="keywords">
             {% for tag in thePost.tags %}
                 <a href="/tags.html#{{tag}}-ref" alt="{{tag}}" rel="tag">{{tag}}</a>{% if tag != thePost.tags.last %},{% endif %}
-            {% endfor %}
+            {% endfor %}</span>
         {% endif %}
         {% if thePost.categories.size > 0 %}
-            &nbsp; <i class="icon-folder-open"></i>
+            &nbsp; <i class="icon-folder-open"></i><span itemprop="articleSection">
             {% for categorie in thePost.categories %}
                 <a href="/categories.html#{{categorie}}-ref" alt="{{categorie}}" rel="tag">{{categorie}}</a>{% if tag != categorie.categories.last %},{% endif %}
-            {% endfor %}
+            {% endfor %}</span>
         {% endif %}
     </span>
 </div>

@@ -4,8 +4,12 @@ title: Blog
 permalink: index.html
 ---
 {% for post in paginator.posts %}
+    <div itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 	{% include postTitle.ext %}
-    {{ post.content | strip_html | truncatewords:100}}
+     <div itemprop="articleBody">
+        {{ post.content | strip_html | truncatewords:100}}
+     </div>
+    </div>
     <div class="readmore"><a href="{{ post.url }}">Lire la suite...</a></div>
 {% endfor %}
 

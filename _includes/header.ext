@@ -2,8 +2,8 @@
     <div class="titlecontentblock">
         <div class="titleblock" title="{{ site.name }}">
             <a href="/" title="Retour à la page d'accueil">
-                <div id="itsignal">IT<span class="titledash">-</span>Signal</div>
-                <div id="subtitle">{{ site.description }}</div>
+                <div itemprop="name"><div id="itsignal">IT<span class="titledash">-</span>Signal</div></div>
+                <div id="subtitle" itemprop="about">{{ site.description }}</div>
             </a>
         </div>
     </div>

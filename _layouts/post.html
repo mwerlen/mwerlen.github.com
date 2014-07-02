@@ -10,13 +10,15 @@ blog: active
 {% endif %}
 
 
-<div id="main-content">
+<div id="main-content" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     {% include postTitle.ext %}
     {% if thePost.categories contains 'archives' %}
         <div class="ribbon-wrapper-green"><div class="ribbon-green">ARCHIVE</div></div>
         <div class="note">Ceci est une archive de mon ancien blog <a href="http://mwerlen.blogspot.com/{{ thePost.date | date: '%Y/%m' }}/{{ thePost.originalName }}" title="Defense de me faire travailler">Defense de me faire travailler</a>.</div>
     {% endif %}
+    <div itemprop="articleBody">
     {{ content }}
+    </div>
 </div>
 
 <div id="related">
