@@ -6,6 +6,8 @@ contact: active
 ---
 
 <div itemscope itemtype="http://schema.org/Person">
+<meta itemprop="name" content="Maxime Werlen">
+<meta itemprop="birthDate" content="1986-05-04">
     <h1>Contact</h1>
 
     <div class="pure-g-r">
@@ -16,25 +18,29 @@ contact: active
                     <legend class="contact-legend">Identité</legend>
                     <div class="pure-control-group">
                         <label for="prenom">Prénom</label>
-                        <input id="prenom" type="text" value="Maxime" disabled class="contact-form" itemprop="givenName">
+                        <input id="prenom" type="text" value="Maxime" disabled class="contact-form">
+                        <meta itemprop="givenName" content="Maxime">
                     </div>
 
                     <div class="pure-control-group">
                         <label for="nom">Nom</label>
                         <input id="nom" type="text" value="Werlen" disabled class="contact-form" itemprop="familyName">
+                        <meta itemprop="familyName" content="Werlen">
                     </div>
 
                     <div class="pure-control-group">
                         <label for="mail">Mail</label>
                         <a href="mailto:maxime@werlen.fr">
                             <input id="mail" type="text" value="maxime@werlen.fr" disabled
-                                   class="contact-form contact-form-mail" itemprop="email">
+                                   class="contact-form contact-form-mail">
+                            <meta itemprop="email" content="maxime@werlen.fr">
                         </a>
                     </div>
 
                     <div class="pure-control-group">
                         <label for="telephone">Téléphone</label>
-                        <input id="telephone" type="text" value="06.74.74.53.65" disabled class="contact-form" itemprop="telephone">
+                        <input id="telephone" type="text" value="06.74.74.53.65" disabled class="contact-form">
+                        <meta itemprop="telephone" content="+33674745365">
                     </div>
                 </fieldset>
 
@@ -42,7 +48,8 @@ contact: active
                     <legend class="contact-legend">Adresse</legend>
                     <div class="pure-control-group">
                         <label for="adresse">Adresse postale</label>
-                        <input id="adresse" type="text" value="3 rue Mozart" disabled class="contact-form" itemprop="streetAddress">
+                        <input id="adresse" type="text" value="3 rue Mozart" disabled class="contact-form">
+                        <meta itemprop="streetAddress" content="3 rue Mozart">
                     </div>
                     <!--
                     <div class="pure-control-group">
