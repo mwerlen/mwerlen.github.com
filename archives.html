@@ -16,7 +16,14 @@ title : Archives
     <ul class="archive-list">
 	{% endif %}
 
-	<li><span>{{ post.date | date: "%d/%m/%Y " }}</span> - <a href="{{ post.url }}">{{ post.title }}</a></li>
+	<li itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+        <meta itemprop="author" content="Maxime Werlen">
+        <span itemprop="datePublished">{{ post.date | date: "%d/%m/%Y " }}</span>
+        -
+        <a href="{{ post.url }}" itemprop="url">
+            <span itemprop="name">{{ post.title }}</span>
+        </a>
+    </li>
 
 	{% if forloop.last %}
 		</ul>
@@ -26,7 +33,7 @@ title : Archives
 			<h2 class="archive-year">{{next_year}}</h2>
             <h3 class="archive-month">{{next_month}} </h3>
 			<ul class="archive-list">
-		{% else %}    
+		{% else %}
 			{% if this_month != next_month %}
 				</ul>
 				<h3 class="archive-month">{{next_month}}</h3>
