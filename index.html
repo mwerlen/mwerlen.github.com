@@ -3,7 +3,24 @@ layout: base
 title: Blog
 permalink: index.html
 ---
-{% for post in paginator.posts %}
+
+
+{% assign post = site.posts.first %}
+<div itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+{% include postTitle.ext %}
+ <div itemprop="articleBody">
+    {{ post.content }}
+ </div>
+</div>
+
+
+<div id="post-pagination" class="pagination">
+    <span class="previous">
+        <a href="/archives.html" class="pure-button"><i class="icon-chevron-sign-left"></i>&nbsp;Voir les archives</a>     
+    </span>    
+</div>
+
+<!-- {% for post in paginator.posts %}
     <div itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 	{% include postTitle.ext %}
      <div itemprop="articleBody">
@@ -28,4 +45,4 @@ permalink: index.html
             <a href="/{{ paginator.next_page_path }}"  class="pure-button">Articles plus anciens&nbsp;<i class="icon-chevron-sign-right"></i></a>
         {% endif %}
     </span>
-</div>
+</div> -->
