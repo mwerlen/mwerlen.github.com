@@ -1,7 +1,7 @@
 <div class="pure-menu pure-menu-open">
 	<a href="/index.html" class="pure-menu-heading">Le Blog</a>
 	<ul>
-		<li><a href="/index.html" title="Le blog" class="{% if page.url == '/index.html'%}pure-menu-selected{% endif %}">Dernières news</a></li>
+		<li><a href="/index.html" title="Le blog" class="{% if page.url == '/index.html'%}pure-menu-selected{% endif %}">Dernier article</a></li>
 		<li><a href="/archives.html" title="Les archives du blog" class="{% if page.url == '/archives.html'%}pure-menu-selected{% endif %}">Archives</a></li>
 		<li><a href="/tags.html" title="Les article du blog classés par tags" class="{% if page.url == '/tags.html'%}pure-menu-selected{% endif %}">Tags</a></li>
         <li><a href="/categories.html" title="Les article du blog classés par catégorie" class="{% if page.url == '/categories.html'%}pure-menu-selected{% endif %}">Catégories</a></li>
