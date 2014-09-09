@@ -1,36 +1,96 @@
-/* ----------------------------
- * Presentation Page
- * ----------------------------
-*/
-.presentation-image {
-    display: block;
-    float: right;
-    margin: 0 0 10px 10px;
-    border: 1px ridge @grey;
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Comfortaa);
+
+/* ------------------------------------------------------------------------------
+ * LESS VARIABLES
+ * --------------------------------------------------------------------------- */
+
+@green: hsla(80, 90%, 40%, 0.5);
+@greenStrong : hsla(80, 90%, 40%, 0.7);
+
+@white : #fafafa;
+@black: #222;
+
+@main-bg: @white;
+@inversed-bg: @black;
+
+/* ------------------------------------------------------------------------------
+ * GLOBAL
+ * --------------------------------------------------------------------------- */
+body {
+    font-family: 'Comfortaa';
+    background-color: @main-bg;
+    color: @black;
 }
 
-.profils {
-    color: @grey;
-    background: @green;
-    padding: 0 0 5px 0;
-    font-size: 95%;
+h1, h2, h3 {
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: normal;
 }
 
-.profils h3 {
-    font-size: 1.2em;
-    background: @greenStrong;
-    padding: 5px;
-    margin: 0
+.small {
+    font-size: 80%;
 }
 
-.profils .profils-sites {
-    color: @grey;
-    font-size: 100%;
-    margin-top: 0.5em;
-    margin-bottom: 0;
-    padding-left: 0;
+.title {
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: normal;
+    font-variant: small-caps;
+    font-size: 600%;
+    color: black; //true black
 }
 
-.profils .profils-sites li{
-    list-style: none;
+.author {
+    margin-top: 3em;
+}
+
+.nolink a {
+    color: @black;
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------------------
+ * SLIDES NORMALES
+ * --------------------------------------------------------------------------- */
+
+.normal {
+    &:extend(body);
+}
+
+/* ------------------------------------------------------------------------------
+ * SLIDES INVERSES
+ * --------------------------------------------------------------------------- */
+
+.inverse {
+    background: @inversed-bg;
+    color: @white;
+}
+
+.inverse h1, .inverse h2 {
+    line-height: 0.8em;
+}
+
+/* Slide-specific styling */
+#slide-inverse .footnote {
+    bottom: 12px;
+    left: 20px;
+}
+
+/* ------------------------------------------------------------------------------
+ * QUOTES
+ * --------------------------------------------------------------------------- */
+
+blockquote {
+    border-left: 5px solid @black;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    text-align: left;
+}
+.inverse blockquote{
+        border-left: 5px solid @white;
+}
+
+blockquote p {
+    display: inline;
 }
