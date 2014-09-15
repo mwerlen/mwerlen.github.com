@@ -45,3 +45,6 @@ kramdown:
 name: It-Signal
 description: A agile developer's blog
 url: http://maxime.werlen.fr
+author:
+  name: Maxime Werlen
+  email: maxime@werlen.fr
