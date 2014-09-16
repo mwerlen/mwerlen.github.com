@@ -181,10 +181,7 @@ body {
 #main-content img {
   max-width: 100%;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin: 5px auto;
 }
 .cookie-banner-content {
   background-color: rgba(133, 194, 10, 0.5);
