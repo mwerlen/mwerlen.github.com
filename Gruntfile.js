@@ -42,7 +42,7 @@ module.exports = function (grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    '_site/**'
+                    '_site/index.html'
                 ]
             }
         },
@@ -76,15 +76,35 @@ module.exports = function (grunt) {
                 }
             }
         },
+        concurrent: {
+            watch: ['jekyll:watch','watch:less','watch:livereload'],
+            options: {
+                logConcurrentOutput: true
+            }
+        },
         jekyll: {
             options: {
-                bundleExec: false,
+                bundleExec: true,
                 config: '_config.yml',
-                src: '.'
+                src: '.',
+                dest: './_site',
+                drafts: true,
+                safe: true,
+                layout: './_layouts'
             },
             compile: {
                 options: {
-                    dest: './_site'
+                    watch: false,
+                    serve: false,
+                    drafts: true,
+                    limit_posts: 10
+                }
+            },
+            watch: {
+                options: {
+                    watch: true,
+                    serve: false,
+                    drafts: true
                 }
             },
             check: {
@@ -128,7 +148,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'less:compile',
             'connect:livereload',
-            'watch'
+            'concurrent:watch'
         ]);
     });
 

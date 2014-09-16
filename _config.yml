@@ -2,9 +2,6 @@ safe:        false
 port:        4000
 baseurl:     /
 
-paginate:    10
-paginate_path: page_:num
-
 source:      .
 exclude:     [node_modules]
 destination: ./_site
