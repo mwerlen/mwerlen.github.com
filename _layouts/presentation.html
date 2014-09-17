@@ -50,6 +50,9 @@ name: license
 
         <script type="text/javascript">
             var slideshow = remark.create();
+            {% if page.presenter == true %}
+                slideshow.togglePresenterMode();
+            {% endif %}
         </script>
     </body>
 </html>
