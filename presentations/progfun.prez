@@ -1,0 +1,486 @@
+---
+layout: presentation
+title: Programmation fonctionnelle
+presenter: true
+permalink: progfun.html
+---
+        
+
+---
+layout: true
+class: center, middle, inverse
+
+---
+# Un peu d'histoire
+
+???
+#Programmation fonctionnelle
+
+* Savoir qu'il existe plusieurs paradigmes de programmation
+* Savoir les différentier
+* Savoir reconnaitre et utiliser les principaux pattern de la programmation fonctionnelle
+* Passer un moment sympa et manger des pizza
+
+# Un ordinateur c'est quoi ?
+
+---
+layout: true
+class: center, top, normal
+
+---
+# Architecture de Von Neumann
+
+!["Schéma de l'architecture de Von Neumann"](http://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Von_Neumann_architecture_fr.svg/420px-Von_Neumann_architecture_fr.svg.png)
+
+???
+## 1945 - Architecture Von Neumann
+
+Ordinateur = machine à calculer
+* faire des opérations (Unité arithmétique)
+* traiter des données (IO)
+* Enchainer les opérations (unité de contrôle)
+
+→ Ca exécute une suite d'instructions : le programme
+
+
+
+
+
+
+
+
+---
+layout: true
+class: center, middle, inverse
+
+---
+
+# C'est quoi un programme ?
+
+
+
+
+
+
+
+
+---
+layout: true
+class: left, top, normal
+---
+## 1940 - Assembleur
+
+```no-highlight
+section .data                                 ; Variables initialisées
+        Buffer:           db 'Bonjour', 10    ; En ascii, 10 = '\n'.
+        BufferSize:     equ $-Buffer          ; Taille de la chaine
+
+section .text                                 ; Le code source
+        global _start                         ; Entrée du programme
+
+_start:                                       ; Entrée du programme
+
+        mov eax, 4                            ; Appel de sys_write
+        mov ebx, 1                            ; Sortie standard STDOUT
+        mov ecx, Buffer                       ; Chaine à afficher
+        mov edx, BufferSize                   ; Taille de la chaine
+        int 80h                               ; Interruption du kernel
+
+        mov eax, 1                            ; Appel de sys_exit
+        mov ebx, 0                            ; Code de retour
+        int 80h                               ; Interruption du kernel
+
+
+```
+
+
+→ Exécution séquentielles d'opérations de déplacement et de calcul
+
+???
+## 1940 - Assembleur
+
+* Déplacement d'octets en mémoire
+* Calcul mathématique
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## 1950 - Fortran
+
+```no-highlight
+ C     FORTRAN IV WAS ONE OF THE FIRST PROGRAMMING
+ C     LANGUAGES TO SUPPORT SOURCE COMMENTS
+ C     6 IS THE LINE PRINTER NUMBER
+ C     7 REFERS TO THE WRITE STATEMENT
+*       WRITE (6,7)
+*     7 FORMAT(13H HELLO, WORLD)
+       STOP
+       END
+```
+
+→  Apparition d'opérations de plus haut niveau, compilé en assembleur
+
+???
+## 1950 - Fortran
+
+* Impression d'une phrases sur une sortie standard
+* Plus vraiment des mathématique
+* Encapsulation d'un comportement
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## 1958 - Algol
+
+```no-highlight
+BEGIN
+  FILE F(KIND=REMOTE);
+*  EBCDIC ARRAY E[0:11];
+  REPLACE E BY "HELLO WORLD!";
+  WRITE(F, *, E);
+END.
+```
+
+→  Utilisation de données typées
+
+???
+## 1958 - Algol
+*  Utilisation de données typées
+*  Abstraction complète de la mémoire
+*  Moins de lien avec les mathématiques
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Fin des années 60
+
+### Langages structurés autours de nouveaux paradigmes
+  - Les langages procéduraux (Pascal, C...)
+  - Les langages orientés objet (Simula/SmallTalk)
+  - Les langages logiques (Prolog)
+  - Les langages fonctionnels (ML, Caml, F#)
+
+???
+## Langage structuré :
+* Eloignement des mathématiques (calcul des x décimales de PI, balistique...)
+* gestion moins physique des informations
+
+* Les GOTO disparaissent (déplacement du pointeur d'instruction)
+* Les fonctions prennent de l'importance
+
+
+
+
+
+
+
+
+
+
+
+
+---
+layout: true
+class: center, middle, inverse
+
+---
+# Comparons ces paradigmes
+
+???
+
+# L'histoire
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+layout: false
+## Langage procédural : Pascal (1970)
+
+```no-highlight
+program HelloWorld(output);
+begin
+writeln ('Hello World');
+readln;
+end.
+```
+
+→ Suppression des GOTO<br/>
+→ Suite d'instructions organisées en procédures
+
+???
+
+## Langage procédural : Pascal (1970)
+
+→ L'objectif du programme est d'effectuer une suite d'instruction pour produire des effets
+
+
+→ Suppression des GOTO<br/>
+→ Suite d'instructions organisées en procédures
+
+* Possiiblité de faire des boucles...
+* On ne gère pas la mémoire directement (emplacements...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Langage orienté objet : Simula (1967)
+
+```no-highlight
+*Class Rectangle (Width, Height); Real Width, Height;
+*                                ! Class with two parameters;
+ Begin
+    Real Area, Perimeter;       ! Attributes;
+
+    Procedure Update;           ! Methods (Can be Virtual);
+    Begin
+      Area := Width * Height;
+      Perimeter := 2*(Width + Height)
+    End of Update;
+
+    Boolean Procedure IsSquare;
+      IsSquare := Width=Height;
+
+    Update;                     ! Life of rectangle started at creation;
+    OutText("Rectangle created: "); OutFix(Width,2,6);
+    OutFix(Height,2,6); OutImage
+ End of Rectangle;
+```
+
+→ Apparition des objets (classes...)<br/>
+→ Les objets proposent des méthodes à appliquer à l'objet
+
+
+???
+## Langage orienté objet : Simula (1967)
+
+* La papy de Java (1995)
+
+→ Objectif : décrire un ensemble d'objet décrivant un modèle et effectuer des opérations pour modifier l'état du modèle (qui représente le modèle).
+
+Par exemple dans DICT.fr, on créé un objet document lorsque l'utilisateur envoie un doc, on lui rattache une objet envoi et on modifie les propriété lorsque les status changent.
+
+* Des objets encapsulent les données qui sont organisées dans des structures complexes
+* On appliques des méthodes sur l'objet (différent de on calcule quelque chose avec un objet en entrée)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+## Langage logique : Prolog (1972)
+
+```no-highlight
+mother_child(trude, sally).
+
+father_child(tom, sally).
+father_child(tom, erica).
+father_child(mike, tom).
+
+sibling(X, Y)      :- parent_child(Z, X), parent_child(Z, Y).
+
+parent_child(X, Y) :- father_child(X, Y).
+parent_child(X, Y) :- mother_child(X, Y).
+```
+```no-highlight
+*?- sibling(sally, erica).
+*Yes
+```
+
+→ Programmation complètement déclarative<br/>
+→ Enonciation des faits et les règles : les relations entre les objets<br/>
+→ Moteur d'interrogation des données
+
+- Utilisé principalement en intelligence artificielle
+
+
+???
+## Langage logique : Prolog (1972)
+
+→ Programmation complètement déclarative (pas d'instructions)<br/>
+→ Enonciation des faits et les règles : les relations entre les objets<br/>
+→ Moteur d'interrogation des données
+
+- Utilisé principalement en intelligence artificielle
+- Un ovni
+
+
+
+
+
+
+
+
+
+
+---
+## Langage fonctionnel : ML (1973)
+
+```
+fun fact n = let
+  fun fac 0 = 1
+    | fac n = n * fac (n - 1)
+  in
+    if (n < 0) then raise Fail "negative argument"
+    else fac n
+  end
+```
+
+→ Langage déclaratif<br/>
+→ Pas d'assignation de variables<br/>
+→ Récursivité<br/>
+→ Fonctions d'ordres supérieur<br/>
+
+- Utilisé principalement pour de la recherche théorique
+
+
+
+
+
+
+
+???
+## Langage fonctionnel : ML (1973)
+
+ML = MetaLanguage
+
+* Pas de données mutables (pas d'assignations)
+* On définit les données plutôt que de spécifier la suite d'insctruction nécessaire à son calcul
+* Pas (peu) de boucles, mais de la récursivité (une boucle c'est un compteur mutable)
+* Apparition des functions d'odres supérieures, les fonctions de fonctions.
+
+
+Jusqu'à récemment utilisé principalement pour de la recherche théorique mais ça peut avoir d'autres usages.
+Maintenant que Java adopte des patterns fonctionels, ça vaut le coup de regarder de plus près.
+
+Pour info, Java est un language objet qui commence à adopter des patterns fonctionnels
+et Scala est un language hybride à la fois fonctionnel et objet.
+
+
+
+
+
+
+
+---
+layout: true
+class: center, middle, inverse
+---
+name: comparaison
+
+#Programmer avec des fonctions ?
+---
+
+
+
+
+---
+layout: true
+class: center, middle, inverse
+---
+name: functions
+
+#Programmer avec des fonctions ?
+---
+
+#C'est quoi une fonction ?
+---
+
+#Fonction
+
+> Relation qui, à chaque élément de son ensemble de départ, associe au plus une image.
+
+--
+
+# x &#8594; f(x)
+
+---
+
+# x &#8594; f(x)
+
+### Pas d'état, pas d'effet de bord
+
+---
+layout: true
+class: center, middle, normal
+
+---
+#Merci de votre attention
+
+---
+layout: false
+class: left, middle, normal
+
+# Sources
+- ["Programmation Fonctionnelle en HOPE"](http://www.labri.fr/perso/billaud/travaux/hope.pdf) par Michel Billaud
+- ["The Guerilla Guide to Functional Programming"](https://docs.google.com/file/d/0B6Pvyu_QqshwYmU1OTg0OGEtMTMwMC00YmQ3LWIxY2MtYzdiMDNiM2QzNjZh/edit?hl=en) par Runar Oli Bjarnason
+- ["Functional Programming is the new black"](https://speakerdeck.com/elise_huard/functional-programming-is-the-new-black)  par Elise Huard
+- [La page wikipedia sur la programmtion fonctionnelle](http://fr.wikipedia.org/wiki/Programmation_fonctionnelle)
