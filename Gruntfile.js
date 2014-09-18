@@ -1,11 +1,5 @@
 'use strict';
 
-// Directory reference:
-//   css: stylesheets
-//   javascript: javascripts
-//   images: images
-//   fonts: fonts
-
 module.exports = function (grunt) {
     // Show elapsed time after tasks run
     require('time-grunt')(grunt);
@@ -107,6 +101,13 @@ module.exports = function (grunt) {
                     drafts: true
                 }
             },
+			build: {
+				options: {
+					watch: false,
+					serve: true,
+					drafts: false
+				}
+			},
             check: {
                 options: {
                     doctor: true
@@ -161,9 +162,14 @@ module.exports = function (grunt) {
         'jekyll:check',
         'less:compile',
         'jshint:all',
-        'csslint',
-        'lesslint'
+        'lesslint',
+        'csslint'
     ]);
+
+	grunt.registerTask('build', [
+		'check',
+		'jekyll:build'
+	]);
 
     grunt.registerTask('default', ['serve']);
 };
