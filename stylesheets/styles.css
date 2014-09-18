@@ -202,7 +202,7 @@ dl {
   margin-bottom: 20px;
 }
 ul ul {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 ul li {
   list-style: disc inside;
@@ -290,7 +290,6 @@ div.pagination {
 }
 div.pagination .previous {
   display: inline-block;
-  float: left;
 }
 div.pagination .previous a {
   background-color: rgba(133, 194, 10, 0.5);
@@ -298,7 +297,6 @@ div.pagination .previous a {
 }
 div.pagination .next {
   display: inline-block;
-  float: right;
 }
 div.pagination .next a {
   background-color: rgba(133, 194, 10, 0.5);
@@ -380,7 +378,7 @@ legend.contact-legend {
   margin-left: -2em;
 }
 h3.blogpostpreview {
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
 }
 #postTitle {
   margin-top: 0;
@@ -464,7 +462,7 @@ hr {
   font: bold 15px Sans-Serif;
   color: #333;
   text-align: center;
-  text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 1px 0;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -481,9 +479,9 @@ hr {
   background-image: -ms-linear-gradient(top, #bfdc7a, #8ebf45);
   background-image: -o-linear-gradient(top, #bfdc7a, #8ebf45);
   color: #6a6340;
-  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 .ribbon-green:before,
 .ribbon-green:after {
