@@ -1,10 +1,10 @@
 ---
 layout: post
-title: KeepItTidy
+title: Microdata
 comments: true    
 date: 2019-01-01
 categories : [Tech]
-tags: [Linux, Shell, TV Show]
+tags: [Google, Microdata]
 ---
 
-qsdfqsdf
+Les microdata sur le blog
