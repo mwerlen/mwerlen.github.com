@@ -98,7 +98,8 @@ module.exports = function (grunt) {
                 options: {
                     watch: true,
                     serve: false,
-                    drafts: true
+                    drafts: true,
+                    raw: 'presenter: true'
                 }
             },
 			build: {
