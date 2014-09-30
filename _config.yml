@@ -3,7 +3,7 @@ port:        4000
 baseurl:     /
 
 source:      .
-exclude:     [node_modules, bower.json, Gemfile, Gemfile.lock, Gruntfile.js, package.json, params.json, README.md]
+exclude:     [node_modules, bower.json, Gemfile, Gemfile.lock, Gruntfile.js, package.json, params.json, README.md, *.less]
 destination: ./_site
 plugins:     ./_plugins
 encoding:    UTF-8

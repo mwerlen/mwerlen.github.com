@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         },
         watch: {
             less: {
-                files: ['<%= yeoman.css %>/*.{less}'],
+                files: ['stylesheets/*.less'],
                 tasks: ['less:compile']
             },
             jekyll: {
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
                     'documents/**',
                     'images/*',
                     'javascripts/*.js',
-                    'presentations/*.{html,md}',
+                    'presentations/*.{html,md,prez}',
                     'stylesheets/*.css',
                     '*.{html,md,markdown,xml,txt,ico}'
                 ],
@@ -66,7 +66,8 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'stylesheets/presentation.css': 'stylesheets/presentation.less',
-                    'stylesheets/styles.css': 'stylesheets/styles.less'
+                    'stylesheets/styles.css': 'stylesheets/styles.less',
+                    'stylesheets/mgmt.css': 'stylesheets/mgmt.less'
                 }
             }
         },
@@ -141,6 +142,7 @@ module.exports = function (grunt) {
             src: [
                 '<%= yeoman.css %>/styles.less',
                 '<%= yeoman.css %>/presentations.less',
+                '<%= yeoman.css %>/mgmt.less',
             ]
         }
     });

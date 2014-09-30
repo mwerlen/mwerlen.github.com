@@ -1,0 +1,22 @@
+.theme {
+  background-color: rgba(133, 194, 10, 0.5);
+  font-size: 2em;
+  padding: 0.5em 0;
+  text-align: center;
+  margin-top: 40px;
+}
+.action {
+  border: 5px solid rgba(133, 194, 10, 0.5);
+  font-size: 1.2em;
+  padding: 0.5em 0;
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 60px;
+}
+.reco {
+  background-color: rgba(212, 29, 48, 0.7);
+  font-size: 2em;
+  padding: 0.5em 0;
+  text-align: center;
+  margin-top: 40px;
+}
