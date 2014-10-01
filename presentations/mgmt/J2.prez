@@ -9,7 +9,7 @@ stylesheet: mgmt
 
 ???
 Silence
-Questions ouvertes ?
+Questions ouvertes ?  => Qu'ai-je appris en réalisant mes objectifs ?
 
 ---
 
@@ -18,13 +18,17 @@ Que proposez-vous ?
 ]
 
 .action[
-Greg sur l'organisation Démat
+Collègue sur l'organisation Démat
 ]
 
+.plus[Adhésion du collègue sur le projet]
+.moins[Chronophage]
+.moins[Peut créer de la gêne si non prévenu]
 
-→ 
-
-
+???
+.plus[Adhésion du collègue sur le projet]
+.moins[Chronophage]
+.moins[Peut créer de la gêne si non prévenu]
 
 
 ---
@@ -37,9 +41,16 @@ Préparation écrite
 Point CP/DP avec mon responsable
 ]
 
+.plus[Ne rien oublier]
+.plus[Garder un trace de la réunion]
+.plus[Structure l'entretien]
+.plus[Accélère l'entretien]
 
-→ 
-
+???
+.plus[Ne rien oublier]
+.plus[Garder un trace de la réunion]
+.plus[Structure l'entretien]
+.plus[Accélère l'entretien]
 
 
 ---
@@ -48,14 +59,12 @@ Point CP/DP avec mon responsable
 Fixer un objectif concret
 ]
 
-.action[
-Saisie des temps
+.actionRayee[
+Travailler sur la timidité de X
 ]
 
-
-→ 
-
-
+???
+Pas l'occasion de mettre en oeuvre.
 
 ---
 
@@ -69,9 +78,16 @@ Fixer la date de la démo dès le départ
 ]
 
 
-→ 
+.plus[Investissement du collab concerné]
+.plus[Préparation réalisée à temps]
+.plus[Collab valorisé]
+.plus[Pas d'impression de flicage ou d'échec assuré]
 
-
+???
+.plus[Investissement du collab concerné]
+.plus[Préparation réalisée à temps]
+.plus[Collab valorisé]
+.plus[Pas d'impression de flicage ou d'échec assuré]
 
 ---
 
@@ -85,8 +101,15 @@ Féliciter l'équipe aux passage en prod
 ]
 
 
-→ 
+.plus[Valorise les collab]
+.plus[Equipe motivée]
+.moins[Certains collab sont moins félicité parce que moins d'évènements]
 
+
+???
+.plus[Valorise les collab]
+.plus[Equipe motivée]
+.moins[Certains collab sont moins félicité parce que moins d'évènements]
 
 
 ---
@@ -94,3 +117,10 @@ Féliciter l'équipe aux passage en prod
 .reco[
 Recommandations
 ]
+
+.plus[Préparer les appels téléphonique]
+.plus[Accompagner la réalisation d'un objectif]
+
+???
+.plus[Préparer les appels téléphonique]
+.plus[Accompagner la réalisation d'un objectif]

@@ -13,10 +13,42 @@
   padding: 1em;
   margin-bottom: 60px;
 }
+.actionRayee {
+  border: 5px solid rgba(133, 194, 10, 0.5);
+  font-size: 1.2em;
+  padding: 0.5em 0;
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 60px;
+  text-decoration: line-through;
+}
 .reco {
-  background-color: rgba(212, 29, 48, 0.7);
+  background-color: rgba(0, 0, 255, 0.52);
   font-size: 2em;
   padding: 0.5em 0;
   text-align: center;
   margin-top: 40px;
+  margin-bottom: 60px;
+}
+.consequence {
+  display: block;
+  font-size: 150%;
+}
+.plus {
+  display: block;
+  font-size: 150%;
+}
+.plus::before {
+  content: "▶ ";
+  font-size: 150%;
+  color: rgba(133, 194, 10, 0.5);
+}
+.moins {
+  display: block;
+  font-size: 150%;
+}
+.moins::before {
+  content: "▶ ";
+  font-size: 150%;
+  color: rgba(205, 22, 12, 0.5);
 }
