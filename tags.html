@@ -9,15 +9,19 @@ permalink: tags.html
 <ul class="tag_box inline">
 	{% if site.tags.first[0] == null %}
 		{% for tag in site.tags %} 
+			{% if site.tags[tag].size > 1 %}			
 			<li><a href="{{ tags_path }}#{{ tag }}-ref">
-				{{ tag | join: "/" | capitalize }} <span>({{ site.tags[tag].size }} posts)</span>
+				{{ tag | join: "/" | capitalize }} <span>({{ site.tags[tag].size }} articles)</span>			
 			</a></li>
-		{% endfor %}
+			{% endif %}
+		{% endfor %}		
 		{% else %}
-		{% for tag in site.tags %} 
-			<li><a href="{{ tags_path }}#{{ tag[0] }}-ref">
-				{{ tag[0] | join: "/" | capitalize}} <span>({{ tag[1].size }} posts)</span>
-			</a></li>
+		{% for tag in site.tags %}
+			{% if tag[1].size > 1 %}
+				<li><a href="{{ tags_path }}#{{ tag[0] }}-ref">
+					{{ tag[0] | join: "/" | capitalize}} <span>({{ tag[1].size }} articles)</span>
+				</a></li>
+			{% endif %}
 		{% endfor %}
 	{% endif %}
 </ul>
