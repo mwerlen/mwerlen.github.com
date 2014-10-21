@@ -8,5 +8,6 @@ Présentations pour la formation Management
 ==========================================
         
 * Jour 1 : [Les méthodes agiles](/presentations/mgmt/agilite/)
-* Jour 2 : [Bilan opérationnel](/presentations/mgmt/J2/)
+* Jour 2 : [Bilan opérationnel](/presentations/mgmt/J2/)         
+* Jour 3 : [Bilan opérationnel](/presentations/mgmt/J3/)
         
