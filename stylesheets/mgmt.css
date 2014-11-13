@@ -52,3 +52,12 @@
   font-size: 150%;
   color: rgba(205, 22, 12, 0.5);
 }
+
+
+.remark-notes-current-area{
+  height: 100% !important;
+}
+
+.remark-notes-preview-area{
+  height: 0 !important;
+}
