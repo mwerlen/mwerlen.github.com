@@ -9,7 +9,6 @@
 .action{
     border: 5px solid hsla(80, 90%, 40%, 0.5);
     font-size: 1.2em;
-    padding: 0.5em 0;
     text-align: center;
     padding: 1em;
     margin-bottom: 60px;
@@ -37,15 +36,25 @@
     .consequence ;
 }
 .plus::before {
-    content: "▶ ";
+    content: "+ ";
     font-size: 150%;
     color: rgba(133, 194, 10, 0.5);
+    vertical-align: middle;
 }
 .moins{
     .consequence;
 }
 .moins::before {
-    content: "▶ ";
+    content: "- ";
     font-size: 150%;
     color: rgba(205, 22, 12, 0.50);
+}
+
+.why{
+    .consequence ;
+}
+.why::before {
+    content: "▶ ";
+    font-size: 150%;
+    color: rgba(0, 0, 255, 0.50);
 }
