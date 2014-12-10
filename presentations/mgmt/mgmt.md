@@ -11,4 +11,5 @@ Présentations pour la formation Management
 * Jour 2 : [Bilan opérationnel](/presentations/mgmt/J2/)         
 * Jour 3 : [Bilan opérationnel](/presentations/mgmt/J3/)
 * Jour 4 : [Bilan opérationnel](/presentations/mgmt/J4/)
+* Jour 5 : [Bilan opérationnel](/presentations/mgmt/J5/)
         
