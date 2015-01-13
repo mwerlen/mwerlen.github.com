@@ -1,0 +1,67 @@
+==================================================================
+https://keybase.io/mwerlen
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://maxime.werlen.fr
+  * I am mwerlen (https://keybase.io/mwerlen) on keybase.
+  * I have a public key with fingerprint 5BB0 15C9 1742 4B86 A521  7D08 49E5 73FA 0D70 DDA6
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "5bb015c917424b86a5217d0849e573fa0d70dda6",
+            "host": "keybase.io",
+            "key_id": "49e573fa0d70dda6",
+            "kid": "0101e1cb662e77054f8d65208b6d093a8b79ec2b8490bbe171e9d74134277d88e1410a",
+            "uid": "7fcc18e1850b8456d9d01e1335be4c00",
+            "username": "mwerlen"
+        },
+        "service": {
+            "hostname": "maxime.werlen.fr",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1421153524,
+    "expire_in": 157680000,
+    "prev": "64dc73bca04470e729c4c66dcf155a6dbdcfdd0e45da499cae1b62e76a7d6352",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owFtkmtIFFEUx9ctywzLSoPKysaKokXunZ07d2aNSDEpyh5WiEItc+fe1WHdnXV2
+NMtMi6KsD0ZkUSCURFJkUCYV9PrQS7e0sg8FhvaQnvSC3iDdsfrW/XLvPef//x3O
+4exNGuZyxy0ZiP5Mijw5Hhd7TVxr2lMGqwVi0o2Cr1oIsqErYIRLmBWxjLAt+ARE
+CIBIVyGWRIkosoZEiClQJJUh7A1ogGJAqSYLHqHUjDoOjiFalGUaJo/xj9+gPPof
+fXAoASCADOpElkWGMUBSQKEyEoFCZApUr6YQrDJdJLwiIIRBDJlKsQS9kogxVRQG
+JQg0jqsYwuGArkMeVBDgFiRTlTp8rxcRJukAOMIos8JaiHF1aAOzylhYqPEIPFhp
+6MyZgNPIP4FWZYRY5h9ZZsDi9ohl2qZulvFsqW1HfI7Z3hhx1BsY8f/l+IkRpnyS
+3FDJrKhhhgUf5ErdNhwwlEQIkReJkkdgVRHDYn7DUSAsK4Afpwyr5EhZojr2El0D
+koQBw6KqS7osUz0AEdJkSviLUsAkRDVJVXWNQeJMUtYwlTlfcDorD5uCj1eytRKO
+jBolYc2usIYzoSaxPi5tuCvO7RoR73a2wZU4KvnfipxOHzk468QIVzt6fc5c1Fj4
+fvTg4x0Z25u/39x3omdtW+HLQ0kFm6an5H769nH07rwbi9L9M1JLx+bvVhPWjb+3
+/VL2Lb/Yaa242PlLrU1b3HTqdr0xc9yzYPvbppMHTy99+vz+/uLcFagrN8dzoetF
+1t4JtWf6FqS6Jo/ZlaYVHq48OqdpatW5emqIs1aPfJPf17q57ciedx0x6DkfvHa2
+cV5Ly67shoG2+Os9Kxe4O/KOLV/WGCre+aW1+8Hlolcd/Wyhu3VmhjK3n8UmJaS9
+7/3hW1m3NmSsr77ScNWe+ObA7FUFjZ7Ytq+x5Kwmq3xKsDs/o+Dhi6Kcz4/uPmto
+/qDfWTWtd/7Wui2/AQ==
+=/2DN
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mwerlen
+
+==================================================================
+
