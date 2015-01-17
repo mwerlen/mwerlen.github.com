@@ -12,6 +12,7 @@ BBL
 ---
 
 * [Programmation fonctionnelle](/presentations/progfun.html)
+* [Sécurisation du courrier électronique](/presentations/securite-mails.html)
 
 
 Formation Management

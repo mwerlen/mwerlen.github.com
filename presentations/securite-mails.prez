@@ -1,0 +1,214 @@
+---
+layout: presentation
+title: Sécurisation du courrier électronique
+presenter: true
+permalink: /presentations/securite-mails.html
+---
+        
+
+---
+layout: true
+class: center, middle, inverse
+
+---
+# :'(
+
+???
+# Pourquoi tant de haine ?!?
+* Découvrir les méthodes de sécurisation des mails
+* Découvrir x509
+* Découvrir GPG
+* Elargir le web-of-trust
+
+---
+# C'est quoi un mail ?
+
+???
+On en utilise tous les jours, mais sait-on vraiment ce que c'est ?
+
+---
+layout: true
+class: left, top, normal
+
+---
+# C'est quoi un mail 
+
+```
+  Received: from 31.121.118.45 (EHLO serveur.fr)
+            by mta1007.mail.ukl.yahoo.com with SMTP; Fri, 21 Sep 2012 21:31:16 +0000
+  Received: by serveur.fr (Postfix, from userid 106)
+            id 3DF2F15A0CD; Fri, 21 Sep 2012 23:31:16 +0200 (CEST)
+* From: "Thomas" <thomas@serveur.fr>
+* To: david@yahoo.fr
+* Subject: Bonjour !
+  Date: Fri, 21 Sep 2012 23:31:16 +0200
+  MIME-Version: 1.0
+  Content-Transfer-Encoding: 8bit
+  Content-Type: text/plain; charset=iso-8859-1
+  X-Mailer: Mozilla Thunderbird
+  Message-Id: <20120921212116.3DF2F16A0CD@serveur.fr>
+
+* Bonjour David,
+* Tiens-moi au courant pour la réunion.
+* Thomas
+```
+Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+
+???
+
+Un message **textuel** envoyé par un **émetteur** à un **destinataire**
+
+
+
+
+---
+# C'est quoi un mail 
+
+```
+  Received: from 31.121.118.45 (EHLO serveur.fr)
+            by mta1007.mail.ukl.yahoo.com with SMTP; Fri, 21 Sep 2012 21:31:16 +0000
+  Received: by serveur.fr (Postfix, from userid 106)
+            id 3DF2F15A0CD; Fri, 21 Sep 2012 23:31:16 +0200 (CEST)
+  From: "Thomas" <thomas@serveur.fr>
+  To: david@yahoo.fr
+  Subject: Bonjour !
+* Date: Fri, 21 Sep 2012 23:31:16 +0200
+* MIME-Version: 1.0
+* Content-Transfer-Encoding: 8bit
+* Content-Type: text/plain; charset=iso-8859-1
+  X-Mailer: Mozilla Thunderbird
+* Message-Id: <20120921212116.3DF2F16A0CD@serveur.fr>
+
+  Bonjour David,
+  Tiens-moi au courant pour la réunion.
+  Thomas
+```
+Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+
+???
+Aussi des informations techniques
+* Type Mime du message
+* Identifiants
+* Dates
+* ...
+
+---
+# C'est quoi un mail 
+
+```
+  Received: from 31.121.118.45 (EHLO serveur.fr)
+            by mta1007.mail.ukl.yahoo.com with SMTP; Fri, 21 Sep 2012 21:31:16 +0000
+  Received: by serveur.fr (Postfix, from userid 106)
+            id 3DF2F15A0CD; Fri, 21 Sep 2012 23:31:16 +0200 (CEST)
+  From: "Thomas" <thomas@serveur.fr>
+  To: david@yahoo.fr
+  Subject: Bonjour !
+  Date: Fri, 21 Sep 2012 23:31:16 +0200
+  MIME-Version: 1.0
+  Content-Transfer-Encoding: 8bit
+  Content-Type: text/plain; charset=iso-8859-1
+* X-Mailer: Mozilla Thunderbird
+  Message-Id: <20120921212116.3DF2F16A0CD@serveur.fr>
+
+  Bonjour David,
+  Tiens-moi au courant pour la réunion.
+  Thomas
+```
+Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+
+???
+C'est aussi tout une multitude de clients mails, des logiciels avec leur spécificités et leurs limitations
+* Outlook/Exchange qui ne fait rien comme les autres
+* mutt qui est en ligne de commande
+
+---
+# C'est quoi un mail 
+
+```
+*  Received: from 31.121.118.45 (EHLO serveur.fr)
+*           by mta1007.mail.ukl.yahoo.com with SMTP; Fri, 21 Sep 2012 21:31:16 +0000
+* Received: by serveur.fr (Postfix, from userid 106)
+*           id 3DF2F15A0CD; Fri, 21 Sep 2012 23:31:16 +0200 (CEST)
+  From: "Thomas" <thomas@serveur.fr>
+  To: david@yahoo.fr
+  Subject: Bonjour !
+  Date: Fri, 21 Sep 2012 23:31:16 +0200
+  MIME-Version: 1.0
+  Content-Transfer-Encoding: 8bit
+  Content-Type: text/plain; charset=iso-8859-1
+  X-Mailer: Mozilla Thunderbird
+  Message-Id: <20120921212116.3DF2F16A0CD@serveur.fr>
+
+  Bonjour David,
+  Tiens-moi au courant pour la réunion.
+  Thomas
+```
+Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+
+???
+C'est aussi toute une architecture de distribution pour faire transiter le mail de l'émetteur au destinataire 
+
+---
+layout: true
+class: center, middle, inverse
+
+---
+
+# L'acheminement
+
+---
+layout: true
+class: left, top, normal
+
+---
+# L'acheminement
+
+![Schéma de l'acheminement d'un mail par Wikipedia](http://upload.wikimedia.org/wikipedia/commons/8/8c/Etapes_envoi_email.png)
+Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.png)
+
+???
+
+Le mail n'est pas envoyé directement de l'émetteur vers le destinataire mais il passe par des serveurs relais. En effet, tout le monde n'est pas tout le temps connecté.
+
+---
+# L'acheminement
+
+## Acteurs
+* **MUA** : **M**ail **U**ser **A**gent
+* **MTA** : **M**ail **T**ransport **A**gent
+* **MDA** : **M**ail **D**elivery **A**gent
+
+## Protocoles
+* **SMTP** : **S**imple **M**ail **T**ransfert **P**rotocol
+* **POP** : **P**ost **O**ffice **P**rotocol
+* **IMAP** : **I**nternet **M**essage **A**ccess **P**rotocol
+
+---
+# L'acheminement
+
+## Exo : envoyer un mail avec SMTP
+```
+    telnet xxxx.yyyy.fr 25
+    EHLO toto.example.net
+    MAIL FROM:<sender@domain.com>
+    RCPT TO:<MAIL FROM:<sender@domain.com>
+    DATA
+    From: Alice <Alice@example.net>
+    To: Bob <bob@server.org>
+    Subject: Happy Birthday !
+    Hey, happy birthday !
+    .
+```
+
+---
+layout: true
+class: left, top, normal
+
+---
+# Sources
+
+* Wikipedia
+* http://www.mail-tester.com/
+* https://unlocktheinbox.com/resources/emailauthentication/#_
+
+
