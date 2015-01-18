@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Progfun-plan
+title: Securité-mails-plan
 ---
 
 Plan de la présentation sur la sécurité

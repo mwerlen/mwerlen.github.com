@@ -4,7 +4,12 @@ title: Sécurisation du courrier électronique
 presenter: true
 permalink: /presentations/securite-mails.html
 ---
-        
+       
+???
+Prérequis :
+* Telnet et internet
+* thunderbird avec Enigmail ou Mutt
+* GPG
 
 ---
 layout: true
@@ -169,6 +174,13 @@ Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.p
 ???
 
 Le mail n'est pas envoyé directement de l'émetteur vers le destinataire mais il passe par des serveurs relais. En effet, tout le monde n'est pas tout le temps connecté.
+Le contenu est en clair presque tout le temps :
+* Sur les serveurs
+* Entre les serveurs
+
+Pas d'authentification entre les serveurs :
+* On ne sait pas qui envoi réellement les mails
+* N'importe qui peut envoyer n'importe quoi
 
 ---
 # L'acheminement
@@ -186,7 +198,7 @@ Le mail n'est pas envoyé directement de l'émetteur vers le destinataire mais i
 ---
 # L'acheminement
 
-## Exo : envoyer un mail avec SMTP
+## Exercice #1 : envoyer un mail avec SMTP
 ```
     telnet xxxx.yyyy.fr 25
     EHLO toto.example.net
@@ -199,6 +211,140 @@ Le mail n'est pas envoyé directement de l'émetteur vers le destinataire mais i
     Hey, happy birthday !
     .
 ```
+
+???
+* Utiliser Telnet pour se connecter au serveur SMTP
+* Donner l'adresse du serveur ouvert
+* S'envoyer un mail à soit depuis une adresse bison (alice@...)
+
+
+
+
+
+
+
+
+
+
+---
+layout: true
+class: center, middle, inverse
+
+---
+
+# Eviter les faux mails
+
+---
+layout: true
+class: left, top, normal
+
+---
+# Eviter les faux mails
+##SPF
+
+```
+  server 300 IN A 89.156.99.86
+  server 10800 IN MX 50 server.werlen.fr.
+* server 10800 IN SPF "v=spf1 mx a ip4:82.216.111.2/24 -all"
+* server 10800 IN TXT "v=spf1 mx a ip4:82.216.111.2/24 -all"
+  mail._domainkey.server 10800 IN TXT "v=DKIM1; p=MIGfMA0GCSqGSIb3DQE
+  BAQUAA4GNADCBiQKBgQCtROvK7xVd+t55/R54bOVXZb+eSlDPD2DEuH5qz9Oou+jdsV
+  kQpZD8hrl/2QBfUlUkKpfHpvKrUq71vjFHPkdq3DzAszr/IYVRIlEmpHFSF/RatqGrf
+  i2fGAjbRU0NpvSmbjm8Eqa0YsbJJqAiwEdb9Yuu+H1oRjsQewU5a/w3TwIDAQAB"
+  _dmarc.server 10800 IN TXT "v=DMARC1; p=none; sp=reject; adkim=s; 
+                        aspf=s; rua=mailto:dmarc@server.werlen.fr!10m;
+                        ruf=mailto:forensic@server.werlen.fr!10m; 
+                        rf=afrf; pct=100; ri=86400"
+```
+
+??? 
+SPF : sender Policy Framework
+Enregsitrement DNS en TXT ou SPF
+
+---
+# Eviter les faux mails
+## SPF
+
+```
+   ; <<>> DiG 9.9.5-3ubuntu0.1-Ubuntu <<>> sogelink.fr txt
+   ;; Got answer:
+   ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51450
+   ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+   ;; QUESTION SECTION:
+   ;sogelink.fr.           IN  TXT
+
+   ;; ANSWER SECTION:
+*  sogelink.fr.        3600    IN  TXT "v=spf1 +mx ip4:78.40.74.32/28
+*                                      ip4:176.31.234.24 
+*                                      ip4:178.33.9.63 -all"
+```
+
+???
+Démo avec le MX de la boite depuis mon server perso
+
+* Mais possibilité de 
+ * passer par le bon chemin en étant pas pour autant identifié.
+ * Spoofer l'adresse IP (blind spoof)
+
+
+---
+# Eviter les faux mails
+
+## Exercice #2 : Tromper SPF
+```
+    telnet xxxx.yyyy.fr 25
+    EHLO toto.example.net
+    MAIL FROM:<sender@domain.com>
+    RCPT TO:<MAIL FROM:<sender@domain.com>
+    DATA
+    From: Alice <Alice@example.net>
+    To: Bob <bob@server.org>
+    Subject: Happy Birthday !
+    Hey, happy birthday !
+    .
+```
+
+???
+* Utiliser Telnet pour se connecter au serveur SMTP depuis une machine du réseau interne
+* Donner l'adresse du serveur protégé par SPF
+* S'envoyer un mail à soit depuis une adresse bison (alice@...)
+
+
+
+
+
+
+
+
+
+---
+# Eviter les faux mails
+## DKIM
+
+
+```
+  server 300 IN A 89.156.99.86
+  server 10800 IN MX 50 server.werlen.fr.
+  server 10800 IN SPF "v=spf1 mx a ip4:82.216.111.2/24 -all"
+  server 10800 IN TXT "v=spf1 mx a ip4:82.216.111.2/24 -all"
+* mail._domainkey.server 10800 IN TXT "v=DKIM1; p=MIGfMA0GCSqGSIb3DQE
+* BAQUAA4GNADCBiQKBgQCtROvK7xVd+t55/R54bOVXZb+eSlDPD2DEuH5qz9Oou+jdsV
+* kQpZD8hrl/2QBfUlUkKpfHpvKrUq71vjFHPkdq3DzAszr/IYVRIlEmpHFSF/RatqGrf
+* i2fGAjbRU0NpvSmbjm8Eqa0YsbJJqAiwEdb9Yuu+H1oRjsQewU5a/w3TwIDAQAB"
+  _dmarc.server 10800 IN TXT "v=DMARC1; p=none; sp=reject; adkim=s; 
+                        aspf=s; rua=mailto:dmarc@server.werlen.fr!10m;
+                        ruf=mailto:forensic@server.werlen.fr!10m; 
+                        rf=afrf; pct=100; ri=86400"
+```
+
+??? 
+
+SPF : sender Policy Framework
+
+
+
+
 
 ---
 layout: true
