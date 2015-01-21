@@ -200,7 +200,8 @@ Pas d'authentification entre les serveurs :
 
 ## Exercice #1 : envoyer un mail avec SMTP
 ```
-    telnet xxxx.yyyy.fr 25
+    $> telnet xxxx.yyyy.fr 25
+
     EHLO toto.example.net
     MAIL FROM:<sender@domain.com>
     RCPT TO:<MAIL FROM:<sender@domain.com>
@@ -257,7 +258,8 @@ class: left, top, normal
                         rf=afrf; pct=100; ri=86400"
 ```
 
-??? 
+???
+
 SPF : sender Policy Framework
 Enregsitrement DNS en TXT ou SPF
 
@@ -283,6 +285,7 @@ Enregsitrement DNS en TXT ou SPF
 ???
 Démo avec le MX de la boite depuis mon server perso
 
+* Fonctionne uniquement pour les serveur qui vérifient
 * Mais possibilité de 
  * passer par le bon chemin en étant pas pour autant identifié.
  * Spoofer l'adresse IP (blind spoof)
@@ -293,7 +296,8 @@ Démo avec le MX de la boite depuis mon server perso
 
 ## Exercice #2 : Tromper SPF
 ```
-    telnet xxxx.yyyy.fr 25
+    $> telnet xxxx.yyyy.fr 25
+
     EHLO toto.example.net
     MAIL FROM:<sender@domain.com>
     RCPT TO:<MAIL FROM:<sender@domain.com>
@@ -311,7 +315,7 @@ Démo avec le MX de la boite depuis mon server perso
 * S'envoyer un mail à soit depuis une adresse bison (alice@...)
 
 
-
+SPF PAs suffisant pour assurer la sécurité du mail...
 
 
 
@@ -338,12 +342,99 @@ Démo avec le MX de la boite depuis mon server perso
                         rf=afrf; pct=100; ri=86400"
 ```
 
-??? 
 
-SPF : sender Policy Framework
+???
+
+DKIM : Domain Key Identified Mail
+
+* Le serveur signe un message avant de l'envoyer avec sa clé privée
+* Clé publique exposée dans le DNS
 
 
+---
+# Eviter les faux mails
+## DKIM
 
+```
+  Received: from server.werlen.fr (89-156-99-86.rev.numericable.fr. [89.156.99.86])
+          by mx.google.com with ESMTPS [...] for <maxime.werlen@gmail.com> [...]
+  Authentication-Results: mx.google.com;
+         spf=pass (google.com: domain of mwerlen@server.werlen.fr designates
+         89.156.99.86 as permitted sender) smtp.mail=mwerlen@server.werlen.fr;
+         dkim=temperror (no key for signature) header.i=@
+  Received: by server.werlen.fr (Postfix, from userid 1000)
+      id CE3221F77C; Thu,  8 Jan 2015 21:17:16 +0100 (CET)
+* DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=server.werlen.fr;
+*     s=mail; t=1420748236;
+*     bh=GZszWhFR6tgBIY1LNkqdFuZxHBkgdbMgOyew/FURnRc=;
+*     h=Date:From:To:Subject:From;
+*     b=JueY2Nbp6zL6Y9skwFt1SLpJY1gHEalArVdd8fzGq8LXzB80k4flJTml10pgfINZM
+*      Fkyhmuh8ui9sMX8KjrBxfo2TFMDdfyb2SgiJ3h0TJGSdB84+pcYzx2MnCZ4kT65h2Q
+*      mbzqWlm8cm2Wxx4gj1GOqIEZ9vRcMCGJn++amMaw=
+  From: Maxime Werlen <mwerlen@server.werlen.fr>
+  To: maxime.werlen@gmail.com
+  Subject: Test avec DKIM
+    ...
+```
+
+???
+* v=1 is the version,
+* a=rsa-sha256 is the signing algorithm,
+* c is the canonicalization algorithm(s) for header and body,
+* t is the signature timestamp,
+* h is the list of signed header fields
+
+* On peut néanmoins toujours outrepasser la signature en envoyant depuis le réseau interne puisque c'est le serveur qui signe.
+* Plus difficile de spoofer une adresse IP
+
+
+---
+# Eviter les faux mails
+## DMARC
+
+
+```
+  server 300 IN A 89.156.99.86
+  server 10800 IN MX 50 server.werlen.fr.
+  server 10800 IN SPF "v=spf1 mx a ip4:82.216.111.2/24 -all"
+  server 10800 IN TXT "v=spf1 mx a ip4:82.216.111.2/24 -all"
+  mail._domainkey.server 10800 IN TXT "v=DKIM1; p=MIGfMA0GCSqGSIb3DQE
+  BAQUAA4GNADCBiQKBgQCtROvK7xVd+t55/R54bOVXZb+eSlDPD2DEuH5qz9Oou+jdsV
+  kQpZD8hrl/2QBfUlUkKpfHpvKrUq71vjFHPkdq3DzAszr/IYVRIlEmpHFSF/RatqGrf
+  i2fGAjbRU0NpvSmbjm8Eqa0YsbJJqAiwEdb9Yuu+H1oRjsQewU5a/w3TwIDAQAB"
+* _dmarc.server 10800 IN TXT "v=DMARC1; p=none; sp=reject; adkim=s;
+*                       aspf=s; rua=mailto:dmarc@server.werlen.fr!10m;
+*                       ruf=mailto:forensic@server.werlen.fr!10m;
+*                      rf=afrf; pct=100; ri=86400"
+```
+
+
+???
+
+DMARC : Domain-based Message Authentication, Reporting and Conformance
+
+Publication d'une politique de traitement des messages
+
+* v	: Protocol version
+* p : traitement des erreurs
+* sp : Policy for subdomains of the OD
+* adkim : Alignment mode for DKIM
+* aspf : Alignment mode for SPF
+* pct : Percentage of messages subjected to filtering
+* ruf : Reporting URI for forensic reports
+* rua : Reporting URI of aggregate reports
+
+
+Mais toujours à la bonne volonté des serveurs mails destinataires
+
+---
+# Eviter les faux mails
+# GPG
+
+
+???
+
+* Encodé/Signé par l'utilisateur - Pas d'usurpation coté server
 
 
 ---
