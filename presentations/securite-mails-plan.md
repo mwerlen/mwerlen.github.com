@@ -13,7 +13,7 @@ L'architecture Mail
 * Architecture d'acheminement
 * Sécurisation du contenu
 
-Eviter les faux mails
+Assurer l'authenticité
 ---------------------
 
 * SPF
@@ -21,7 +21,7 @@ Eviter les faux mails
 * DMARC
 * GPG
 
-La confidentialité
+Assurer la confidentialité
 ------------------
 
 * TLS/SSL

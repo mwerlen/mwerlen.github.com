@@ -233,14 +233,14 @@ class: center, middle, inverse
 
 ---
 
-# Eviter les faux mails
+# Assurer l'authenticité
 
 ---
 layout: true
 class: left, top, normal
 
 ---
-# Eviter les faux mails
+# Assurer l'authenticité
 ##SPF
 
 ```
@@ -264,7 +264,7 @@ SPF : sender Policy Framework
 Enregsitrement DNS en TXT ou SPF
 
 ---
-# Eviter les faux mails
+# Assurer l'authenticité
 ## SPF
 
 ```
@@ -292,7 +292,7 @@ Démo avec le MX de la boite depuis mon server perso
 
 
 ---
-# Eviter les faux mails
+# Assurer l'authenticité
 
 ## Exercice #2 : Tromper SPF
 ```
@@ -323,7 +323,7 @@ SPF PAs suffisant pour assurer la sécurité du mail...
 
 
 ---
-# Eviter les faux mails
+# Assurer l'authenticité
 ## DKIM
 
 
@@ -352,7 +352,7 @@ DKIM : Domain Key Identified Mail
 
 
 ---
-# Eviter les faux mails
+# Assurer l'authenticité
 ## DKIM
 
 ```
@@ -389,7 +389,7 @@ DKIM : Domain Key Identified Mail
 
 
 ---
-# Eviter les faux mails
+# Assurer l'authenticité
 ## DMARC
 
 
@@ -428,13 +428,88 @@ Publication d'une politique de traitement des messages
 Mais toujours à la bonne volonté des serveurs mails destinataires
 
 ---
-# Eviter les faux mails
-# GPG
+# L'acheminement
 
+![Schéma de l'acheminement d'un mail par Wikipedia](http://upload.wikimedia.org/wikipedia/commons/8/8c/Etapes_envoi_email.png)
+Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.png)
 
 ???
 
-* Encodé/Signé par l'utilisateur - Pas d'usurpation coté server
+Toute la chaine n'est pas sécurisée !
+
+---
+# Assurer l'authenticité
+## Signature GPG
+
+```
+    From: Maxime Werlen <mwerlen@server.werlen.fr>
+    To: mwerlen@server.werlen.fr
+    Subject: Demo GPG
+    Content-Type: text/plain; charset=utf-8; x-action=pgp-signed
+
+*   -----BEGIN PGP SIGNED MESSAGE-----
+*   Hash: SHA1
+*
+*   Ceci est un message signé avec GPG.
+*   -----BEGIN PGP SIGNATURE-----
+*   Version: GnuPG v1
+*
+*   iQEcBAEBAgAGBQJUwPGlAAoJEEnlc/oNcN2m+tEH/05MY1NyMddon4Hm1fPHD4Ox
+*   HltkTW5bFL4fHx1O4fh8frh/P8UG+ZK4MSTzj/fUcUe2DZEgtqlFjlJFD3CisNbV
+*   qZujEyHL6/p/MIP8dNtkUbgJA4nZHA1BOsSILbRV2vXsgA6l3Rt2i25aRmZcVWvG
+*   YIsbQ5PxgbRu1fkf+aPcLBa/L6WUG1TvKpG8hQrywqc6HKwAtg5GoGQ1ZSIUiX2i
+*   iGjjw56eD8x4tMd3bODkVcBubn7G4hx/7ppb6vujGq+ydz7G99dTDeTDpvXgC9nf
+*   SM39U7ObGQW3abpQ7sPbv4u0taMWKhiRUuwEYos6Wb6YhHAfWVHDsvYxHmKcXKA=
+*   =Yzba
+*   -----END PGP SIGNATURE-----
+```
+
+???
+* PGP : Pretty Good Privacy -> implémetation de OpenPGP
+* GPG : Gnu Privacy Guard -> autre implémentation
+
+* Signé par l'utilisateur - Pas d'usurpation coté server
+
+
+Signature du message avec sa clé publique. Le destinataire vérifie la validité avec la clé privée.
+
+
+
+
+
+---
+layout: true
+class: center, middle, inverse
+
+---
+
+# Assurer la confidentialité
+
+---
+layout: true
+class: left, top, normal
+
+---
+# L'acheminement
+
+![Schéma de l'acheminement d'un mail par Wikipedia](http://upload.wikimedia.org/wikipedia/commons/8/8c/Etapes_envoi_email.png)
+Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.png)
+
+???
+
+Toute la chaine n'est pas sécurisée !
+
+---
+# Assurer la confidentialité
+## TLS/SSL et X509
+
+
+
+
+---
+# Assurer la confidentialité
+## Chiffrement GPG
+
 
 
 ---
