@@ -40,12 +40,12 @@ h1 {
 }
 
 .title {
-     font-family: 'Yanone Kaffeesatz';
-     font-weight: normal;
-     font-variant: small-caps;
-     font-size: 600%;
-     color: black; //true black
- }
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: normal;
+    font-variant: small-caps;
+    font-size: 600%;
+    color: black; //true black
+}
 
 .subtitle {
     font-family: 'Yanone Kaffeesatz';
@@ -62,8 +62,6 @@ h1 {
     color: @black;
     text-decoration: none;
 }
-
-
 
 /* ------------------------------------------------------------------------------
  * SLIDES NORMALES
@@ -102,8 +100,9 @@ blockquote {
     padding: 0.2em 10px;
     text-align: left;
 }
-.inverse blockquote{
-        border-left: 5px solid @white;
+
+.inverse blockquote {
+    border-left: 5px solid @white;
 }
 
 blockquote p {
@@ -116,4 +115,44 @@ blockquote p {
 
 .remark-notes {
     font-size: 1.2em;
+}
+
+/* --------------------------------------------------------------------------------
+ * TABLES
+ * ------------------------------------------------------------------------------- */
+.prezTable {
+    margin: 10px 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.prezTable table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.prezTable th {
+    background-color: @black;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+    color: @white;
+    padding: 5px;
+}
+
+.prezTable td {
+    vertical-align: middle;
+    text-align: left;
+    padding: 7px;
+}
+
+.prezTable tr:nth-child(odd) {
+    background-color: #e2e2e2;
+}
+
+.prezTable tr:nth-child(even) {
+    background-color: #b7b7b7;
 }

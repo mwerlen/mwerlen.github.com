@@ -8,6 +8,7 @@ permalink: /presentations/securite-mails.html
 ???
 Prérequis :
 * Telnet et internet
+** Telnet dans windows : http://www.labnol.org/software/windows-telnet-command/18222/
 * thunderbird avec Enigmail ou Mutt
 * GPG
 
@@ -204,7 +205,7 @@ Pas d'authentification entre les serveurs :
 
     EHLO toto.example.net
     MAIL FROM:<sender@domain.com>
-    RCPT TO:<MAIL FROM:<sender@domain.com>
+    RCPT TO:<sender@domain.com>
     DATA
     From: Alice <Alice@example.net>
     To: Bob <bob@server.org>
@@ -503,7 +504,54 @@ Toute la chaine n'est pas sécurisée !
 # Assurer la confidentialité
 ## TLS/SSL et X509
 
-
+.prezTable[
+    <table>
+        <thead>
+            <tr>
+                <th>level</th>
+                <th>Layer</th>
+                <th>Application</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>7</td>
+                <td>Application Layer</td>
+                <td>HTTP, FTP, DNS, <b>SMTP</b></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Présentation Layer</td>
+                <td><b>SSL, TLS</b></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Session Layer</td>
+                <td>NetBios, PPTP, <b>SSL, TLS</b></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Transport Layer</td>
+                <td><b>TCP</b>, UDP</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Network Layer</td>
+                <td><b>IP</b>, ARP, ICMP, IPSec</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Data Link Layer</td>
+                <td>PPP, ATM, <b>Ethernet</b></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Physical Layer</td>
+                <td><b>Ethernet</b>, USB, Bluetooth</td>
+            </tr>
+        </tbody>
+    </table>
+]
 
 
 ---
