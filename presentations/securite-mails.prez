@@ -8,7 +8,7 @@ permalink: /presentations/securite-mails.html
 ???
 Prérequis :
 * Telnet et internet
-** Telnet dans windows : http://www.labnol.org/software/windows-telnet-command/18222/
+ * Telnet dans windows : http://www.labnol.org/software/windows-telnet-command/18222/
 * thunderbird avec Enigmail ou Mutt
 * GPG
 
@@ -131,7 +131,7 @@ C'est aussi tout une multitude de clients mails, des logiciels avec leur spécif
 # C'est quoi un mail 
 
 ```
-*  Received: from 31.121.118.45 (EHLO serveur.fr)
+* Received: from 31.121.118.45 (EHLO serveur.fr)
 *           by mta1007.mail.ukl.yahoo.com with SMTP; Fri, 21 Sep 2012 21:31:16 +0000
 * Received: by serveur.fr (Postfix, from userid 106)
 *           id 3DF2F15A0CD; Fri, 21 Sep 2012 23:31:16 +0200 (CEST)
@@ -301,7 +301,7 @@ Démo avec le MX de la boite depuis mon server perso
 
     EHLO toto.example.net
     MAIL FROM:<sender@domain.com>
-    RCPT TO:<MAIL FROM:<sender@domain.com>
+    RCPT TO:<receiver@domain.com>
     DATA
     From: Alice <Alice@example.net>
     To: Bob <bob@server.org>
@@ -316,7 +316,7 @@ Démo avec le MX de la boite depuis mon server perso
 * S'envoyer un mail à soit depuis une adresse bison (alice@...)
 
 
-SPF PAs suffisant pour assurer la sécurité du mail...
+SPF : Pas suffisant pour assurer la sécurité du mail...
 
 
 
@@ -553,6 +553,16 @@ Toute la chaine n'est pas sécurisée !
     </table>
 ]
 
+
+---
+# Assurer la confidentialité
+## TLS/SSL et X509
+
+> In cryptography, X.509 is **an ITU-T standard** for a **public key infrastructure (PKI)** and **Privilege Management Infrastructure (PMI)**. 
+> <br/><br/>
+> X.509 specifies, amongst other things, **standard formats for public key certificates**, **certificate revocation lists**, **attribute certificates**, and **a certification path validation algorithm**.
+
+Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
 
 ---
 # Assurer la confidentialité
