@@ -13,10 +13,9 @@ Prérequis :
 * GPG
 
 ---
-layout: true
+title: why
 class: center, middle, inverse
 
----
 # :'(
 
 ???
@@ -29,6 +28,9 @@ class: center, middle, inverse
 * Elargir le web-of-trust
 
 ---
+title: c'est quoi un mail 
+class: center, middle, inverse
+
 # C'est quoi un mail ?
 
 ???
@@ -157,10 +159,8 @@ Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
 C'est aussi toute une architecture de distribution pour faire transiter le mail de l'émetteur au destinataire 
 
 ---
-layout: true
+title: acheminement
 class: center, middle, inverse
-
----
 
 # L'acheminement
 
@@ -230,14 +230,97 @@ Pas d'authentification entre les serveurs :
 
 
 
+---
+title: routage
+class: center, middle, inverse
 
+# Routage 
 
+???
+
+Adresse du Telnet fournie ici, mais pas toujours le cas, comment trouver un serveur si on a pas d'entrée dans notre /etc/hosts ?
 
 ---
 layout: true
-class: center, middle, inverse
+class: left, top, normal
 
 ---
+# Routage
+## DNS
+
+* Association d'un nom de domaine avec une adresse IP
+* Base de donnée distribuée et hierarchique
+
+.prezTable[
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Class</th>
+            <th>TTL</th>
+            <th>Data</th>
+        </tr>
+        <tr>
+            <td>sogelink.fr.</td>
+            <td>A</td>
+            <td>IN</td>
+            <td>180</td>
+            <td>86.66.19.110</td>
+        </tr>
+        <tr>
+            <td>sogelink.fr.</td>
+            <td>SOA</td>
+            <td>IN</td>
+            <td>3600</td>
+            <td>a.ns.certilience.fr. nsadmin.sogelink.fr. 1421330078 28800 7200 604800 3600</td>
+        </tr>
+        <tr>
+            <td>sogelink.fr.</td>
+            <td>NS</td>
+            <td>IN</td>
+            <td>259200</td>
+            <td>a.ns.certilience.fr.</td>
+        </tr>
+        <tr>
+            <td>sogelink.fr.</td>
+            <td>MX</td>
+            <td>IN</td>
+            <td>180</td>
+            <td>11 mx11.dict.fr.</td>
+        </tr>
+        <tr>
+            <td>www</td>
+            <td>CNAME</td>
+            <td>IN</td>
+            <td>75263</td>
+            <td>vip110.dc.certilience.com.</td>
+        </tr>
+        <tr>
+            <td>sogelink.fr.</td>
+            <td>TXT</td>
+            <td>IN</td>
+            <td>3600</td>
+            <td>"v=spf1 +mx ip4:78.40.74.32/28 ip4:176.31.234.24 ip4:178.33.9.63 -all"</td>
+        </tr>
+    </table>
+]
+
+???
+* A : Adresse IPv4
+* AAAA: Adresse IPv6
+* CNAME: Alias
+* MX: Mail Server
+* NS: Name Server
+* SOA: autorité locale
+* TXT: Texte
+
+Hiérarchie des DNS : NS de . puis NS de .fr. puis NS de .sogelink.fr. ...
+
+* Sécurisation possible grâce à DNSSec (utilisation de la crypto asymétrique pour signer les enregistrement DNS)
+
+---
+title: securisation
+class: center, middle, inverse
 
 # Sécurisation des mails
 
@@ -247,6 +330,8 @@ class: center, middle, inverse
 * Confidentialité : qui peut le lire
 
 ---
+title: authenticite
+class: center, middle, inverse
 
 # Assurer l'authenticité
 
@@ -497,10 +582,8 @@ Signature du message avec sa clé publique. Le destinataire vérifie la validit�
 
 
 ---
-layout: true
+title: confidentialite
 class: center, middle, inverse
-
----
 
 # Assurer la confidentialité
 
@@ -593,7 +676,7 @@ Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.p
 > <br/><br/>
 > This session key is then used to **encrypt data flowing between the parties**. This allows for **data/message confidentiality** \[...\] and as a by-product, **message authentication**.
 
-Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+Source : [Wikipedia](http://en.wikipedia.org/wiki/Transport_Layer_Security)
 
 ???
 
@@ -653,7 +736,7 @@ Plein d'algorithms utilisent des clés asymétriques :
 > <br/><br/>
 > This session key is then used to **encrypt data flowing between the parties**. This allows for **data/message confidentiality** \[...\] and as a by-product, **message authentication**.
 
-Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+Source : [Wikipedia](http://en.wikipedia.org/wiki/Transport_Layer_Security)
 
 ???
 
@@ -675,7 +758,7 @@ Objectif :
 > <br/><br/>
 > X.509 specifies, amongst other things, **standard formats for public key certificates**, **certificate revocation lists**, **attribute certificates**, and **a certification path validation algorithm**.
 
-Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+Source : [Wikipedia](http://en.wikipedia.org/wiki/X.509)
 
 ???
 
@@ -744,9 +827,34 @@ Codé sous forme de clé-valeur avec des identifiants normalisés, des OID :
 # X.509
 ## Révocation
 
-![Certificate Revocation List](/images/crl.png)
+```
+  Certificate Revocation List (CRL):
+      Version 2 (0x1)
+    Signature Algorithm: sha1WithRSAEncryption
+      Issuer: /C=US/O=Google Inc/CN=Google Internet Authority G2
+      Last Update: Jan 25 01:00:03 2015 GMT
+      Next Update: Feb  4 01:00:03 2015 GMT
+      CRL extensions:
+        X509v3 Authority Key Identifier: 
+          keyid:4A:DD:06:16:1B:BC:F6:68:B5:76:F5:81:B6:BB:62:1A:BA:5A:81:2F
+        X509v3 CRL Number: 
+          617
+  Revoked Certificates:
+*   Serial Number: 0D2AF612383ADA5C
+*     Revocation Date: Jul  9 07:58:39 2014 GMT
+*     CRL entry extensions:
+*       X509v3 CRL Reason Code: 
+*         Key Compromise
+      [...]
+  Signature Algorithm: sha1WithRSAEncryption
+     17:4c:0d:fc:47:61:fd:02:ef:d7:11:f7:23:e3:45:db:72:15:
+     [...]
+
+```
+
 
 ???
+Exemple de CRL visualisée avec openssl crl
 
 Publication par les autorités de certification (CA), d'une liste de révocation contenant tous les numéro de série des certificats révoqués avec la raison et la date.
 
@@ -754,9 +862,168 @@ La vérification est normalement obligatoire, mais elle est rarement obligatoire
 
 ---
 # Assurer la confidentialité
+## SSL et TLS
+
+
+1. Etablissement du tunnel TCP
+2. → **Client Hello** (version SSL, algo supportés et random du client)
+3. ← **Server Hello** (version SSL, algo supportés et random du serveur)
+3. ← **Server Certificate** (chaine de certificat serveur)
+3. ← **Server Hello Done**
+4. _Verification du certificat du serveur_
+5. _Creation d'un secret premaster chiffré avec la clé publique du serveur_
+6. → **Client Certificate** + secret premaster chiffré
+7. _Calcul de la clé symétrique (premaster+randoms)_
+8. → **Client Finished** (message "client" chiffré avec la clé symétrique)
+9. ← **Server Finished** (message "server" chiffré avec la clé symétrique)
+11. _Echange de données chiffrées symétriquement_
+
+
+???
+* Version courte du bouzin complet
+* Possibilité d'avoir de l'identification du client plus forte
+* Possibilité d'un mode anonyme (on ne s'envois que les clés publiques, pas les certificats complets
+* Possibilités de renégociation
+* Différents algorithmes de calcul du master (clé symétrique)
+
+
+---
+# L'acheminement
+
+![Schéma de l'acheminement d'un mail par Wikipedia](http://upload.wikimedia.org/wikipedia/commons/8/8c/Etapes_envoi_email.png)
+Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.png)
+
+???
+
+* Toute la chaine n'est pas sécurisée !
+* On sait qui a envoyé le message, mais tout le monde peut lire son contenu
+* Confidentialité entre les SMTP (si pris en charge) et vers le client
+* Pas de confidentialité sur les serveurs ! Le serveur a le message en clair et peut le renvoyer en clair
+
+---
+# Assurer la confidentialité
 ## Chiffrement GPG
 
+```
+    From: Maxime Werlen <mwerlen@server.werlen.fr>
+    To: maxime@werlen.fr
+    Subject: Message =?iso-8859-1?Q?chiffr=E9?= avec GPG
+    Content-Type: text/plain; charset=us-ascii; x-action=pgp-encrypted
+    
+    -----BEGIN PGP MESSAGE-----
+    Version: GnuPG v1
+    
+    hQEMAz9clsGeCsjzAQgApIDt2mLrj93E4e2j3F7i9BhmBdhYPtS+pGDNziwN8Gcg
+    pqeFT29/E5P5UH/Jn0HYMy6mI1zEGsWZ59Mucly0nsptHlnZHmq7cWDtTn50h1L8
+    D8oHbaNLI1DW0ghZvTF1Pb0ybVf+3+79XJRZn5507jVqesG3jmMHP98eAIOn9EvM
+    2JGztj3gvcuSI30QpwwU1LANpphqnqF0JM4x3yU62jjbwG7WKPagtETPGcU8e7GF
+    CYWG0KAzM4layHw/q/aObq1p3VY18WsgmzHawAtnR9CUEBYWg4MN2O0ERORqQ5Gs
+    qzsjFD362c46JIgN9sdQm7mOQGXdxei8rJW+jgKfytKMAaN0bTSnBrspiSJkYf7y
+    k4yN1botJTz5hIhy1PfRdiMlo5YKuE3DrD6lHosRrwi9Zd2rF92Ialw/5FM15L13
+    TCd9LWSufLM8Blpe0Qb90p3mZu011WWjPdB33aKtMfbt1TblCBojIr0XekmXeNCs
+    rSoUj+pyKWj2McUo8TFa/R7rqKqeb+MeaSxNIo4=
+    =o6js
+    -----END PGP MESSAGE-----
+```
 
+???
+
+* Message chiffré par l'utilisateur avec la clé publique du destinataire.
+* Seul le destinataire pourra le déchiffrer
+* Cumulable avec la signature
+* Plusieurs formats possible (inline ou PGP/MIME)
+
+---
+# GPG
+
+## Fonctionnement
+
+> Pretty Good Privacy (PGP) is a data encryption and decryption **computer program** that provides cryptographic **privacy** and **authentication** for data communication.
+> <br/><br/>
+> PGP is often used for **signing**, **encrypting**, and **decrypting** texts, e-mails, files, directories, and whole disk partitions and to increase the security of e-mail communications
+
+Source : [Wikipedia](http://en.wikipedia.org/wiki/Pretty_Good_Privacy)
+
+???
+
+* Pas un protocol, ni algorithme. C'est un logiciel de chiffrement et signature à clé asymétrique.
+* Gestion de la clé privée et création du réseau de confiance.
+
+---
+# GPG
+## Web of Trust
+
+> In cryptography, a web of trust is a concept used in PGP, GnuPG, and other OpenPGP-compatible systems to **establish the authenticity of the binding between a public key and its owner**.
+> <br/><br/>
+> Its **decentralized trust model** is an alternative to the centralized trust model of a public key infrastructure (PKI), which relies exclusively on a certificate authority (or a hierarchy of such).
+
+Source : [Wikipedia](http://en.wikipedia.org/wiki/Web_of_trust)
+
+???
+
+* Objectif : associer de manière sûre une clée et une identité.
+* S'appuie sur des serveur de clés qui permettent de publier des clés publiques
+* Complètement décentralisé. Personne ne nous dit à qui faire confiance.
+
+---
+class: center
+
+# Web of Trust
+
+![Web of Trust](/images/Web of Trust.png)
+
+.prezTable[
+    <table>
+        <tbody>
+            <tr>
+                <th colspan=2>trust</th>
+                <th colspan=2>validity</th>
+            </tr>
+            <tr>
+                <th>marginal</th>
+                <th>full</th>
+                <th>marginal</th>
+                <th>full</th>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>Dharma</td>
+                <td>&nbsp;</td>
+                <td>Blake, Chloe, Dharma, Francis</td>
+            </tr>
+            <tr>
+                <td>Blake, Dharma</td>
+                <td>&nbsp;</td>
+                <td>Francis</td>
+                <td>Blake, Chloe, Dharma</td>
+            </tr>
+            <tr>
+                <td>Chloe, Dharma</td>
+                <td>&nbsp;</td>
+                <td>Chloe, Francis</td>
+                <td>Blake, Dharma</td>
+            </tr>
+            <tr>
+                <td>Blake, Chloe, Dharma</td>
+                <td>&nbsp;</td>
+                <td>Elena</td>
+                <td>Blake, Chloe, Dharma, Francis</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td>Blake, Chloe, Elena</td>
+                <td>&nbsp;</td>
+                <td>Blake, Chloe, Elena, Francis</td>
+            </tr>
+        </tbody>
+    </table>
+]
+
+---
+title: end
+class: center, middle, inverse
+
+# The end
 
 ---
 layout: true
@@ -765,7 +1032,12 @@ class: left, top, normal
 ---
 # Sources
 
+## Préparation du BBL
+
 * Wikipedia
+
+## Test de la configuration des mails
+
 * http://www.mail-tester.com/
 * https://unlocktheinbox.com/resources/emailauthentication/#_
 
