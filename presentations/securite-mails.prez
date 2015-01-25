@@ -21,8 +21,10 @@ class: center, middle, inverse
 
 ???
 # Pourquoi tant de haine ?!?
-* Découvrir les méthodes de sécurisation des mails
-* Découvrir x509
+* Découvrir les méthodes de sécurisation des protocols historisques d'internet comme HTTP, SMTP...
+* Exemple sur les mails (mise en place récente)
+* Découvrir quelques technos du web comme les DNS...
+* Découvrir SSL/TLS/x509
 * Découvrir GPG
 * Elargir le web-of-trust
 
@@ -62,7 +64,7 @@ Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
 
 ???
 
-Un message **textuel** envoyé par un **émetteur** à un **destinataire**
+Un message **textuel** en ASCII (7bits) envoyé par un **émetteur** à un **destinataire**
 
 
 
@@ -162,6 +164,11 @@ class: center, middle, inverse
 
 # L'acheminement
 
+
+???
+
+On ne contacte pas directement le destinataire, nos mails passent par des relais. On va voir comment toute ce système est sécurisé.
+
 ---
 layout: true
 class: left, top, normal
@@ -226,11 +233,18 @@ Pas d'authentification entre les serveurs :
 
 
 
-
-
 ---
 layout: true
 class: center, middle, inverse
+
+---
+
+# Sécurisation des mails
+
+???
+
+* Autenticité : qui a envoyé
+* Confidentialité : qui peut le lire
 
 ---
 
@@ -386,7 +400,6 @@ DKIM : Domain Key Identified Mail
 * h is the list of signed header fields
 
 * On peut néanmoins toujours outrepasser la signature en envoyant depuis le réseau interne puisque c'est le serveur qui signe.
-* Plus difficile de spoofer une adresse IP
 
 
 ---
@@ -438,6 +451,11 @@ Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.p
 
 Toute la chaine n'est pas sécurisée !
 
+* A la bonne volonté des MTA/MDA
+ * Possibilité d'attaque (DNS cache poisoning, IP spoofing...)
+* Authentification du premier MTA uniquement, pas de l'utilisateur réel
+
+
 ---
 # Assurer l'authenticité
 ## Signature GPG
@@ -486,6 +504,10 @@ class: center, middle, inverse
 
 # Assurer la confidentialité
 
+???
+
+On sait qui a envoyé le message, mais tout le monde peut lire son contenu
+
 ---
 layout: true
 class: left, top, normal
@@ -498,11 +520,13 @@ Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.p
 
 ???
 
-Toute la chaine n'est pas sécurisée !
+* Toute la chaine n'est pas sécurisée !
+* On sait qui a envoyé le message, mais tout le monde peut lire son contenu
+* Confidentialité pas prévue dans le protocole, mais dans la stack réseau
 
 ---
 # Assurer la confidentialité
-## TLS/SSL et X509
+## 7 couches du modèle OSI
 
 .prezTable[
     <table>
@@ -553,16 +577,180 @@ Toute la chaine n'est pas sécurisée !
     </table>
 ]
 
+???
+
+## L'architecture en 7 couche du modèle OSI
+* Protocols internet sur couche 7
+* Sécurisation sur couche 5/6
 
 ---
 # Assurer la confidentialité
-## TLS/SSL et X509
+## SSL et TLS
+
+> Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), are **cryptographic protocols** designed to provide communication security over the Internet.
+> <br/><br/>
+> They use **X.509 certificates** and hence **asymmetric cryptography** to authenticate the counterparty with whom they are communicating, and to **exchange a symmetric key**.
+> <br/><br/>
+> This session key is then used to **encrypt data flowing between the parties**. This allows for **data/message confidentiality** \[...\] and as a by-product, **message authentication**.
+
+Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+
+???
+
+Protocoles cryptographique
+* Basé sur X.509 (hein ?)
+* et la crypto asymétrique (hein ?)
+* Pour échanger une clé symétrique (re-re-hein ?)
+* Pour finalement tout crypter entre les deux
+
+Objectif :
+* Confidentialité
+* Authentification
+
+---
+# Assurer la confidentialité
+## Cryptographie symétrique
+
+![Symmetric-key algorithm](/images/Symmetric-key algorithm.svg)
+
+???
+
+Une seule clé sert à chiffrer et déchiffrer.
+* Algorithme de César (décalage de caaractères A->C, B->D...)
+* XOR (application d'un masque XOR bit à bit)
+* Twofish
+* AES
+* RC4
+* 3DES
+
+RC4 encore très utilisé dans TLS, mais déconseillé à cause de biais possible. Probablement cassé par les agences crypto.
+
+---
+# Assurer la confidentialité
+## Cryptographie asymétrique
+
+![Asymmetric-key algorithm](/images/Asymmetric-key algorithm.svg)
+
+???
+Deux clés liées mathématiquement (factorisation de nombres premiers, factorisation sur courbes éliptiques) permettent de :
+* Chiffrer et déchiffer
+* Signer et vérifier
+
+Les deux clés sont interchangeable (avant publication) !
+
+Plein d'algorithms utilisent des clés asymétriques :
+* RSA (signature et chiffrement) --> SSH, GPG...
+* DSA (signature) -> 
+* Diffie-Helmann (échange de clés sécurisé) -> TLS/SSL
+
+---
+# Assurer la confidentialité
+## SSL et TLS
+
+> Transport Layer Security (TLS) and its predecessor, Secure Sockets Layer (SSL), are **cryptographic protocols** designed to provide communication security over the Internet.
+> <br/><br/>
+> They use **X.509 certificates** and hence **asymmetric cryptography** to authenticate the counterparty with whom they are communicating, and to **exchange a symmetric key**.
+> <br/><br/>
+> This session key is then used to **encrypt data flowing between the parties**. This allows for **data/message confidentiality** \[...\] and as a by-product, **message authentication**.
+
+Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+
+???
+
+Protocoles cryptographique
+* Basé sur X.509 (hein ?)
+* et la crypto asymétrique (hein ?)
+* Pour échanger une clé symétrique (re-re-hein ?)
+* Pour finalement tout crypter entre les deux
+
+Objectif :
+* Confidentialité
+* Authentification
+
+---
+# Assurer la confidentialité
+## X.509
 
 > In cryptography, X.509 is **an ITU-T standard** for a **public key infrastructure (PKI)** and **Privilege Management Infrastructure (PMI)**. 
 > <br/><br/>
 > X.509 specifies, amongst other things, **standard formats for public key certificates**, **certificate revocation lists**, **attribute certificates**, and **a certification path validation algorithm**.
 
 Source : [Wikipedia](http://fr.wikipedia.org/wiki/Courrier_%C3%A9lectronique)
+
+???
+
+* Définition d'un système de gestion de clé uniquement. Ca ne définit pas d'algorithme ou de protocoles. C'est applicables partout.
+* Basé sur de la crypto asymétriques à clé publique/privée
+* Utilisé dans SSL/TLS mais pas uniquement, aussi pour la signature du code, des documents PDF...
+
+---
+# X.509
+## Certificat
+
+Informations sur le certificat
+* Serial Number
+* Subject
+* Subject Public Key
+* Issuer
+* Validity
+* Usages
+* Signature
+
+Codé sous forme de clé-valeur avec des identifiants normalisés, des OID :
+
+* 2.5.29.15 - Key Usage
+* 1.2.840.113549.1.1.5 : Signature RSA-SHA
+* 2.5.29.14 : Subject Key Identifier
+* 1.3.6.1.4.1.36513 : Préfix Sogelink
+
+???
+* OID : Object Identifier
+* Liste maintenue par l'ISO (International Organisation for Standardisation) et ITU-T (International telecomunication Union - Telecom Standardization Sector)
+
+
+---
+# X.509
+## Certificat
+
+* Des formats de certificats
+ * DER/CER/CRT : format binaire de certificat basé sur [ASN1](http://lapo.it/asn1js/#3082052D30820415A0030201020203159718300D06092A864886F70D0101050500303C310B300906035504061302555331173015060355040A130E47656F54727573742C20496E632E311430120603550403130B526170696453534C204341301E170D3134313030353038313932315A170D3137313030373136343334355A3081BC31293027060355040513204A50344A476F36523064416459533149784D6666686241547169396E65364E4C31133011060355040B130A475439383638333335353131302F060355040B1328536565207777772E726170696473736C2E636F6D2F7265736F75726365732F637073202863293134312F302D060355040B1326446F6D61696E20436F6E74726F6C2056616C696461746564202D20526170696453534C2852293116301406035504030C0D2A2E736F67656C696E6B2E667230820122300D06092A864886F70D01010105000382010F003082010A0282010100BA9AB3936606D1D4CECB669F3BEB9D3A978266B15E8FF1E2CCBCF0EEAD3680BEAE0AFA591953709CD2A639FDF527062456109E637586335EFD41B9F27676A7AB507D214B9BC27D8F09673957F1D36C556B289A0B09AA834D16B8A05F6ED661902EF80B0395E0DDF13A19682C5154DAE5BC70A80DAB27BB4A7C5C25CCA34E6C59F0B562165AB3B025D5BC9DBF5A3840D0A1EC45F2AFD0CAAE332A8D0417A10CEECB2B2DCF4F129240EB2081BAB4CA975402881AC1DEBEDACE5420E01341F60CDBD27368C68B02F7F684376DD362E07E86AD52E7F3E021F3C7DBBD70FC836B4D41ACE1A7AB67F700E175FD3FBEA4F71192D8E2A027365C3A17E9A22FDE116F69A30203010001A38201B5308201B1301F0603551D230418301680146B693D6A18424ADD8F026539FD35248678911630300E0603551D0F0101FF0404030205A0301D0603551D250416301406082B0601050507030106082B0601050507030230250603551D11041E301C820D2A2E736F67656C696E6B2E6672820B736F67656C696E6B2E667230430603551D1F043C303A3038A036A0348632687474703A2F2F726170696473736C2D63726C2E67656F74727573742E636F6D2F63726C732F726170696473736C2E63726C301D0603551D0E04160414BDA8932EC2EB251205403C24AD16E4983F67977A300C0603551D130101FF04023000307806082B06010505070101046C306A302D06082B060105050730018621687474703A2F2F726170696473736C2D6F6373702E67656F74727573742E636F6D303906082B06010505073002862D687474703A2F2F726170696473736C2D6169612E67656F74727573742E636F6D2F726170696473736C2E637274304C0603551D20044530433041060A6086480186F8450107363033303106082B060105050702011625687474703A2F2F7777772E67656F74727573742E636F6D2F7265736F75726365732F637073300D06092A864886F70D0101050500038201010053FAAF73BCD7E02864A7C32ED30E66D7935B44D78DECC93C7F303DA997609C847EAE9A13455E96EC9D7403D6B1C8B7DC48E4E6B20035F0FCC4F83153D02BB0A0C7DCAE49B1E9B09925B8A4CE94BD73AF7C67B864A77BBDA21E3DBBF4F45FD4A39D046B9F5B87F51EE827BAFB2C244EDC2F887900D59DA9205F6C9A9F3DE4BCFF785BC32F3F6636BEFF695280411584F73FFB738D10520E1B239305D280F0EAF269BB9FF03A6BD30099FB8C7ACCF61E2E192B4044D1A667E16DC12B24667EA9B6FEF1C62C288B58510F0B29A6ED1CF8661315630E957B489FF47F033BF082336276DADDE404260B44231A00A57E84302735E92D6EA2342DC5D1C027A887F4173E)
+ * PEM : DER encodé en base64 (utilisé pour la communication d'un fichier DER)
+ * PKCS7 : Format de signature pouvant contenir le certificat publique
+ * PKCS12 : Format de conteneur de clés publiques et privées protégé par mot de passe
+
+---
+# X.509
+## Modèle de confiance des autorités de certification
+
+![Certification Authority Trust Model](/images/Certification Authority Trust Model.svg)
+
+---
+# X.509
+## Hierarchie des certificats
+
+### Exercice : Trouver le root CA du certificat Sogelink
+
+--
+* Equifax Secure Certificate Authority
+    * GeoTrust Global CA
+        * RapidSSL CA
+            * *.sogelink.fr
+
+???
+* Geotrust a racheté la branche sécurité d'un organisme bancaire (Equifax). Il a depuis été acquis par Verisign.
+* RapidSSL est un revendeur sur la PKI de verisign...
+
+---
+# X.509
+## Révocation
+
+![Certificate Revocation List](/images/crl.png)
+
+???
+
+Publication par les autorités de certification (CA), d'une liste de révocation contenant tous les numéro de série des certificats révoqués avec la raison et la date.
+
+La vérification est normalement obligatoire, mais elle est rarement obligatoire.
 
 ---
 # Assurer la confidentialité
