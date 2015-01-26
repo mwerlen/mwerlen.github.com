@@ -7,10 +7,9 @@ permalink: /presentations/securite-mails.html
        
 ???
 Prérequis :
-* Telnet et internet
- * Telnet dans windows : http://www.labnol.org/software/windows-telnet-command/18222/
-* thunderbird avec Enigmail ou Mutt
-* GPG
+* Telnet et internet ou accès à la machine v_console
+* thunderbird avec Enigmail ou Mutt connecté à un compte mail
+* GPG ou WinGpG
 
 ---
 title: why
@@ -208,16 +207,16 @@ Pas d'authentification entre les serveurs :
 
 ## Exercice #1 : envoyer un mail avec SMTP
 ```
-    $> telnet xxxx.yyyy.fr 25
+    $> telnet server.werlen.fr 25
 
     EHLO toto.example.net
     MAIL FROM:<sender@domain.com>
-    RCPT TO:<sender@domain.com>
+    RCPT TO:<mwerlen@server.werlen.fr>
     DATA
     From: Alice <Alice@example.net>
-    To: Bob <bob@server.org>
-    Subject: Happy Birthday !
-    Hey, happy birthday !
+    To: Maxime Werlen <mwerlen@server.werlen.fr>
+    Subject: [Alice] Démo pour le BBL
+    J'ai validé le premier exercice !
     .
 ```
 
@@ -391,31 +390,6 @@ Démo avec le MX de la boite depuis mon server perso
  * Spoofer l'adresse IP (blind spoof)
 
 
----
-# Assurer l'authenticité
-
-## Exercice #2 : Tromper SPF
-```
-    $> telnet xxxx.yyyy.fr 25
-
-    EHLO toto.example.net
-    MAIL FROM:<sender@domain.com>
-    RCPT TO:<receiver@domain.com>
-    DATA
-    From: Alice <Alice@example.net>
-    To: Bob <bob@server.org>
-    Subject: Happy Birthday !
-    Hey, happy birthday !
-    .
-```
-
-???
-* Utiliser Telnet pour se connecter au serveur SMTP depuis une machine du réseau interne
-* Donner l'adresse du serveur protégé par SPF
-* S'envoyer un mail à soit depuis une adresse bison (alice@...)
-
-
-SPF : Pas suffisant pour assurer la sécurité du mail...
 
 
 
@@ -823,6 +797,7 @@ Codé sous forme de clé-valeur avec des identifiants normalisés, des OID :
 * Geotrust a racheté la branche sécurité d'un organisme bancaire (Equifax). Il a depuis été acquis par Verisign.
 * RapidSSL est un revendeur sur la PKI de verisign...
 
+
 ---
 # X.509
 ## Révocation
@@ -886,6 +861,22 @@ La vérification est normalement obligatoire, mais elle est rarement obligatoire
 * Possibilités de renégociation
 * Différents algorithmes de calcul du master (clé symétrique)
 
+
+---
+# Assurer la confidentialité
+## SSL et TLS
+
+### Démo : SMTP sur TLS
+
+```
+  openssl s_client -starttls smtp -connect server.werlen.fr:465
+```
+
+
+???
+* Se connecter sur server.werlen.fr
+* Montrer la hierarchie des certificats
+* Montrer la session résultante
 
 ---
 # L'acheminement
