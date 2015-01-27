@@ -11,6 +11,11 @@ Prérequis :
 * Machine windows : ssh pour aller sur v_console
 * thunderbird avec Enigmail ou Mutt connecté à un compte mail
 * GPG ou WinGpG
+* Une pièce d'identité avec photo
+
+A apporter :
+* Quelques impressions de ma clé (pour l'exo sur l'envoi d'un mail chiffré)
+* Ma pièce d'identité 
 
 ---
 title: why
@@ -23,6 +28,7 @@ class: center, middle, inverse
 * Découvrir les méthodes de sécurisation des protocols historisques d'internet comme HTTP, SMTP...
 * Exemple sur les mails (mise en place récente)
 * Découvrir quelques technos du web comme les DNS...
+* Parler un peu de crypto
 * Découvrir SSL/TLS/x509
 * Découvrir GPG
 * Elargir le web-of-trust
@@ -181,17 +187,8 @@ Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.p
 
 ???
 
-Le mail n'est pas envoyé directement de l'émetteur vers le destinataire mais il passe par des serveurs relais. En effet, tout le monde n'est pas tout le temps connecté.
-Le contenu est en clair presque tout le temps :
-* Sur les serveurs
-* Entre les serveurs
-
-Pas d'authentification entre les serveurs :
-* On ne sait pas qui envoi réellement les mails
-* N'importe qui peut envoyer n'importe quoi
-
----
-# L'acheminement
+* Le contenu est en clair presque tout le temps (sur serveur et en transfert)
+* Pas d'authentification entre les serveurs
 
 ## Acteurs
 * **MUA** : **M**ail **U**ser **A**gent
@@ -223,8 +220,8 @@ Pas d'authentification entre les serveurs :
 
 ???
 * Utiliser Telnet pour se connecter au serveur SMTP
-* Donner l'adresse du serveur ouvert
-* S'envoyer un mail à soit depuis une adresse bison (alice@...)
+* Donner l'adresse de mon serveur (server.werlen.fr)
+* M'envoyer un mail depuis une adresse bison (superman@...)
 
 
 
@@ -764,6 +761,16 @@ Codé sous forme de clé-valeur avec des identifiants normalisés, des OID :
 * 1.3.6.1.4.1.36513 : Préfix Sogelink
 
 ???
+* Certificat : Association d'une clée publique et d'une identité (personne).
+
+* Usages : utilisations possibles du certificat.
+* Classes de certificats
+    * SSL : pas cher
+    * SSL wildcard : + cher
+    * Authentification personnelle : très cher
+    * Signature de code : très cher
+    * Extended Validation (cadena vert) : très très cher 
+
 * OID : Object Identifier
 * Liste maintenue par l'ISO (International Organisation for Standardisation) et ITU-T (International telecomunication Union - Telecom Standardization Sector)
 
@@ -775,7 +782,7 @@ Codé sous forme de clé-valeur avec des identifiants normalisés, des OID :
 * Des formats de certificats
  * DER/CER/CRT : format binaire de certificat basé sur [ASN1](http://lapo.it/asn1js/#3082052D30820415A0030201020203159718300D06092A864886F70D0101050500303C310B300906035504061302555331173015060355040A130E47656F54727573742C20496E632E311430120603550403130B526170696453534C204341301E170D3134313030353038313932315A170D3137313030373136343334355A3081BC31293027060355040513204A50344A476F36523064416459533149784D6666686241547169396E65364E4C31133011060355040B130A475439383638333335353131302F060355040B1328536565207777772E726170696473736C2E636F6D2F7265736F75726365732F637073202863293134312F302D060355040B1326446F6D61696E20436F6E74726F6C2056616C696461746564202D20526170696453534C2852293116301406035504030C0D2A2E736F67656C696E6B2E667230820122300D06092A864886F70D01010105000382010F003082010A0282010100BA9AB3936606D1D4CECB669F3BEB9D3A978266B15E8FF1E2CCBCF0EEAD3680BEAE0AFA591953709CD2A639FDF527062456109E637586335EFD41B9F27676A7AB507D214B9BC27D8F09673957F1D36C556B289A0B09AA834D16B8A05F6ED661902EF80B0395E0DDF13A19682C5154DAE5BC70A80DAB27BB4A7C5C25CCA34E6C59F0B562165AB3B025D5BC9DBF5A3840D0A1EC45F2AFD0CAAE332A8D0417A10CEECB2B2DCF4F129240EB2081BAB4CA975402881AC1DEBEDACE5420E01341F60CDBD27368C68B02F7F684376DD362E07E86AD52E7F3E021F3C7DBBD70FC836B4D41ACE1A7AB67F700E175FD3FBEA4F71192D8E2A027365C3A17E9A22FDE116F69A30203010001A38201B5308201B1301F0603551D230418301680146B693D6A18424ADD8F026539FD35248678911630300E0603551D0F0101FF0404030205A0301D0603551D250416301406082B0601050507030106082B0601050507030230250603551D11041E301C820D2A2E736F67656C696E6B2E6672820B736F67656C696E6B2E667230430603551D1F043C303A3038A036A0348632687474703A2F2F726170696473736C2D63726C2E67656F74727573742E636F6D2F63726C732F726170696473736C2E63726C301D0603551D0E04160414BDA8932EC2EB251205403C24AD16E4983F67977A300C0603551D130101FF04023000307806082B06010505070101046C306A302D06082B060105050730018621687474703A2F2F726170696473736C2D6F6373702E67656F74727573742E636F6D303906082B06010505073002862D687474703A2F2F726170696473736C2D6169612E67656F74727573742E636F6D2F726170696473736C2E637274304C0603551D20044530433041060A6086480186F8450107363033303106082B060105050702011625687474703A2F2F7777772E67656F74727573742E636F6D2F7265736F75726365732F637073300D06092A864886F70D0101050500038201010053FAAF73BCD7E02864A7C32ED30E66D7935B44D78DECC93C7F303DA997609C847EAE9A13455E96EC9D7403D6B1C8B7DC48E4E6B20035F0FCC4F83153D02BB0A0C7DCAE49B1E9B09925B8A4CE94BD73AF7C67B864A77BBDA21E3DBBF4F45FD4A39D046B9F5B87F51EE827BAFB2C244EDC2F887900D59DA9205F6C9A9F3DE4BCFF785BC32F3F6636BEFF695280411584F73FFB738D10520E1B239305D280F0EAF269BB9FF03A6BD30099FB8C7ACCF61E2E192B4044D1A667E16DC12B24667EA9B6FEF1C62C288B58510F0B29A6ED1CF8661315630E957B489FF47F033BF082336276DADDE404260B44231A00A57E84302735E92D6EA2342DC5D1C027A887F4173E)
  * PEM : DER encodé en base64 (utilisé pour la communication d'un fichier DER)
- * PKCS7 : Format de signature pouvant contenir le certificat publique
+ * PKCS7 : Format de signature pouvant contenir le certificat public
  * PKCS12 : Format de conteneur de clés publiques et privées protégé par mot de passe
 
 ---
@@ -783,6 +790,14 @@ Codé sous forme de clé-valeur avec des identifiants normalisés, des OID :
 ## Modèle de confiance des autorités de certification
 
 ![Certification Authority Trust Model](/images/Certification Authority Trust Model.svg)
+
+???
+
+* Environ 500 certificats installé dans Ubuntu (root et intermédiaires)
+* Une 50 de Root CA sur les OS/navigateurs
+* 5 gros acteurs pour les certificats SSL mais des centaines d'AC intermédiaires
+* Des revendeurs sur les AC des gros
+* Tous les logiciels n'ont pas la même liste (Adobe != OS, CaCert sur certains linux...)
 
 ---
 # X.509
@@ -799,7 +814,7 @@ Codé sous forme de clé-valeur avec des identifiants normalisés, des OID :
 ???
 * Geotrust a racheté la branche sécurité d'un organisme bancaire (Equifax). Il a depuis été acquis par Verisign.
 * RapidSSL est un revendeur sur la PKI de verisign...
-
+* Verisign appartient à Symantec qui a 35% du marché (5 acteur pour 95 des cert)
 
 ---
 # X.509
@@ -901,23 +916,23 @@ Source : [Wikipedia](http://commons.wikimedia.org/wiki/File:Etapes_envoi_email.p
 ```
     From: Maxime Werlen <mwerlen@server.werlen.fr>
     To: maxime@werlen.fr
-    Subject: Message =?iso-8859-1?Q?chiffr=E9?= avec GPG
+    Subject: Message chiffre avec GPG
     Content-Type: text/plain; charset=us-ascii; x-action=pgp-encrypted
     
-    -----BEGIN PGP MESSAGE-----
-    Version: GnuPG v1
-    
-    hQEMAz9clsGeCsjzAQgApIDt2mLrj93E4e2j3F7i9BhmBdhYPtS+pGDNziwN8Gcg
-    pqeFT29/E5P5UH/Jn0HYMy6mI1zEGsWZ59Mucly0nsptHlnZHmq7cWDtTn50h1L8
-    D8oHbaNLI1DW0ghZvTF1Pb0ybVf+3+79XJRZn5507jVqesG3jmMHP98eAIOn9EvM
-    2JGztj3gvcuSI30QpwwU1LANpphqnqF0JM4x3yU62jjbwG7WKPagtETPGcU8e7GF
-    CYWG0KAzM4layHw/q/aObq1p3VY18WsgmzHawAtnR9CUEBYWg4MN2O0ERORqQ5Gs
-    qzsjFD362c46JIgN9sdQm7mOQGXdxei8rJW+jgKfytKMAaN0bTSnBrspiSJkYf7y
-    k4yN1botJTz5hIhy1PfRdiMlo5YKuE3DrD6lHosRrwi9Zd2rF92Ialw/5FM15L13
-    TCd9LWSufLM8Blpe0Qb90p3mZu011WWjPdB33aKtMfbt1TblCBojIr0XekmXeNCs
-    rSoUj+pyKWj2McUo8TFa/R7rqKqeb+MeaSxNIo4=
-    =o6js
-    -----END PGP MESSAGE-----
+*   -----BEGIN PGP MESSAGE-----
+*   Version: GnuPG v1
+*   
+*   hQEMAz9clsGeCsjzAQgApIDt2mLrj93E4e2j3F7i9BhmBdhYPtS+pGDNziwN8Gcg
+*   pqeFT29/E5P5UH/Jn0HYMy6mI1zEGsWZ59Mucly0nsptHlnZHmq7cWDtTn50h1L8
+*   D8oHbaNLI1DW0ghZvTF1Pb0ybVf+3+79XJRZn5507jVqesG3jmMHP98eAIOn9EvM
+*   2JGztj3gvcuSI30QpwwU1LANpphqnqF0JM4x3yU62jjbwG7WKPagtETPGcU8e7GF
+*   CYWG0KAzM4layHw/q/aObq1p3VY18WsgmzHawAtnR9CUEBYWg4MN2O0ERORqQ5Gs
+*   qzsjFD362c46JIgN9sdQm7mOQGXdxei8rJW+jgKfytKMAaN0bTSnBrspiSJkYf7y
+*   k4yN1botJTz5hIhy1PfRdiMlo5YKuE3DrD6lHosRrwi9Zd2rF92Ialw/5FM15L13
+*   TCd9LWSufLM8Blpe0Qb90p3mZu011WWjPdB33aKtMfbt1TblCBojIr0XekmXeNCs
+*   rSoUj+pyKWj2McUo8TFa/R7rqKqeb+MeaSxNIo4=
+*   =o6js
+*   -----END PGP MESSAGE-----
 ```
 
 ???
@@ -941,7 +956,9 @@ Source : [Wikipedia](http://en.wikipedia.org/wiki/Pretty_Good_Privacy)
 ???
 
 * Pas un protocol, ni algorithme. C'est un logiciel de chiffrement et signature à clé asymétrique.
-* Gestion de la clé privée et création du réseau de confiance.
+* Gestion de la confidentialité et de l'authentification
+* Gestion de la clé privée et de son utilisation
+* pas de x.509 pour gérer la confiance et les formats...
 
 ---
 # GPG
@@ -958,6 +975,30 @@ Source : [Wikipedia](http://en.wikipedia.org/wiki/Web_of_trust)
 * Objectif : associer de manière sûre une clée et une identité.
 * S'appuie sur des serveur de clés qui permettent de publier des clés publiques
 * Complètement décentralisé. Personne ne nous dit à qui faire confiance.
+
+---
+# GPG
+## Web of Trust
+
+### Valider une clé
+
+Signer la clé de quelqu'un (comment dans x.509)
+
+### Partager l'information
+
+Publier la signature sur un [serveur de clé](https://pgp.mit.edu/pks/lookup?op=vindex&search=0xE0CD3CDC59B2D9A0)
+
+### Strong set
+60 000 clés liées entre elles, distance moyenne 6 clés, en moyenne 10 signatures par clé
+
+???
+
+* Clé PGP == certificat x.509
+* Valider une clé == valider l'association humain-clé
+* Faire confiance == déléguer la validation des clés à une autre personne/clé
+* Ne pas confondre validité et confiance
+
+Montrer l'exemple sur le serveur MIT
 
 ---
 class: center
@@ -1003,16 +1044,66 @@ class: center
                 <td>Elena</td>
                 <td>Blake, Chloe, Dharma, Francis</td>
             </tr>
+<!--
             <tr>
                 <td>&nbsp;</td>
                 <td>Blake, Chloe, Elena</td>
                 <td>&nbsp;</td>
                 <td>Blake, Chloe, Elena, Francis</td>
             </tr>
+-->
         </tbody>
     </table>
 ]
 
+???
+
+Confiance = 1 confiance totale ou 2 confiance marginale
+
+---
+# GPG
+## Exercice GPG
+
+1. Se créer une clé
+```
+gpg --gen-key
+```
+2. Publier sa clé
+```
+gpg --send-key 1A2B3C4D
+```
+3. Récupérer ma clé publique
+```
+gpg --recv-keys 0D70DDA6
+```
+4. M'envoyer un mail chiffré avec Thunderbird/Enimgail sur mwerlen@server.werlen.fr
+
+???
+
+Possibilité de faire tout ça avec Enigmail
+
+---
+# GPG
+## Exercice GPG
+
+### Exercice : constituer un Web of Trust
+
+1. Se créer une clé
+2. Publier sa clé
+3. Imprimer/écrire son empreinte de clé sur papier
+4. Echange des empreintes et vérification de l'identité (avec CNI)
+5. Signer les clés des autres
+```
+gpg --recv-keys 00AA11BB
+gpg --fingerprint 00AA11BB
+gpg --sign-key 00AA11BB
+gpg --armor --output 00AA11BB-signedBy-1A2B3C4D.asc --export 00AA11BB
+```
+6. Publier la signature
+```
+gpg --import 1A2B3C4D-signedBy-00AA11BB.asc
+gpg --send-key 1A2B3C4D
+```
 ---
 title: end
 class: center, middle, inverse
@@ -1029,6 +1120,8 @@ class: left, top, normal
 ## Préparation du BBL
 
 * Wikipedia
+* Debian wiki : https://wiki.debian.org/Keysigning
+* Analyse du strong-set WoT : http://pgp.cs.uu.nl/plot/
 
 ## Test de la configuration des mails
 
