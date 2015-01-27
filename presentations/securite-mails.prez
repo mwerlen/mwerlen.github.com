@@ -7,7 +7,8 @@ permalink: /presentations/securite-mails.html
        
 ???
 Prérequis :
-* Telnet et internet ou accès à la machine v_console
+* Machine linux avec telnet, dig, openssl, gpg
+* Machine windows : ssh pour aller sur v_console
 * thunderbird avec Enigmail ou Mutt connecté à un compte mail
 * GPG ou WinGpG
 
@@ -316,6 +317,8 @@ class: left, top, normal
 Hiérarchie des DNS : NS de . puis NS de .fr. puis NS de .sogelink.fr. ...
 
 * Sécurisation possible grâce à DNSSec (utilisation de la crypto asymétrique pour signer les enregistrement DNS)
+
+Outil : dig 
 
 ---
 title: securisation
@@ -1032,4 +1035,5 @@ class: left, top, normal
 * http://www.mail-tester.com/
 * https://unlocktheinbox.com/resources/emailauthentication/#_
 
-
+## Super lecture
+* http://blog.bienaime.info/2015/01/le-challenge-du-logo-anssi.html?m=1
