@@ -9,13 +9,14 @@ permalink: /presentations/securite-mails.html
 Prérequis :
 * Machine linux avec telnet, dig, openssl, gpg
 * Machine windows : ssh pour aller sur v_console
-* thunderbird avec Enigmail ou Mutt connecté à un compte mail
-* GPG ou WinGpG
+* Thunderbird avec Enigmail ou Mutt connecté à un compte mail
+* GPG ou WinGpG (installation vanilla suffisante)
 * Une pièce d'identité avec photo
 
 A apporter :
 * Quelques impressions de ma clé (pour l'exo sur l'envoi d'un mail chiffré)
 * Ma pièce d'identité 
+* Mon PC pour vérifier les mails et lancer la démo open_ssl
 
 ---
 title: why
@@ -1070,11 +1071,11 @@ gpg --gen-key
 ```
 2. Publier sa clé
 ```
-gpg --send-key 1A2B3C4D
+gpg --keyserver pgp.mit.edu --send-key 1A2B3C4D
 ```
 3. Récupérer ma clé publique
 ```
-gpg --recv-keys 0D70DDA6
+gpg --keyserver pgp.mit.edu --recv-keys 0D70DDA6
 ```
 4. M'envoyer un mail chiffré avec Thunderbird/Enimgail sur mwerlen@server.werlen.fr
 
@@ -1094,7 +1095,7 @@ Possibilité de faire tout ça avec Enigmail
 4. Echange des empreintes et vérification de l'identité (avec CNI)
 5. Signer les clés des autres
 ```
-gpg --recv-keys 00AA11BB
+gpg --keyserver pgp.mit.edu --recv-keys 00AA11BB
 gpg --fingerprint 00AA11BB
 gpg --sign-key 00AA11BB
 gpg --armor --output 00AA11BB-signedBy-1A2B3C4D.asc --export 00AA11BB
@@ -1102,7 +1103,7 @@ gpg --armor --output 00AA11BB-signedBy-1A2B3C4D.asc --export 00AA11BB
 6. Publier la signature
 ```
 gpg --import 1A2B3C4D-signedBy-00AA11BB.asc
-gpg --send-key 1A2B3C4D
+gpg --keyserver pgp.mit.edu --send-key 1A2B3C4D
 ```
 ---
 title: end
