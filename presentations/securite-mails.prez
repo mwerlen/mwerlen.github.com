@@ -879,6 +879,7 @@ La vérification est normalement obligatoire, mais elle est rarement obligatoire
 * Possibilité d'un mode anonyme (on ne s'envois que les clés publiques, pas les certificats complets
 * Possibilités de renégociation
 * Différents algorithmes de calcul du master (clé symétrique)
+* Perfect Forward Secrecy !
 
 
 ---
