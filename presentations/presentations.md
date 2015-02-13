@@ -19,8 +19,3 @@ Une présentation de quelques paradigmes de programmation avec un focus particul
 Une présentation de quelques mécanismes de sécurité et cryptographie appliqués à l'exemple de mails.
 
 
-Formation Management
---------------------
-
-[Liste des présentations](/presentations/mgmt/)<br/>
-L'objectif était de présenter à chaque nouvelle journée une présentation rapide (3 minute maximum) des résultats de la formation.
