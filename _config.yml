@@ -9,7 +9,7 @@ plugins:     ./_plugins
 encoding:    UTF-8
 
 future:      true
-lsi:         false
+lsi:         true
 pygments:    false
 markdown:    rdiscount
 permalink:   /blog/:categories/:year/:month/:day/:title.html
