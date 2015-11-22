@@ -64,7 +64,9 @@ Les principaux pattern de la programmation fonctionnelle
 ### Transparence référentielle et méthodes de substitutions
 " A functional program is not a sequence of instructions. It is a single referentially transparent expression.
 Computation proceeds by substitution."
+
 #### Lazy Evaluation
+
 #### Streams
 
 
@@ -101,3 +103,6 @@ Sources
 
 ### Reactive
 - ["Typesafe blog post on Reactive 2.0"](http://typesafe.com/blog/reactive-manifesto-20)
+
+### Autres presentations
+- ["Presentation de Christophe"](https://drive.google.com/open?id=1SU8WQiGnoH-8IVvXq2wXj6_ZCjzkA0xPYhPS3sPtJOw)

@@ -60,7 +60,9 @@ name: license
 
 
         <script type="text/javascript">
-            var slideshow = remark.create();
+            var slideshow = remark.create({
+                "highlightLines": true
+            });
             {% if page.presenter == true and site.presenter == true %}
                 slideshow.togglePresenterMode();
             {% endif %}

@@ -430,14 +430,6 @@ et Scala est un language hybride à la fois fonctionnel et objet.
 
 
 
----
-layout: true
-class: center, middle, inverse
----
-name: comparaison
-
-#Programmer avec des fonctions ?
----
 
 
 
@@ -461,6 +453,10 @@ name: functions
 --
 
 # x &#8594; f(x)
+
+--
+
+# f : x &#8594; (4 &#215; x) + 2
 
 ---
 
