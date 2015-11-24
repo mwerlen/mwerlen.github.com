@@ -434,6 +434,50 @@ et Scala est un language hybride à la fois fonctionnel et objet.
 
 
 
+
+---
+layout: true
+class: center, middle, inverse
+---
+name: functions
+
+#La programmation fonctionnelle
+
+---
+layout: false
+class: bigText
+
+#Programmation fonctionnelle pure
+* Pas d'affectation (mutation de variable)
+* Transparence référentielle
+
+???
+→ Facilite grandement les tests et la réutilisabilité <br/>
+→ Language plus proche des spécifications : on explique ce que ça doit faire, pas comment le faire <br/>
+→ Parallélisation plus simple
+
+Mais pas évident pour certains problèmes (gestion d'état...) comme l'informatique de gestion.
+
+
+---
+class: bigText
+
+#Programmation fonctionnelle impure
+* Affectations possibles
+* Possibilité de travailler en orienté objet
+* Utilisation de programmation impérative et fonctionnelle dans le même language
+* Limiter au maximum les effets de bords
+
+???
+→ Java 8 <br/>
+→ Scala
+
+
+
+
+
+
+
 ---
 layout: true
 class: center, middle, inverse
@@ -452,17 +496,69 @@ name: functions
 
 --
 
-# x &#8594; f(x)
+# x → f(x)
 
 --
 
-# f : x &#8594; (4 &#215; x) + 2
+# f : x → (4 × x) + 2
+
+---
+layout: false
+class: bigText
+
+# Transparence référentielle
+
+> "La transparence référentielle est une propriété des expressions d'un langage de programmation qui fait qu'une expression peut être remplacée par son résultat sans changer le comportement du programme."
+
+Source : [Wikipedia](https://fr.m.wikipedia.org/wiki/Transparence_r%C3%A9f%C3%A9rentielle)
+
+---
+class: bigTex2t
+
+# Transparence référentielle
+
+
+```java
+Si      f = x → g(x) + g(x)
+Alors   f = x → 2 × g(x)
+```
+
+--
+
+Sauf si
+
+```java
+int n = 2;
+int g(int x) {
+    n = n + x;
+    return n;
+}
+```
+
+```java
+        f¹(3) = g(3) + g(3) = 5 + 8 = 13
+        f²(3) = 2 × g(3) = 2 × 5 = 10
+```
+
+→ Pas d'effet de bord         <br/>
+→ Pas d'assignation
+
+???
+
+→ Préfigure CQRS (Command and Query Resposibility Segregation)  <br/>
+→ Possibilité de faire de l'évaluation lazy (mot clé Scala)     <br/>
+
+
+
+
 
 ---
 
-# x &#8594; f(x)
+#Comment travailler sans assignations ?
 
-### Pas d'état, pas d'effet de bord
+
+<Insérer quelques exemples>
+
 
 ---
 layout: true
