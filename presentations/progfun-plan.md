@@ -66,9 +66,10 @@ Les principaux pattern de la programmation fonctionnelle
 Computation proceeds by substitution."
 
 #### Lazy Evaluation
+Exemple Stackoverflow de lazy en scala
 
 #### Streams
-
+Exemple de stream infini
 
 ### Fonctions 
 #### Les fonctions d'ordres supérieurs

@@ -549,11 +549,86 @@ int g(int x) {
 → Possibilité de faire de l'évaluation lazy (mot clé Scala)     <br/>
 
 
+---
+#Lazyness
+
+```scala
+scala> val x = { println("compute X"); 15 }
+compute X
+x: Int = 15
+
+scala> lazy val y = { println("compute Y"); 13 }
+y: Int = <lazy>
+
+scala> x
+res2: Int = 15
+
+scala> y
+compute Y
+res3: Int = 13
+
+scala> y
+res4: Int = 13
+```
+
+Source : [Stackoverflow](http://stackoverflow.com/questions/7484928/what-does-a-lazy-val-do)
+
+???
+
+Si on est certain qu'une fonction donnera toujours le même résultat, pas besoin de l'évaluer plusieurs fois, ni de l'évaluer prématurément.
+
+En scala, mot clé lazy obligatoire.
+
+
+PS : super le REPL en Scala (ça arrive en Java 9)
+
 
 
 
 ---
+# Stream
 
+Scala :
+
+```scala
+scala> val stream = (1 to 100000000).toStream
+stream: scala.collection.immutable.Stream[Int] = Stream(1, ?)
+```
+
+???
+Possibilité de faire une collection de longueur infinie sans saturer la mémoire.
+Chaque itération sera évaluée uniquement lorsque nécessaire
+
+? = non évalué
+
+
+--
+
+Java :
+
+```java
+IntStream.iterate(0, i -> i + 1)
+        .limit(10000000)
+        .forEach(System.out::println);
+```
+
+???
+
+Possible aussi en java
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 #Comment travailler sans assignations ?
 
 
