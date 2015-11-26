@@ -485,6 +485,11 @@ class: center, middle, inverse
 name: functions
 
 #Programmer avec des fonctions ?
+
+???
+
+Voyons quelques grand principes de la programmation fonctionnelle.
+
 ---
 
 #C'est quoi une fonction ?
@@ -621,6 +626,50 @@ Possible aussi en java
 
 
 
+
+---
+# Les fonctions d'ordre supérieur
+## En paramètre
+Java:
+```java
+static int maMethode(IntBinaryOperator op){
+    return op.applyAsInt(5, 10);
+}
+```
+Scala:
+```scala
+def maMethode(uneFonction: (int, int) => int) {
+    return uneFonction(5,10);
+}
+```
+Javascript:
+```javascript
+app.get('/', function(req, res) {...});
+```
+
+---
+# Les fonctions d'ordre supérieur
+## En retour
+Java:
+```java
+static int maMethode(IntBinaryOperator op){
+    return op.applyAsInt(5, 10);
+}
+```
+Scala:
+```scala
+def maMethode(uneFonction: (int, int) => int) {
+    return uneFonction(5,10);
+}
+```
+Javascript:
+```javascript
+app.get('/', function(req, res) {...});
+```
+
+
+---
+# Le currying
 
 
 
