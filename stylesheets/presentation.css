@@ -121,10 +121,8 @@ blockquote p {
 .prezTable tr:nth-child(even) {
   background-color: #b7b7b7;
 }
-
 .bigText li,
 .bigText p,
 .bigText .remark-code {
-    font-size: 1.5em;
-    padding-top: 15px;
+  font-size: 1.5em;
 }

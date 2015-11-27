@@ -49,7 +49,9 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    open: true,
+                    open: {
+                        target: 'http://localhost:9000/presentations/progfun.html'
+                    },
                     base: [
                         '_site'
                     ]

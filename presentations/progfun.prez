@@ -652,26 +652,45 @@ app.get('/', function(req, res) {...});
 ## En retour
 Java:
 ```java
-static int maMethode(IntBinaryOperator op){
-    return op.applyAsInt(5, 10);
+public IntFunction<int> createAdder(int step){
+    IntFunction<int> addFunction = (a) -> {return a+step};
+    return addFunction;
 }
+IntFunction<int> addOne = createAdder(1);
+addOne(4) //5
 ```
 Scala:
 ```scala
-def maMethode(uneFonction: (int, int) => int) {
-    return uneFonction(5,10);
-}
+def createAdder(step: Integer) = (a: Integer) => {a + step};
+val addOne = createAdder(1);
+addOne(4)
 ```
 Javascript:
 ```javascript
-app.get('/', function(req, res) {...});
+function createAdder(step) {
+    return function(a){return a+step;}
+}
+var addOne = createAdder(1);
+addOne(4) //5
 ```
 
 
 ---
 # Le currying
 
+Scala:
+```scala
+def createAdder(step: Integer) = (a: Integer) => {a + step};
+val addOne = createAdder(1);
+addOne(4)
+```
 
+--
+
+```scala
+def createAdder(step: Integer) = (a: Integer) => {a + step};
+createAdder(1)(4) //5
+```
 
 
 
