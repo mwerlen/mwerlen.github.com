@@ -107,3 +107,4 @@ Sources
 
 ### Autres presentations
 - ["Presentation de Christophe"](https://drive.google.com/open?id=1SU8WQiGnoH-8IVvXq2wXj6_ZCjzkA0xPYhPS3sPtJOw)
+- ["La programmation fonctionnelle en JS de David Sferruzza"](https://dsferruzza.github.io/conf-programmation-fonctionnelle-en-js/#/)
