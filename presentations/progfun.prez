@@ -445,6 +445,15 @@ name: functions
 
 ---
 layout: false
+class: middle, inverse, bigText
+
+> "La programmation fonctionnelle est un paradigme de programmation qui considère le calcul en tant qu'évaluation de fonctions mathématiques."
+
+Source : [Wikipedia](https://fr.m.wikipedia.org/wiki/Transparence_r%C3%A9f%C3%A9rentielle)
+
+
+---
+layout: false
 class: bigText
 
 #Programmation fonctionnelle pure
