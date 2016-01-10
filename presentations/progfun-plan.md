@@ -6,41 +6,15 @@ title: Progfun-plan
 Plan de la présentation programmation fonctionnelle
 ===================================================
 
-**Objectif de la présentation :** 
+**Objectif de la présentation :**
 
-* Savoir qu'il existe plusieurs paradigmes de programmation
-* Savoir les différentier
 * Savoir reconnaitre et utiliser les principaux pattern de la programmation fonctionnelle
 * Passer un moment sympa et manger des pizza
 
-Histoire des languages
-----------------------
+Programmation fonctionnelle
+---------------------------
 
-- Architecture Von Neumann : machine à calculer simple
-- Assembleur : language au dessus du compilateur
-- Fortran : abstractions
-- Algol : données typées
-- Apparition des language de programmation évolués
-
-
-Différence entre les principaux paradigmes
-------------------------------------------
-
-### Programmation procédurale
-* Gestion d'un état et instructions de modification de l'état
-* Effet secondaires (effet de bord)
-* GOTO (modification du pointeur du programme)
-
-### Programmation orientée objet
-* Modification de l'état du programme à travers des objets métier
-
-### Programmation logique
-* Complètement déclaratif
-* Ne sert à rien pour de vrai :)
-
-### Programmation fonctionnelle
-
-#### Programmation purement fonctionnelle
+### Programmation purement fonctionnelle
 * Pas d'affectation
 * Répétabilité : même paramètres en entrée = même résultat en sortie
 
@@ -48,7 +22,7 @@ Différence entre les principaux paradigmes
 → Language plus proche des spécifications : on explique ce que ça doit faire, pas comment le faire <br/>
 → Paralélisation plus simple                                                                             <br/>
 
-#### Programmation fonctionnelle impure
+### Programmation fonctionnelle impure
 * Affectation possible
 * Possibilité de travailler en orienté objet
 * Utilisation des patterns fonctionnels et impératifs dans le même language
@@ -58,8 +32,6 @@ Différence entre les principaux paradigmes
 
 Les principaux pattern de la programmation fonctionnelle
 -----------------------------------------------------------
-
-### Fonctions ?
 
 ### Transparence référentielle et méthodes de substitutions
 " A functional program is not a sequence of instructions. It is a single referentially transparent expression.
@@ -71,7 +43,7 @@ Exemple Stackoverflow de lazy en scala
 #### Streams
 Exemple de stream infini
 
-### Fonctions 
+### Fonctions
 #### Les fonctions d'ordres supérieurs
 p25 de https://speakerdeck.com/elise_huard/functional-programming-is-the-new-black
 → Monades
@@ -83,9 +55,13 @@ p25 de https://speakerdeck.com/elise_huard/functional-programming-is-the-new-bla
 ### Les structures immutables (listes...)
 
 
- 
+
 ### La gestion des erreurs, de la nullité...
 Options, Try
+
+
+La programmation fonctionnelle dans la vraie vie
+------------------------------------------------
 
 
 ----
