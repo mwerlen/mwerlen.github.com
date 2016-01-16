@@ -60,11 +60,11 @@ Mais pas évident pour certains problèmes (gestion d'état...) comme l'informat
 
 ---
 layout: true
-class: center, middle, inverse
+class: center, middle, inverse, bigText
 ---
 name: functions
 
-#Programmer avec des fonctions ?
+#Tout est fonction
 
 ???
 
@@ -227,6 +227,9 @@ Javascript:
 app.get('/', function(req, res) {...});
 ```
 
+???
+Scala : structural Typing (static - à la compilation)  != Duck typing (dynamic - au runtime) 
+
 ---
 # Les fonctions d'ordre supérieur
 ## En retour
@@ -273,7 +276,9 @@ createAdder(1)(4) //5
 ```
 
 
+???
 
+Exemple d'un regex pattern matcher
 
 ---
 layout: false
