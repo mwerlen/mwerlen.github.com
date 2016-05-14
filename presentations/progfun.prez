@@ -278,7 +278,76 @@ createAdder(1)(4) //5
 
 ???
 
-Exemple d'un regex pattern matcher
+Exemple d'un regex pattern matcher, pour permettre la réutilisation de le regex compilée.
+```
+Regex.match(".*(\d).*")(toto)
+```
+
+
+
+
+---
+# La récursivité
+
+```
+n! = 1 x 2 x 3 x 4 x .... x n-1 x n
+```
+
+--
+
+Sans récursivité :
+```java
+int factor = 1;
+for (int i=1; i<=number; i++) {
+    factor = factor*i;
+}```
+
+--
+
+Avec récursivité :
+```scala
+def factorial(n: BigInt): BigInt = {  
+      if (n <= 1)
+         1  
+      else    
+      n * factorial(n - 1)
+   }
+```
+
+
+???
+
+Récursivité bien sur possible en java aussi, mais sans tail recursion on finit rapidement avec un stackoverflow.
+
+La tail récursion permet de garder le même contexte (la même stack) dans une boucle de récursion ou l'appel se fait en fin de boucle.
+
+
+
+---
+# La gestion des erreurs
+
+## Optional // Option
+
+
+## Try
+
+## Either
+
+???
+
+Exemples sur : https://tersesystems.com/2012/12/27/error-handling-in-scala/
+
+
+---
+# Les structures immuables
+
+<Exemples à trouver>
+
+???
+
+<Il faudrait touver des exemples>
+
+
 
 ---
 layout: false
