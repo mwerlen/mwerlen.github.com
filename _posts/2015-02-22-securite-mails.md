@@ -34,7 +34,7 @@ Un BBL
 ------
 
 Pour ne pas garder le fruit de toutes ces recherches uniquement pour moi (j'ai bien essayé de partager avec ma femme, mais ça ne l'intéresse pas), j'ai décidé d'en faire une présentation dans mon [entreprise](//www.sogelink.fr).
-En effet, tous les mois j'organise un [BBL]  (pour __B__rown __B__ag __L__unch), il s'agit d'un repas où chacun amène son repas (d'où les sacs bruns) et où l'un des participants présente une technologie ou sujet qui l'a intéressé.
+En effet, tous les mois j'organise un [BBL]  (pour **B**rown **B**ag **L**unch), il s'agit d'un repas où chacun amène son repas (d'où les sacs bruns) et où l'un des participants présente une technologie ou sujet qui l'a intéressé.
 Ce mois-ci c'était moi avec [ma présentation sur la sécurisation des mails](/presentations/securite-mails.html).
 J'ai beaucoup appris en réalisant cette présentation devant un public exigeant de développeurs et d'administrateurs systèmes et j'espère qu'eux aussi ont appris quelque chose.
 

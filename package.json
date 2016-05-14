@@ -5,7 +5,7 @@
     "description": "A agile developer's blog",
     "author": "Maxime Werlen <maxime@werlen.fr>",
     "devDependencies": {
-        "less": ">= 1.4.1",
+        "less": "~1.7.5",
         "grunt": "~0.4.1",
         "grunt-contrib-connect": "~0.6.0",
         "grunt-contrib-csslint": "~0.2.0",
