@@ -11,7 +11,7 @@ encoding:    UTF-8
 future:      true
 lsi:         true
 pygments:    false
-markdown:    rdiscount
+markdown:    kramdown
 permalink:   /blog/:categories/:year/:month/:day/:title.html
 relative_permalinks: false
 
