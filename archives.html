@@ -6,13 +6,10 @@ title : Archives
 <h1>Les archives du blog</h1>
 {% for post in site.posts  %}
 	{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-	{% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
 	{% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-	{% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
 
 	{% if forloop.first %}
 		<h2 class="archive-year">{{this_year}}</h2>
-        <h3 class="archive-month">{{this_month}}</h3>
     <ul class="archive-list">
 	{% endif %}
 
@@ -31,14 +28,7 @@ title : Archives
 		{% if this_year != next_year %}
 			</ul>
 			<h2 class="archive-year">{{next_year}}</h2>
-            <h3 class="archive-month">{{next_month}} </h3>
 			<ul class="archive-list">
-		{% else %}
-			{% if this_month != next_month %}
-				</ul>
-				<h3 class="archive-month">{{next_month}}</h3>
-				<ul  class="archive-list">
-			{% endif %}
 		{% endif %}
 	{% endif %}
 {% endfor %}

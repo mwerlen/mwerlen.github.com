@@ -9,7 +9,7 @@ plugins:     ./_plugins
 encoding:    UTF-8
 
 future:      true
-lsi:         true
+lsi:         false
 pygments:    false
 markdown:    kramdown
 permalink:   /blog/:categories/:year/:month/:day/:title.html
