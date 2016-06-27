@@ -5,30 +5,19 @@ baseurl:     /
 source:      .
 exclude:     [node_modules, bower.json, Gemfile, Gemfile.lock, Gruntfile.js, package.json, params.json, README.md, stylesheets/.*\.less]
 destination: ./_site
-plugins:     ./_plugins
 encoding:    UTF-8
 
+highlighter: rouge
 future:      true
 lsi:         false
-pygments:    false
 markdown:    kramdown
 permalink:   /blog/:categories/:year/:month/:day/:title.html
-relative_permalinks: false
 
 kramdown:
   auto_ids: true,
   footnote_nr: 1
   entity_output: as_char
   toc_levels: 1..6
-  use_coderay: false
-  
-  coderay:
-    coderay_wrap: div
-    coderay_line_numbers: inline
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: style
 
 name: It-Signal
 description: A agile developer's blog
