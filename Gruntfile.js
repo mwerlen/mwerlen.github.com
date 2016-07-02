@@ -102,9 +102,8 @@ module.exports = function (grunt) {
                     watch: true,
                     serve: false,
                     drafts: true,
-                    lsi: false,
-                    raw: 'presenter: true\n'+
-                         'lsi: false'
+                    incremental: true,
+                    raw: 'presenter: true'
                 }
             },
 			build: {

@@ -38,5 +38,6 @@ Thumbs.db
 app/_bower_components
 dist
 .tmp
+.jekyll-metadata
 
 /Gemfile.lock
