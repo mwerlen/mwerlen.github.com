@@ -74,6 +74,7 @@ Sources
 - ["The Guerilla Guide to Functional Programming"](https://docs.google.com/file/d/0B6Pvyu_QqshwYmU1OTg0OGEtMTMwMC00YmQ3LWIxY2MtYzdiMDNiM2QzNjZh/edit?hl=en) par Runar Oli Bjarnason
 - ["Functional Programming is the new black"](https://speakerdeck.com/elise_huard/functional-programming-is-the-new-black)  par Elise Huard
 - [La page wikipedia sur la programmtion fonctionnelle](http://fr.wikipedia.org/wiki/Programmation_fonctionnelle)
+- ["Article dans programmez"](http://blog.xebia.fr/wp-content/uploads/2017/04/programmez-206-avril17-2.pdf)
 
 ### Scala
 - ["Scala introduction"](http://scalacamp.pl/intro/#/start)
