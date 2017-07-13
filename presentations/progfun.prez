@@ -523,7 +523,7 @@ class: bigText
 
 > "La transparence référentielle est une propriété des expressions d'un langage de programmation qui fait qu'une expression peut être remplacée par son résultat sans changer le comportement du programme."
 
-Source : [Wikipedia](https://fr.m.wikipedia.org/wiki/Transparence_r%C3%A9f%C3%A9rentielle)
+Source : [Wikipedia](https://fr.wikipedia.org/wiki/Transparence_r%C3%A9f%C3%A9rentielle)
 
 ---
 class: bigTex2t
@@ -735,11 +735,11 @@ for (int i=1; i<=number; i++) {
 Avec récursivité :
 ```scala
 def factorial(n: BigInt): BigInt = {  
-      if (n <= 1)
-         1  
-      else    
-      n * factorial(n - 1)
-   }
+  if (n <= 1)
+    1  
+  else    
+    n * factorial(n - 1)
+}
 ```
 
 
@@ -752,9 +752,59 @@ La tail récursion permet de garder le même contexte (la même stack) dans une 
 
 
 ---
-# La gestion des erreurs
+layout: true
+class: center, middle, inverse, bigText
+---
+name: types
 
-## Optional // Option
+#Tout est typé
+
+???
+
+Voyons quelques grand principes des languages fonctionnels matures (oui donc pas JS).
+
+---
+
+#C'est quoi un type ?
+---
+
+#Type
+
+> Un type définit les valeurs que peut prendre une donnée, ainsi que les opérateurs qui peuvent lui être appliqués.
+
+Source : [Wikipedia](https://fr.wikipedia.org/wiki/Type_%28informatique%29)
+
+---
+layout: false
+
+# Les types riches
+
+## Either
+
+```scala
+def divideXByY(x: Int, y: Int): Either[String, Int] = {
+  if (y == 0) Left("Dude, can't divide by 0")
+    else Right(x / y)
+}
+  
+// a few different ways to use Either, Left, and Right
+println(divideXByY(1, 0)) // Dude, can't divide by 0
+println(divideXByY(1, 1)) // 1
+divideXByY(1, 0) match {
+  case Left(s) => println("Answer: " + s)
+  case Right(i) => println("Answer: " + i)
+}
+```
+???
+
+Exemples sur : https://tersesystems.com/2012/12/27/error-handling-in-scala/
+
+
+
+---
+# Les types riches
+
+## Option
 ```scala
 def inverse(x: Double): Option[Double] = {
   if (x != 0) {
@@ -769,48 +819,22 @@ def inverse(x: Double): Option[Double] = {
 Comme en Java mais très utilisé. Le NullPointerException n'existe pas.
 
 ---
-# La gestion des erreurs
-
-## Either
-
-```scala
- def divideXByY(x: Int, y: Int): Either[String, Int] = {
-    if (y == 0) Left("Dude, can't divide by 0")
-    else Right(x / y)
-  }
-  
-  // a few different ways to use Either, Left, and Right
-  println(divideXByY(1, 0)) // Dude, can't divide by 0
-  println(divideXByY(1, 1)) // 1
-  divideXByY(1, 0) match {
-    case Left(s) => println("Answer: " + s)
-    case Right(i) => println("Answer: " + i)
-  }
-```
-???
-
-Exemples sur : https://tersesystems.com/2012/12/27/error-handling-in-scala/
-
-
-
----
-# La gestion des erreurs
+# Les types riches
 
 ## Try
 
 ```scala
 object Test extends App {
 
-    def readTextFile(filename: String): Try[List[String]] = {
-        Try(Source.fromFile(filename).getLines.toList)
-    }
+  def readTextFile(filename: String): Try[List[String]] = {
+    Try(Source.fromFile(filename).getLines.toList)
+  }
 
-    val filename = "/etc/passwd"
-    readTextFile(filename) match {
-        case Success(lines) => lines.foreach(println)
-        case Failure(f) => println(f)
-    }
-
+  val filename = "/etc/passwd"
+  readTextFile(filename) match {
+    case Success(lines) => lines.foreach(println)
+    case Failure(f) => println(f)
+  }
 }
 ```
 
@@ -820,10 +844,11 @@ Le Try est executé au moment ou il est nécessaire et géré localement et expl
 Pas moyen de ne pas le gérer.
 C'est parfois frustrant.
 
+
 ---
 # Les structures immuables
 
-Scala:
+
 ```scala
 var mutableVar = 1;
 mutableVar = 2;
@@ -832,25 +857,147 @@ val immutableVar = 1;
 immutableVar = 2; //Error
 ```
 
+???
 → Facilite la parallélisation du programme sur plusieurs CPU
+
+--
+
+```scala
+scala> val vec = Vector(1, 2, 3)
+vec: scala.collection.immutable.Vector[Int] = Vector(1, 2, 3)
+scala> vec updated (2, 4)
+res0: scala.collection.immutable.Vector[Int] = Vector(1, 2, 4)
+scala> vec
+res1: scala.collection.immutable.Vector[Int] = Vector(1, 2, 3)
+```
+
+
+
+???
+Source : http://docs.scala-lang.org/overviews/collections/concrete-immutable-collection-classes.html
+
+---
+# Les case class
+
+```scala
+case class Livre(titre: String, isbn: String)
+
+val book = Livre("The Hitchhiker's Guide to the Galaxy",42)
+println(book.isbn) // 42
+
+val copy = Livre("The Hitchhiker's Guide to the Galaxy",42)
+book == copy // true
+```
+
+???
+Pas de boilerplate
+Automatiquement deep-copie, comparaison...
+
+Lombok dans le language.
+
+Voir l'article : http://blog.xebia.fr/wp-content/uploads/2017/04/programmez-206-avril17-2.pdf
+
+
+---
+# Les sealed class
+
+Scala
+```scala
+sealed trait Color
+case object Blue extends Color
+case object Red extends Color
+```
+
+--
+
+Scala
+```scala
+sealed trait Tree
+case object Empty extends Tree
+case class Node(v: Int, left: Tree, right: Tree) extends Tree
+```
 
 ???
 
-<Il faudrait touver des exemples> 
+Devrait arriver avec Java 10, petit copieur
 
+---
+
+# Les sealed class
+
+Scala
+```scala
+sealed trait Tree
+case object Empty extends Tree
+case class Node(v: Int, left: Tree, right: Tree) extends Tree
+```
+
+Java 10
+```java
+sealed interface Tree { }
+data class Empty() implements Tree {}
+data class Node(Int v, Tree left, Tree right) implements Tree {...}
+```
 
 ---
 # Pattern Matching
 
+Java 8
+```java
+  public int fact(int n) {
+    int result;
+    if (n == 0) {
+      result =  1;
+    } else {
+      result =  n * fact(n - 1);
+    }
+    return result;
+  }
+```
+
+Scala
+```scala
+  def fact(n: Int): Int = n match {
+    case 0 => 1
+    case n => n * fact(n - 1)
+  }
+```
 
 ???
-Voir comment ça va s'implémenter en Java
+Bonne nouvelle ça arrive en Java 10 !
 
 ---
-# Les TypeClass
+# Pattern Matching
+
+Java 10
+```java
+  public int fact(int n) {
+    return exprswitch (n) {
+      case 0 -> 1
+      case int i -> i * fact(i - 1)
+    };
+  }
+```
+
+Scala
+```scala
+  def fact(n: Int): Int = n match {
+    case 0 => 1
+    case n => n * fact(n - 1)
+  }
+```
 
 ???
-Voir l'article : http://blog.xebia.fr/wp-content/uploads/2017/04/programmez-206-avril17-2.pdf
+
+Petit copieur ce Java...
+Source : http://cr.openjdk.java.net/~briangoetz/amber/pattern-match.html
+
+---
+# Pattern Matching + sealed class
+
+
+
+
 
 ---
 layout: false
@@ -885,3 +1032,7 @@ class: left, middle, normal
 - ["The Guerilla Guide to Functional Programming"](https://docs.google.com/file/d/0B6Pvyu_QqshwYmU1OTg0OGEtMTMwMC00YmQ3LWIxY2MtYzdiMDNiM2QzNjZh/edit?hl=en) par Runar Oli Bjarnason
 - ["Functional Programming is the new black"](https://speakerdeck.com/elise_huard/functional-programming-is-the-new-black)  par Elise Huard
 - [La page wikipedia sur la programmtion fonctionnelle](http://fr.wikipedia.org/wiki/Programmation_fonctionnelle)
+- ["Un article de Xebians dans le Programmez n°206 d'avril 2017"](http://blog.xebia.fr/wp-content/uploads/2017/04/programmez-206-avril17-2.pdf)
+- Extraits trouvés sur Internet de _Scala Cookbook: Recipes for Object-Oriented and Functional Programming 1st Edition_ par Alvin Alexander
+
+
