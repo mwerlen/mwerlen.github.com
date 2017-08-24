@@ -38,7 +38,7 @@
 .titleblock {
   padding-top: 1em;
   padding-bottom: 1em;
-  color: #444444;
+  color: #444;
   font-family: Georgia, "DejaVu Serif", Times, "Times New Roman", serif;
   font-variant: small-caps;
 }
@@ -48,12 +48,12 @@
   color: rgba(133, 194, 10, 0.7);
 }
 .titledash {
-  color: #444444;
+  color: #444;
 }
 #subtitle {
   font-size: 2.3em;
   line-height: 0.75em;
-  color: #444444;
+  color: #444;
 }
 /* ----------------------------------------------------------------------------
  * IMPORTED FOOTER
@@ -293,14 +293,14 @@ div.pagination .previous {
 }
 div.pagination .previous a {
   background-color: rgba(133, 194, 10, 0.5);
-  color: #444444;
+  color: #444;
 }
 div.pagination .next {
   display: inline-block;
 }
 div.pagination .next a {
   background-color: rgba(133, 194, 10, 0.5);
-  color: #444444;
+  color: #444;
 }
 /* ----------------------------------------------------------------------------
  * IMPORTED CONTACT
@@ -317,7 +317,7 @@ div.pagination .next a {
 }
 .contact-button {
   background-color: rgba(133, 194, 10, 0.7) !important;
-  color: #444444 !important;
+  color: #444 !important;
 }
 .contact-form-mail {
   color: #2879d0 !important;
@@ -337,10 +337,10 @@ legend.contact-legend {
   display: block;
   float: right;
   margin: 0 0 10px 10px;
-  border: 1px ridge #444444;
+  border: 1px ridge #444;
 }
 .profils {
-  color: #444444;
+  color: #444;
   background: rgba(133, 194, 10, 0.5);
   padding: 0 0 5px 0;
   font-size: 95%;
@@ -352,7 +352,7 @@ legend.contact-legend {
   margin: 0;
 }
 .profils .profils-sites {
-  color: #444444;
+  color: #444;
   font-size: 100%;
   margin-top: 0.5em;
   margin-bottom: 0;
@@ -372,7 +372,7 @@ legend.contact-legend {
   margin-bottom: 30px;
 }
 .metadata {
-  color: #444444;
+  color: #444;
   font-style: italic;
   font-size: 80%;
   margin-left: -2em;
@@ -394,7 +394,7 @@ h3.blogpostpreview {
   text-align: left;
 }
 #postTitle a {
-  color: #444444;
+  color: #444;
 }
 #postTitle .metadata {
   margin-left: 13px;
@@ -405,7 +405,7 @@ h3.blogpostpreview {
   padding: 0 0.5em 0 0.5em;
 }
 #related {
-  color: #444444;
+  color: #444;
   background: rgba(133, 194, 10, 0.5);
   padding: 0 0 5px 0;
   font-size: 95%;
@@ -418,7 +418,7 @@ h3.blogpostpreview {
   margin: 0;
 }
 #related .posts {
-  color: #444444;
+  color: #444;
   line-height: 1.3em;
   margin-top: 0.5em;
   margin-bottom: 0;
@@ -445,7 +445,7 @@ hr {
  *****************************************/
 .note {
   text-align: center;
-  color: #444444;
+  color: #444;
   background: rgba(133, 194, 10, 0.7);
   padding: 10px 0 10px 0;
   margin-bottom: 2em;
@@ -473,11 +473,11 @@ hr {
   top: 15px;
   width: 150px;
   background-color: #BFDC7A;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#bfdc7a), to(#8ebf45));
-  background-image: -webkit-linear-gradient(top, #bfdc7a, #8ebf45);
-  background-image: -moz-linear-gradient(top, #bfdc7a, #8ebf45);
-  background-image: -ms-linear-gradient(top, #bfdc7a, #8ebf45);
-  background-image: -o-linear-gradient(top, #bfdc7a, #8ebf45);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
   color: #6a6340;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -542,14 +542,14 @@ ul.archive-list li {
 }
 #cv-menu ul li a {
   padding: 5px 15px 5px 15px;
-  color: #777777;
+  color: #777;
 }
 #cv-menu ul li a:hover {
   background: rgba(133, 194, 10, 0.7);
   color: #ffffff;
 }
 #cv-menu ul li a:visited {
-  color: #777777;
+  color: #777;
 }
 #cv-menu ul li a.cv-download-link {
   color: #955;
@@ -593,7 +593,7 @@ ul.archive-list li {
   background-color: #fafafa;
   float: left;
   padding: 0 0.5em 0 0.5em;
-  color: #444444;
+  color: #444;
 }
 .cv-description-job {
   margin-bottom: 4em;
@@ -642,12 +642,12 @@ table.cv-competences th {
   text-align: left;
   padding: 0.6em;
   width: 20%;
-  color: #444444;
+  color: #444;
   background-color: rgba(133, 194, 10, 0.7);
 }
 table.cv-competences td {
   padding: 0.6em;
-  color: #444444;
+  color: #444;
   background-color: rgba(133, 194, 10, 0.5);
 }
 .printHeader {

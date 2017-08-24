@@ -36,7 +36,7 @@ module.exports = function (grunt) {
                     livereload: '<%= connect.options.livereload %>'
                 },
                 files: [
-                    '_site/index.html'
+                    '_site/**'
                 ]
             }
         },
@@ -106,13 +106,13 @@ module.exports = function (grunt) {
                     raw: 'presenter: true'
                 }
             },
-			build: {
-				options: {
-					watch: false,
-					serve: true,
-					drafts: false
-				}
-			},
+            build: {
+                options: {
+                    watch: false,
+                    serve: false,
+                    drafts: false
+                }
+            },
             check: {
                 options: {
                     doctor: true
@@ -153,6 +153,7 @@ module.exports = function (grunt) {
     // Define Tasks
     grunt.registerTask('serve', function (target) {
         grunt.task.run([
+            'jekyll:compile',
             'less:compile',
             'connect:livereload',
             'concurrent:watch'
@@ -172,10 +173,10 @@ module.exports = function (grunt) {
         'csslint'
     ]);
 
-	grunt.registerTask('build', [
-		'check',
-		'jekyll:build'
-	]);
+    grunt.registerTask('build', [
+        'check',
+        'jekyll:build'
+    ]);
 
     grunt.registerTask('default', ['serve']);
 };
