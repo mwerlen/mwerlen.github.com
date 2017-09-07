@@ -1,13 +1,13 @@
 ---
 layout: presentation
-title: Présentation accélérée sur l'informatique
+title: Architecture des systèmes d'information
 presenter: true
-permalink: /presentations/info.html
+permalink: /presentations/si-archi.html
 ---
        
 ???
 Prérequis :
-* Machine linux avec telnet, dig, openssl, gpg
+* 
 
 ---
 title: why
