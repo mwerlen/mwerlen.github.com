@@ -1,3 +1,8 @@
+---
+layout: base
+title: SI-plan
+---
+
 Formation informatique accélérée
 ================================
 
@@ -10,7 +15,6 @@ Fournir un vernis de base sur les grandes notions d'informatique :
 * Bases de données
 * Réseau
 * Sécurité
-
 
 Architecture d'un SI
 --------------------
