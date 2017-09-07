@@ -19,6 +19,7 @@ Une présentation de quelques mécanismes de sécurité et cryptographie appliqu
 
 [Formation accélérée aux systèmes d'informations](/presentations/si.html)<br/>
 Une présentation accélérée des systèmes d'informations modernes (architecture, infrastructure, réseau, bases de données, développement et sécurité). Cette présentation est découpée en plusieurs parties :
+0. [Introduction](/presentations/si.html)
 1. [L'architecture des systèmes d'informations](/presentations/si-archi.html)
 2. [L'infrastructure des systèmes d'information](/presentations/si-infra.html)
 3. [Le développement informatique](/presentations/si-dev.html)
