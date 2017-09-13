@@ -103,3 +103,12 @@ Sécurité
 * CVE, responsible disclosure, white hat, grey hat, black hat
 * Chiffrement symétrique/asymétrique, Alice, Bob, Eve, Man In The Middle (attaques actives/passives)
 * X509, certificats, TLS/SSL
+
+
+Organisation humaine
+---------------------
+
+Faut-il en parler ?
+
+* Rôle d'un DBA, Intégrateur, Développeur, Architecte, Scream Master, Expert, Business Analyst, Urbaniste, consultant, DEsigner...
+* Les structures organisationnelles en SSII.
