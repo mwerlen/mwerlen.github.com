@@ -19,5 +19,17 @@
         "load-grunt-tasks": "~5.1.0",
         "time-grunt": "~1.4.0"
     },
-    "engine": "node 15.0.1"
+    "engine": "node 15.0.1",
+    "dependencies": {},
+    "lesshint": {
+        "fileExtensions": [
+            ".less"
+        ],
+        "spaceAfterPropertyColon": {
+            "enabled": true,
+            "style": "one_space"
+        },
+        "zeroUnit": "no_unit",
+        "propertyOrdering": false
+    }
 }

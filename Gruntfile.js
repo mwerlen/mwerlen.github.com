@@ -169,7 +169,7 @@ module.exports = function (grunt) {
         'jekyll:check',
         'less:compile',
         'jshint:all',
-        'lesslint',
+        'lesshint',
         'csslint'
     ]);
 
