@@ -13,7 +13,8 @@ Checkout this repository.
 
 ### Install 
 
-* Install Ruby dependencies (for Jekyll) with `Bundle install`
+* Install Ruby dependencies (for Jekyll) with `bundle install --path vendor/bundle`
+* Install archaic node version `nvm install lts/carbon`
 * Install npm packages with `npm install`
 
 ### Run

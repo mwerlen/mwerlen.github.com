@@ -41,3 +41,4 @@ dist
 .jekyll-metadata
 
 /Gemfile.lock
+/vendor/bundle
