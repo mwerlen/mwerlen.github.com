@@ -5,6 +5,7 @@
 # Ignore hidden folders #
 # This takes care of .tmp, .sass-cache, and many others #
 .*/
+!/.bundle
 
 # Ignore OS generated files #
 .DS_Store*
@@ -40,5 +41,4 @@ dist
 .tmp
 .jekyll-metadata
 
-/Gemfile.lock
 /vendor/bundle

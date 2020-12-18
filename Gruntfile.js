@@ -138,7 +138,7 @@ module.exports = function (grunt) {
                 '!<%= yeoman.css %>/prism.css'
             ]
         },
-        lesslint: {
+        lesshint: {
             options: {
                 imports: ['<%= yeoman.css %>/*.less']
             },

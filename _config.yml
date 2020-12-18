@@ -3,7 +3,7 @@ port:        4000
 baseurl:     /
 
 source:      .
-exclude:     [node_modules, bower.json, Gemfile, Gemfile.lock, Gruntfile.js, package.json, params.json, README.md, stylesheets/.*\.less, vendor]
+exclude:     [bower.json, Gruntfile.js, package.json, params.json, README.md, stylesheets/.*\.less ]
 destination: ./_site
 encoding:    UTF-8
 
@@ -21,7 +21,7 @@ kramdown:
 
 name: It-Signal
 description: A agile developer's blog
-url: http://maxime.werlen.fr
+url: https://maxime.werlen.fr
 author:
   name: Maxime Werlen
   email: maxime@werlen.fr
