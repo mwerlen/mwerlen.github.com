@@ -14,11 +14,15 @@ Checkout this repository.
 ### Install 
 
 * Install Ruby dependencies (for Jekyll) with `bundle install --path vendor/bundle`
-* Install archaic node version `nvm install lts/carbon`
 * Install npm packages with `npm install`
 
 ### Run
 
 * Run with `grunt serve`
 * Autorelead will refresh your bowser when changes are detected.
+* `grunt build` will complain about less stylesheets not clean enough
+
+### Todo
+
+* Remove old Grunt and bower files and replace it by simple npm commands or a Makefile...
 
