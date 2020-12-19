@@ -15,7 +15,7 @@ contact: active
             <form class="pure-form pure-form-aligned" action="mailto:maxime@werlen.fr">
                 <fieldset>
 
-                    <legend class="contact-legend">Identité</legend>
+                    <legend class="contact-legend">Mail</legend>
                     <div class="pure-control-group">
                         <label for="prenom">Prénom</label>
                         <input id="prenom" type="text" value="Maxime" disabled class="contact-form">
@@ -38,31 +38,12 @@ contact: active
                     </div>
 
                     <div class="pure-control-group">
-                        <label for="telephone">Téléphone</label>
-                        <input id="telephone" type="text" value="06.74.74.53.65" disabled class="contact-form">
-                        <meta itemprop="telephone" content="+33674745365">
+                        <label for="gpg-key">Clé GPG</label>
+                        <a href="/mwerlen.gpg">
+                        <input id="gpg-key" type="text" value="0D70DDA6" title="5BB0 15C9 1742 4B86 A521  7D08 49E5 73FA 0D70 DDA6" disabled
+                               class="contact-form  contact-form-mail">
+                        </a>
                     </div>
-                </fieldset>
-
-                <fieldset itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-                    <legend class="contact-legend">Adresse</legend>
-                    <div class="pure-control-group">
-                        <label for="adresse">Adresse postale</label>
-                        <input id="adresse" type="text" value="3 rue Mozart" disabled class="contact-form">
-                        <meta itemprop="streetAddress" content="3 rue Mozart">
-                    </div>
-                    <!--
-                    <div class="pure-control-group">
-                        <label for="complement"></label>
-                        <input id="complement" type="text" value="Bât. I" disabled class="contact-form">
-                    </div>
-                    -->
-                    <div class="pure-control-group">
-                        <label for="ville"></label>
-                        <input id="ville" type="text" value="69380 Lissieu" disabled class="contact-form">
-                    </div>
-                    <meta itemprop="addressLocality" content="LISSIEU">
-                    <meta itemprop="postalCode" content="69380">
                 </fieldset>
             </form>
 
@@ -102,20 +83,6 @@ contact: active
                     </div>
                 </fieldset>
 
-                <fieldset>
-                    <legend class="contact-legend">Contact mail</legend>
-                    <div class="pure-control-group">
-                        <label for="submit"></label>
-                        <button id="submit" type="submit" class="pure-button contact-button">M'écrire un mail</button>
-                    </div>
-                    <div class="pure-control-group">
-                        <label for="gpg-key">Clé GPG</label>
-                        <a href="/mwerlen.gpg">
-                        <input id="gpg-key" type="text" value="0D70DDA6" title="5BB0 15C9 1742 4B86 A521  7D08 49E5 73FA 0D70 DDA6" disabled
-                               class="contact-form  contact-form-mail">
-                        </a>
-                    </div>
-                </fieldset>
             </form>
         </div>
     </div>

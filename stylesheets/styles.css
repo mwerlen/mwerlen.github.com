@@ -325,6 +325,9 @@ div.pagination .next a {
 legend.contact-legend {
   border-bottom: 1px solid hsla(80, 90%, 40%, 0.7);
 }
+input[disabled] {
+  pointer-events: none;
+}
 /* ----------------------------------------------------------------------------
  * IMPORTED PRESENTATION
  * ------------------------------------------------------------------------- */
