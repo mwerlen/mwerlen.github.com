@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
@@ -34,7 +34,7 @@ GEM
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     json (2.4.1)
-    kramdown (2.3.0)
+    kramdown (2.3.1)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
@@ -64,7 +64,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (>= 4.2.0)
   json
-  kramdown
+  kramdown (~> 2.3, >= 2.3.1)
 
 BUNDLED WITH
-   1.17.3
+   2.1.4
