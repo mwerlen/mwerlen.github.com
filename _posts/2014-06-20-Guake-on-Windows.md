@@ -47,7 +47,7 @@ on se retrouve avec une console cygwin totalement opérationnelle.
  
 Pour lancer automatiquement un screen au lancement de bash :
 
-<pre><code class="language-bash">
+```bash
 # Auto-screen invocation. see: http://taint.org/wk/RemoteLoginAutoScreen
 # if we're coming from a remote SSH connection, in an interactive session
 # then automatically put us into a screen(1) session.   Only try once
@@ -64,11 +64,11 @@ then
   echo "Screen failed! continuing with normal bash startup"
 fi
 # [end of auto-screen snippet]
-</code></pre>
+```
 
 Ma configuration de screen pour gérer correctement le scroll, l'initialisation et quelques raccourcis :
 
-<pre><code class="language-bash">
+```bash
 #Three main screens
 screen -t music 0 /usr/bin/bash
 screen -t GIT 1 /usr/bin/bash
@@ -102,7 +102,7 @@ startup_message off
 
 #Scroll buffer
 defscrollback 100000
-</code></pre>
+```
 
 Finalement on se retrouve donc avec une machine windows qui lance un cygwin, qui lance un mintty qui lance un bash qui lance un screen qui lance plusieurs bash.
 Bienvenue notre votre nouveau remake d'Inception version shell.  
@@ -114,5 +114,5 @@ Bienvenue notre votre nouveau remake d'Inception version shell.
 [Babun]: http://babun.github.io/ "Le site officiel de Babun" 
 [Cygwin]: https://www.cygwin.com/ "La page officielle de Cygwin"
 [mintty]: https://code.google.com/p/mintty/ "La page officielle de Mintty" 
-[Mintty-Quake-console]: https://github.com/lonepie/mintty-quake-console "Page github de Mintty-quake-console
+[Mintty-Quake-console]: https://github.com/lonepie/mintty-quake-console "Page github de Mintty-quake-console"
 [Gnu Screen]: http://en.wikipedia.org/wiki/GNU_Screen "La page wikipedia de Screen"

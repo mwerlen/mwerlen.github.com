@@ -20,7 +20,6 @@
         "time-grunt": "~1.4.0"
     },
     "engine": "node 15.0.1",
-    "dependencies": {},
     "lesshint": {
         "fileExtensions": [
             ".less"

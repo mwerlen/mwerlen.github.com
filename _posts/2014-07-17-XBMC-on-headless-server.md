@@ -11,7 +11,8 @@ Il suffit d'utiliser la commande [xinit] disponible dans le package du serveur X
 J'utilise par exemple cette commande pour lancer un service [XBMC] (un super media-center) sur mon serveur Ubuntu qui ne dispose pas d'interface graphique.
 
 Voici, pour l'exemple, le script de lancement du service :
-<pre><code class="language-bash">#! /bin/sh
+```bash
+#! /bin/sh
 
 ### BEGIN INIT INFO
 # Provides:          xbmc
@@ -76,7 +77,8 @@ case "$1" in
      ;;
 esac
 
-exit 0</code></pre>
+exit 0
+```
 
 
 Une commande utile et simple à utilser qu'il ne faut pas oublier.

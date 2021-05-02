@@ -28,7 +28,7 @@ _Ci-dessous le mindmap de l'auteur pour référencer tous les facteurs de perfor
 (en rouge les impacts négatifs, en vert le positif 
 et en jaune les facteurs pouvant être positifs ou négatifs en fonction de la dose) :_
 
-![Mindmap des facteur de performance](http://www.targetprocess.com/articles/img/speed/map2.jpg)
+![Mindmap des facteur de performance](https://assets.cdntpondemand.com/content/uploads/2020/07/img30.jpg)
 
 <!--
 Pour ceux qui regardent les sources, voici ma liste des sujets abordés par l'article :
@@ -57,4 +57,4 @@ Pour ceux qui regardent les sources, voici ma liste des sujets abordés par l'ar
         
 -->
          
-[article]: http://www.targetprocess.com/articles/speed-in-software-development.html "L'article de Michael Dubakov de Targetprocess"
+[article]: https://www.targetprocess.com/blog/speed-in-software-development/ "L'article de Michael Dubakov de Targetprocess"
