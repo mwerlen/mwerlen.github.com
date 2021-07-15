@@ -1,21 +1,7 @@
 ---
-layout: base
-title: Blog
-permalink: index.html
+permalink: /index.html
+redir_to: '/mwerlen.html'
+layout: 'redirect'
+sitemap: false
 ---
 
-
-{% assign post = site.posts.first %}
-<div itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost" id="main-content">
-{% include postTitle.ext %}
- <div itemprop="articleBody">
-    {{ post.content }}
- </div>
-</div>
-
-
-<div id="post-pagination" class="pagination">
-    <span class="previous">
-        <a href="/archives.html" class="pure-button"><i class="icon-chevron-sign-left"></i>&nbsp;Voir les archives</a>     
-    </span>    
-</div>
