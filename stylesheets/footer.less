@@ -1,18 +1,22 @@
 /* FOOTER
 ------------------------------------------------------------------------*/
-.wrapper {
-    min-height: 100%;
-    height: auto !important;
+#main {
+    display: flex;
+    flex-direction: column;
     height: 100%;
+}
+
+.wrapper {
     margin: 0 auto -3em;
+    flex: auto;
 }
 
 .footer-push {
     height: 3em;
 }
 
-.footer {
-    height: 3/0.8em;
+#main .footer {
+    height: 3.75em;
     box-sizing: border-box;
     border-top: 3px solid @greenBorder;
     text-align: center;

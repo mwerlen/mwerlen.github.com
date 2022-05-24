@@ -59,16 +59,19 @@
  * ------------------------------------------------------------------------- */
 /* FOOTER
 ------------------------------------------------------------------------*/
-.wrapper {
-  min-height: 100%;
-  height: auto !important;
+#main {
+  display: flex;
+  flex-direction: column;
   height: 100%;
+}
+.wrapper {
   margin: 0 auto -3em;
+  flex: auto;
 }
 .footer-push {
   height: 3em;
 }
-.footer {
+#main .footer {
   height: 3.75em;
   box-sizing: border-box;
   border-top: 3px solid hsla(80, 90%, 40%, 0.5);
@@ -103,6 +106,7 @@
   border: none;
   white-space: normal;
   padding: 0.6em 0 0.6em 0.6em;
+  display: block;
 }
 #menu .pure-menu-open {
   background: transparent;
@@ -112,6 +116,8 @@
   border: none;
   background: transparent;
   margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
 }
 #menu .pure-menu ul,
 #menu .pure-menu .menu-item-divided {
@@ -143,6 +149,7 @@
 #menu .pure-menu-heading {
   font-size: 110%;
   color: #fff;
+  margin-top: 0.5em;
 }
 #menu .pure-menu-heading:hover,
 #menu .pure-menu-heading:focus {
@@ -168,14 +175,21 @@
 
 */
 /* LAYOUT STYLES */
+html {
+  height: 100%;
+}
 body {
   font-size: 14px;
   line-height: 1.5;
   background: #fafafa 0 0 repeat;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'serif';
   font-weight: 400;
   color: #666;
   text-align: justify;
+  height: 100%;
+}
+body,
+.pure-g [class*="pure-u"] {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'serif';
 }
 #main-content img {
   max-width: 100%;
@@ -253,8 +267,10 @@ dd {
   padding-left: 150px;
   /* left col width "#menu" */
   left: 0;
+  height: 100%;
 }
-#main {
+#main,
+.wrapper {
   width: 100%;
 }
 /* Apply the .box class on the immediate parent of any grid element (pure-u-*) to apply some padding. */
@@ -324,6 +340,7 @@ div.pagination .next a {
 }
 legend.contact-legend {
   border-bottom: 1px solid hsla(80, 90%, 40%, 0.7);
+  font-size: 125%;
 }
 .pure-form input[type="text"][disabled].contact-form {
   pointer-events: none;
@@ -442,6 +459,9 @@ hr {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
+a.pure-button {
+  padding: 0.5em 1.5em;
+}
 /*****************************************
  * ARCHIVE
  *****************************************/
@@ -537,14 +557,23 @@ ul.archive-list li {
 #cv-menu ul {
   background: hsla(80, 90%, 40%, 0.5);
   height: inherit;
+  margin: 0;
+  padding: 0;
 }
 #cv-menu ul li {
   padding-left: 0;
   border: 0;
+  list-style: none;
+  display: inline-block;
 }
 #cv-menu ul li a {
   padding: 5px 15px 5px 15px;
   color: #777;
+  display: block;
+  line-height: 1.5em;
+  border: 1px solid transparent;
+  border-left: 0;
+  border-right: 0;
 }
 #cv-menu ul li a:hover {
   background: hsla(80, 90%, 40%, 0.7);
@@ -632,6 +661,9 @@ table.cv-competences {
   border-collapse: separate;
   border-spacing: 0 3px;
   width: 100%;
+  line-height: normal;
+  font-size: medium;
+  text-align: start;
 }
 table.cv-competences caption {
   font-size: 1em;

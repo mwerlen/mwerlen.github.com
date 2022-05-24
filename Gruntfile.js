@@ -101,7 +101,7 @@ module.exports = function (grunt) {
                 options: {
                     watch: true,
                     serve: false,
-                    drafts: true,
+                    drafts: false,
                     incremental: true,
                     raw: 'presenter: true'
                 }

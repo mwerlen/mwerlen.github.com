@@ -5,14 +5,23 @@
 */
 /* LAYOUT STYLES */
 
+html {
+    height: 100%;
+}
+
 body {
     font-size: 14px;
     line-height: 1.5;
     background: @main-bg 0 0 repeat;
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'serif';
     font-weight: 400;
     color: #666;
     text-align: justify;
+    height: 100%;
+}
+
+body,
+.pure-g [class *= "pure-u"] {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'serif';
 }
 
 #main-content img {
@@ -95,11 +104,14 @@ dd {
 #layout {
     padding-left: 150px; /* left col width "#menu" */
     left: 0;
+    height: 100%;
 }
 
-#main {
+#main,
+.wrapper {
     width: 100%;
 }
+
 
 /* Apply the .box class on the immediate parent of any grid element (pure-u-*) to apply some padding. */
 .l-box {

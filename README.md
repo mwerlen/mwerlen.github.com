@@ -14,7 +14,7 @@ Checkout this repository.
 ### Install 
 
 * Install Ruby dependencies (for Jekyll) with `bundle install`
-* Install npm packages with `npm install`
+* Install npm packages with `yarn install`
 
 ### Run
 

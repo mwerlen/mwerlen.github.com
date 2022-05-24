@@ -1,36 +1,30 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
     <head>
-        <meta charset='utf-8'>
+        <meta charset=UTF-8>
         <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
         <title>{{ site.name }} - {{ page.title }}</title>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.0/pure-min.css"> -->
         <link rel="stylesheet" type="text/css" href="/stylesheets/pure-min.css">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/grids-responsive-min.css">
         <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css" media="screen"/>
         <link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print"/>
         <link rel="stylesheet" type="text/css" href="/stylesheets/prism.css">
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-
-        <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-        <!-- <script src="http://yui.yahooapis.com/3.10.3/build/yui/yui-min.js"></script> --> 
-        <script type="text/javascript" src="/javascripts/yui-min.js"></script>
+        <script type="text/javascript" src="https://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
 
         <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="/feed.xml">
         <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
-
-        {% include analytics.ext %}
     </head>
 
     <body>
-        <div class="pure-g-r " id="layout">
+        <div class="pure-g " id="layout">
             <a href="#menu" id="menuLink" class="pure-menu-link">
-                <img src="/images/menu.png" width="20" alt="Menu toggle">
+                <img src="/images/menu.png" width="24px" height="16px" alt="Menu toggle">
             </a>
             <div id="menu" class="pure-u">
                 {% include menu.ext %}
@@ -50,7 +44,8 @@
                         <img alt="Licence Creative Commons"
                              title="Licence Creative Commons BY NC SA"
                              style="border-width:0"
-                             src="//i.creativecommons.org/l/by-nc-sa/2.0/fr/80x15.png"/>
+                             src="//i.creativecommons.org/l/by-nc-sa/2.0/fr/80x15.png"
+                             width="80px" height="15px"/>
                     </a>
                     - <a href="/mentionslegales.html" title="Mentions légales" itemprop="publishingPrinciples">Mentions légales</a>
                 </div>
