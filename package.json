@@ -30,5 +30,8 @@
         },
         "zeroUnit": "no_unit",
         "propertyOrdering": false
+    },
+    "dependencies": {
+        "yarn": "^1.22.22"
     }
 }
