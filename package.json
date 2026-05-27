@@ -5,9 +5,9 @@
     "description": "A agile developer's blog",
     "author": "Maxime Werlen <maxime@werlen.fr>",
     "devDependencies": {
-        "grunt": "~1.5.2",
+        "grunt": "~1.6.2",
         "grunt-concurrent": "~3.0.0",
-        "grunt-contrib-connect": "~3.0.0",
+        "grunt-contrib-connect": "~5.0.1",
         "grunt-contrib-csslint": "~2.0.0",
         "grunt-contrib-jshint": "~3.2.0",
         "grunt-contrib-less": "~3.0.0",
@@ -15,7 +15,7 @@
         "grunt-jekyll": "~1.0.1",
         "grunt-lesshint": "2.0.0",
         "jshint-stylish": "~2.2.1",
-        "less": "~4.1.2",
+        "less": "~4.6.4",
         "load-grunt-tasks": "~5.1.0",
         "time-grunt": "~2.0.0"
     },
@@ -32,6 +32,7 @@
         "propertyOrdering": false
     },
     "dependencies": {
+        "corepack": "^0.35.0",
         "yarn": "^1.22.22"
     }
 }
