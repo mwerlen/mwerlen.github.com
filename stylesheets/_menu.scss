@@ -48,8 +48,8 @@
 
 #menu .pure-menu li a:hover,
 #menu .pure-menu li a:focus {
-    background: @green;
-    color: @main-bg;
+    background: $green;
+    color: $main-bg;
 }
 
 .pure-menu-link {
@@ -74,11 +74,11 @@
 
 #menu .pure-menu-heading:hover,
 #menu .pure-menu-heading:focus {
-    color: @greenStrong;
+    color: $greenStrong;
 }
 
 #menu .pure-menu-selected {
-    background: @greenStrong;
+    background: $greenStrong;
     color: #eeeeee;
 }
 

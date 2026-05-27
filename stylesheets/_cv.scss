@@ -4,12 +4,12 @@
 
 #cv-menu {
     margin-top: -5px;
-    background: @main-bg;
+    background: $main-bg;
     width: auto;
     display: inline-block;
 
     ul {
-        background: @green;
+        background: $green;
         height: inherit;
         margin: 0;
         padding: 0;
@@ -21,7 +21,7 @@
             display: inline-block;
             a {
                 padding: 5px 15px 5px 15px;
-                color: @greyLight;
+                color: $greyLight;
                 display: block;
                 line-height: 1.5em;
                 border: 1px solid transparent;
@@ -29,11 +29,11 @@
                 border-right: 0;
             }
             a:hover {
-                background: @greenStrong;
-                color: @white;
+                background: $greenStrong;
+                color: $white;
             }
             a:visited {
-                color: @greyLight;
+                color: $greyLight;
             }
             a.cv-download-link {
                 color : #955;
@@ -50,8 +50,8 @@
 
 .cv-titre-chapitre {
     line-height: 1.7em;
-    border-top: 3px solid @greenStrong;
-    border-bottom: 3px solid @greenStrong;
+    border-top: 3px solid $greenStrong;
+    border-bottom: 3px solid $greenStrong;
     margin-top: 3em;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .cv-titre-job {
-    border-bottom: 3px solid @greenStrong;
+    border-bottom: 3px solid $greenStrong;
     padding: 0;
     padding-left: 15px;
     padding-bottom: 0.55em;
@@ -82,10 +82,10 @@
     margin-left: 13px;
     margin-top: -40px;
     display: block;
-    background-color: @main-bg;
+    background-color: $main-bg;
     float: left;
     padding: 0 0.5em 0 0.5em;
-    color: @grey;
+    color: $grey;
 }
 
 .cv-description-job {
@@ -101,7 +101,7 @@
         }
 
         li:before {
-            color: @greenStrong;
+            color: $greenStrong;
             content: "•";
             position: relative;
             left: -7px;
@@ -146,14 +146,14 @@ table.cv-competences {
         padding: 0.6em;
         width: 20%;
 
-        color: @grey;
-        background-color: @greenStrong;
+        color: $grey;
+        background-color: $greenStrong;
     }
     td {
         padding: 0.6em;
 
-        color: @grey;
-        background-color: @green;
+        color: $grey;
+        background-color: $green;
     }
 }
 

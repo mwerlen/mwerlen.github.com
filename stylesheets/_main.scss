@@ -12,7 +12,7 @@ html {
 body {
     font-size: 14px;
     line-height: 1.5;
-    background: @main-bg 0 0 repeat;
+    background: $main-bg 0 0 repeat;
     font-weight: 400;
     color: #666;
     text-align: justify;
@@ -31,7 +31,7 @@ body,
 }
 
 .cookie-banner-content {
-    background-color: @green;
+    background-color: $green;
     text-align: center;
     font-style: italic;
     font-size: small;
@@ -153,15 +153,15 @@ div.pagination {
     .previous {
         display: inline-block;
         a {
-            background-color: @green;
-            color: @grey;
+            background-color: $green;
+            color: $grey;
         }
     }
     .next {
         display: inline-block;
         a {
-            background-color: @green;
-            color: @grey;
+            background-color: $green;
+            color: $grey;
         }
     }
 }

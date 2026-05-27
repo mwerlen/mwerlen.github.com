@@ -1,3 +1,6 @@
+---
+---
+@use "sass:color";
 @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 @import url(http://fonts.googleapis.com/css?family=Comfortaa);
@@ -6,22 +9,22 @@
  * LESS VARIABLES
  * --------------------------------------------------------------------------- */
 
-@green: hsla(80, 90%, 40%, 0.5);
-@greenStrong : hsla(80, 90%, 40%, 0.7);
+$green: hsla(80, 90%, 40%, 0.5);
+$greenStrong : hsla(80, 90%, 40%, 0.7);
 
-@white : #fafafa;
-@black: #222;
+$white : #fafafa;
+$black: #222;
 
-@main-bg: @white;
-@inversed-bg: @black;
+$main-bg: $white;
+$inversed-bg: $black;
 
 /* ------------------------------------------------------------------------------
  * GLOBAL
  * --------------------------------------------------------------------------- */
 body {
     font-family: 'Comfortaa';
-    background-color: @main-bg;
-    color: @black;
+    background-color: $main-bg;
+    color: $black;
 }
 
 h1, h2, h3 {
@@ -59,7 +62,7 @@ h1 {
 }
 
 .nolink a {
-    color: @black;
+    color: $black;
     text-decoration: none;
 }
 
@@ -68,7 +71,7 @@ h1 {
  * --------------------------------------------------------------------------- */
 
 .normal {
-    &:extend(body);
+    @extend body;
 }
 
 /* ------------------------------------------------------------------------------
@@ -76,8 +79,8 @@ h1 {
  * --------------------------------------------------------------------------- */
 
 .inverse {
-    background: @inversed-bg;
-    color: @white;
+    background: $inversed-bg;
+    color: $white;
 }
 
 .inverse h1, .inverse h2 {
@@ -91,7 +94,7 @@ h1 {
 }
 
 .inverse a {
-    color: @white;
+    color: $white;
 }
 
 /* ------------------------------------------------------------------------------
@@ -99,14 +102,14 @@ h1 {
  * --------------------------------------------------------------------------- */
 
 blockquote {
-    border-left: 5px solid @black;
+    border-left: 5px solid $black;
     margin: 0.5em 10px;
     padding: 0.2em 10px;
     text-align: left;
 }
 
 .inverse blockquote {
-    border-left: 5px solid @white;
+    border-left: 5px solid $white;
 }
 
 blockquote p {
@@ -139,11 +142,11 @@ blockquote p {
 }
 
 .prezTable th {
-    background-color: @black;
+    background-color: $black;
     vertical-align: middle;
     text-align: center;
     font-weight: bold;
-    color: @white;
+    color: $white;
     padding: 5px;
 }
 

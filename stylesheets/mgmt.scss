@@ -1,3 +1,6 @@
+---
+---
+@use "sass:color";
 .theme {
     background-color: hsla(80, 90%, 40%, 0.5);
     font-size: 2em;
@@ -15,7 +18,7 @@
 }
 
 .actionRayee {
-    .action;
+@extend .action;
     text-decoration: line-through;
 }
 
@@ -33,7 +36,7 @@
     font-size: 150%;
 }
 .plus {
-    .consequence ;
+@extend .consequence;
 }
 .plus::before {
     content: "+ ";
@@ -42,7 +45,7 @@
     vertical-align: middle;
 }
 .moins {
-    .consequence;
+@extend .consequence;
 }
 .moins::before {
     content: "- ";
@@ -51,7 +54,7 @@
 }
 
 .why {
-    .consequence ;
+@extend .consequence;
 }
 .why::before {
     content: "▶ ";

@@ -22,4 +22,4 @@ Voilà, c'est tout pour les découvertes informatiques de la journée.
 Je me remets au boulot sur mon projet de stage. Au passage je vous montre mon magnifique 
 serveur de test : un vieux linux qui traine dans une salle de réunion vide...
 
-![Mon serveur de test]("images/pc_pourri.JPG" "Mon serveur de test")
+![Mon serveur de test](/images/pc_pourri.JPG "Mon serveur de test")

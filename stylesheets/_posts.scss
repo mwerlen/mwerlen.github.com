@@ -8,7 +8,7 @@
 }
 
 .metadata {
-    color: @postTitleColor;
+    color: $postTitleColor;
     font-style: italic;
     font-size: 80%;
     margin-left: -2em;
@@ -24,7 +24,7 @@ h3.blogpostpreview {
 }
 
 #postTitle h1 {
-    border-bottom: 2px solid @green;
+    border-bottom: 2px solid $green;
     padding: 0;
     padding-left: 15px;
     padding-bottom: 0.55em;
@@ -34,7 +34,7 @@ h3.blogpostpreview {
 }
 
 #postTitle a {
-    color: @postTitleColor;
+    color: $postTitleColor;
 }
 
 #postTitle .metadata {
@@ -47,8 +47,8 @@ h3.blogpostpreview {
 }
 
 #related {
-    color: @grey;
-    background: @green;
+    color: $grey;
+    background: $green;
     padding: 0 0 5px 0;
     font-size: 95%;
     margin: 1em 0;
@@ -56,14 +56,14 @@ h3.blogpostpreview {
 
 #related h3 {
     font-size: 1.2em;
-    background: @greenStrong;
+    background: $greenStrong;
     padding: 5px;
     margin: 0
 
 }
 
 #related .posts {
-    color: @grey;
+    color: $grey;
     line-height: 1.3em;
     margin-top: 0.5em;
     margin-bottom: 0;
@@ -81,7 +81,7 @@ hr {
     border-left-width: 0;
     border-right-width: 0;
     border-bottom-width: 3px;
-    border-bottom-color: @green;
+    border-bottom-color: $green;
     border-bottom-style: dotted;
 
     padding: 0;

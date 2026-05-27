@@ -3,8 +3,8 @@
  *****************************************/
 .note {
     text-align: center;
-    color: @grey;
-    background: @greenStrong;
+    color: $grey;
+    background: $greenStrong;
     padding: 10px 0 10px 0;
     margin-bottom: 2em;
 }
@@ -62,7 +62,7 @@
 
 
 .archive-year {
-    border-bottom: 3px solid @greenStrong;
+    border-bottom: 3px solid $greenStrong;
     margin-top: 2em;
 }
 
@@ -76,7 +76,7 @@
 
 ul.archive-list {
     margin-bottom: 20px;
-    border-left: 5px solid @greenStrong;
+    border-left: 5px solid $greenStrong;
     margin-left: 2em;
     padding-left: 1em;
     margin-top: 0;

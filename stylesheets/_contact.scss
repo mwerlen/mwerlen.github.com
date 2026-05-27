@@ -4,23 +4,23 @@
 */
 .contact-form {
     cursor: default !important;
-    background-color: @white !important;
+    background-color: $white !important;
     color: black !important;
     border-color: rgb(204, 204, 204) !important;
 }
 
 .contact-button {
-    background-color: @greenStrong !important;
-    color: @grey !important;
+    background-color: $greenStrong !important;
+    color: $grey !important;
 }
 
 .contact-form-mail {
-    color: @blue !important;
+    color: $blue !important;
     cursor: hand !important;
 }
 
 legend.contact-legend {
-    border-bottom: 1px solid @greenStrong;
+    border-bottom: 1px solid $greenStrong;
     font-size: 125%;
 }
 

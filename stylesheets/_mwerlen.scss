@@ -6,25 +6,25 @@
     display: block;
     float: right;
     margin: 0 0 10px 10px;
-    border: 1px ridge @grey;
+    border: 1px ridge $grey;
 }
 
 .profils {
-    color: @grey;
-    background: @green;
+    color: $grey;
+    background: $green;
     padding: 0 0 5px 0;
     font-size: 95%;
 }
 
 .profils h3 {
     font-size: 1.2em;
-    background: @greenStrong;
+    background: $greenStrong;
     padding: 5px;
     margin: 0
 }
 
 .profils .profils-sites {
-    color: @grey;
+    color: $grey;
     font-size: 100%;
     margin-top: 0.5em;
     margin-bottom: 0;
