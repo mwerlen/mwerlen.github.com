@@ -6,6 +6,7 @@
 # This takes care of .tmp, .sass-cache, and many others #
 .*/
 !/.bundle
+!/.github
 
 # Ignore OS generated files #
 .DS_Store*
